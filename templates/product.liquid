@@ -1,0 +1,317 @@
+
+<!-- Bold: CSP Step 4 (product) -->
+{% include 'boldcsp_helper' with 'product' %}
+<!-- // end bold code -->
+
+{% include 'breadcrumb' %}
+
+
+
+
+<div class="grid" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+	<div class="grid-item large--one-fifth">
+		
+		        <!-- START LEFT NAV -->
+		    <style type="text/css">
+			    
+			    @media ( max-width: 1000px) {
+			    #radical { display: none; }
+			    }
+			</style>
+		    <div id="radical" style="margin-right:10px; padding: 10px; border-style: dashed; border-width: 1px; border-color: #717171;"> 
+			    
+			    <!-- START SIZE PICKER BY JOHN TRIPPE -->
+									{% include 'advanced-tag-loop' %}
+							{% if collection.all_tags %}
+									{% if product.type == 'Decks' %}
+									
+												
+									            Shop by board size :<br> <div style="height:85px;">{% for tag in collection.all_tags %}
+									            
+									            			{% if tag contains 'Board' %}
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Board Size_' }}</b></font></a></div>
+															{% endif %}
+									            
+														{% endfor %}</div>
+									{% endif %}
+									{% if product.type == 'Wheels' %}
+									
+												
+									            Shop by wheel size :<br> <div style="height:85px;">{% for tag in collection.all_tags %}
+									            
+									            			{% if tag contains 'Wheel Size' %}
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Wheel Size_' }}</b></font></a></div>
+															{% endif %}
+									            
+														{% endfor %}</div>
+									{% endif %}
+									{% if product.type == 'Trucks' %}
+									
+												
+									            Shop by truck size :<br> <div style="height:85px;">{% for tag in collection.all_tags %}
+									            
+									            			{% if tag contains 'Truck Size' %}
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Truck Size_' }}</b></font></a></div>
+															{% endif %}
+									            
+														{% endfor %}</div>
+									{% endif %}
+									
+									
+							{% endif %}
+				<!-- END SIZE PICKER BY JOHN TRIPPE --> 
+				
+				       
+		        
+				{% include 'related-products-test' %}
+				
+				</div> 
+		    
+		    	<!-- END LEFT NAV -->
+	
+	</div>
+    	
+    	
+	<div class="grid-item large--two-fifths">
+		<div class="grid">
+		  <div class="grid-item large--eleven-twelfths text-center">
+		    <!-- START MAGICZOOMPLUS IMAGES -->{% include 'magiczoomplus' %}<!-- END MAGICZOOMPLUS IMAGES -->
+		
+		  </div>
+		</div>
+	</div>
+  
+  		
+
+  <div class="grid-item large--two-fifths" style="">
+
+    <h2 itemprop="name">{{ product.title }}</h2><img src="{{ product.image }}">
+
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+      {% assign variant = product.selected_or_first_available_variant %}
+
+      <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+      <meta itemprop="price" content="{{ variant.price | money }}">
+
+      {% if settings.product_vendor_enable %}
+        <p class="product-meta" itemprop="brand">{{ product.vendor }}</p>
+      {% endif %}
+
+      <ul class="inline-list product-meta">
+        <li>
+          <span id="productPrice" class="h1">
+            {% include 'price' with variant.price %}
+          </span>
+        </li>
+        {% if product.compare_at_price_max > product.price %}
+        <li>
+          <span id="comparePrice" class="sale-tag large">
+            {% assign compare_price = variant.compare_at_price %}
+            {% assign product_price = variant.price %}
+            {% include 'price-sale' %}
+          </span>
+        </li>
+        {% endif %}
+        {% if settings.product_reviews_enable %}
+          <li class="product-meta--review">
+            <a href="#reviewz"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></a>
+          </li>
+        {% endif %}
+      </ul>
+
+      <hr id="variantBreak" class="hr--clear hr--small">
+
+      <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+      <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
+        <select name="id" id="productSelect" class="product-variants">
+          {% for variant in product.variants %}
+          
+<!-- Bold: CSP 5 (for variant) -->
+{% include 'boldcsp_helper' with 'variants' %}
+<!-- // end bold code -->
+
+            {% if variant.available %}
+
+              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+            {% else %}
+              <option disabled="disabled">
+                {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+              </option>
+            {% endif %}
+          {% endfor %}
+        </select>
+
+        {% if settings.product_quantity_enable %}
+          <label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+        {% endif %}
+
+        <button type="submit" name="add" id="addToCart" style="background: #FD0000;" class="btn">
+          <span class="icon icon-cart"></span>
+          <span id="addToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+        </button>
+
+        <span id="variantQuantity" class="variant-quantity"></span>
+      </form>
+
+      <hr>
+
+    </div>
+
+    <div class="product-description rte" itemprop="description">
+      {{ product.description }}
+    </div>
+    <br>
+    *Let us know what you think. <a href="#reviewz">Write a review</a>.
+    
+
+    {% if settings.social_sharing_products %}
+      {% include 'social-sharing' %}
+    {% endif %}
+    
+    	<div class="tags">
+		          <i class="icon-tags"><br><br><hr>Tags: <br>
+					{% for tag in product.tags %}
+					<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/search?type=product&q={{tag}}" rel="tag"><font color="#FFFFFF">{{ tag }}</font></a></div>
+					{% endfor %}
+		          </i> </div>
+
+  </div>
+</div>
+
+
+
+{% if settings.related_products_enable %}
+  {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+  {% include 'related-products' %}
+{% endif %}
+
+{% if settings.product_reviews_enable %}
+<a name="reviewz"></a>
+  <hr>
+  <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+{% endif %}
+
+<!-- FROM FRONTPAGE -->
+
+<div class="grid-item" style="padding: 0px;">
+	
+		<div class="grid-item large--one-half" style="padding: 0px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/real-skateboards-real-stale-fishes-skate-t-shirt-white-p13900-31170_image.jpg?1464098155150263771"></a></div>
+		
+		<div class="grid-item large--one-half" style="padding: 0px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/complete.jpg?13545694818308413886"></a></div>
+		
+		<div class="grid-item large--one-whole" style="padding: 0px; margin-top: 20px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img  border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/stripes.gif?9783673008983848629"></a></div>
+	
+	
+</div>
+
+<!-- END FROM FRONTPAGE -->
+
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+<script>
+
+  // Pre-loading product images, to avoid a lag when a thumbnail is clicked, or
+  // when a variant is selected that has a variant image.
+  Shopify.Image.preload({{ product.images | json }}, 'large');
+
+  var selectCallback = function(variant, selector) {
+
+    var $addToCart = $('#addToCart'),
+        $productPrice = $('#productPrice'),
+        $comparePrice = $('#comparePrice'),
+        $variantQuantity = $('#variantQuantity'),
+        $quantityElements = $('.quantity-selector, label + .js-qty'),
+        $addToCartText = $('#addToCartText'),
+        $featuredImage = $('#productPhotoImg');
+
+    if (variant) {
+      // Update variant image, if one is set
+      // Call timber.switchImage function in shop.js
+      if (variant.featured_image) {
+        var newImg = variant.featured_image,
+            el = $featuredImage[0];
+        Shopify.Image.switchImage(newImg, el, timber.switchImage);
+      }
+
+      // Select a valid variant if available
+      if (variant.available) {
+        // We have a valid product variant, so enable the submit button
+        $addToCart.removeClass('disabled').prop('disabled', false);
+        $addToCartText.html({{ 'products.product.add_to_cart' | t | json }});
+
+        // Show how many items are left, if below 10
+        if (variant.inventory_management) {
+          if (variant.inventory_quantity < 10 && variant.inventory_quantity > 0) {
+            $variantQuantity.html({{ 'products.product.only_left' | t: count: '1' | json }}.replace('1', variant.inventory_quantity)).show();
+          } else {
+            $variantQuantity.hide();
+          }
+        }
+
+
+        $quantityElements.show();
+      } else {
+        // Variant is sold out, disable the submit button
+        $addToCart.addClass('disabled').prop('disabled', true);
+        $addToCartText.html({{ 'products.product.sold_out' | t | json }});
+        $variantQuantity.hide();
+        $quantityElements.hide();
+      }
+
+      // Regardless of stock, update the product price
+      var customPriceFormat = timber.formatMoney( Shopify.formatMoney(variant.price, "{{ shop.money_format }}") );
+      $productPrice.html(customPriceFormat);
+
+      // Also update and show the product's compare price if necessary
+      if ( variant.compare_at_price > variant.price ) {
+        var priceSaving = timber.formatSaleTag( Shopify.formatMoney(variant.compare_at_price - variant.price, "{{ shop.money_format }}") );
+        {% comment %}
+        priceSaving += ' (' + ( (variant.compare_at_price - variant.price)*100/(variant.compare_at_price) ).toFixed(0) + '%)';
+        {% endcomment %}
+        $comparePrice.html({{ 'products.general.save_html' | t: saved_amount: '[$]' | json }}.replace('[$]', priceSaving)).show();
+      } else {
+        $comparePrice.hide();
+      }
+
+    } else {
+      // The variant doesn't exist, disable submit button.
+      // This may be an error or notice that a specific variant is not available.
+      $addToCart.addClass('disabled').prop('disabled', true);
+      $addToCartText.html({{ 'products.product.unavailable' | t | json }});
+      $variantQuantity.hide();
+      $quantityElements.hide();
+    }
+  };
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {{ product | json }},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label>{{ product.options.first | escape }}</label>');
+    {% endif %}
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+    {% if shappify_csp_options_count == 1 and product.variants.first.title contains 'Default' %}
+      $('.selector-wrapper').hide();
+    {% else %}
+      $('#variantBreak').removeClass('hr--clear');
+    {% endif %}
+  });
+</script>
+
+{% if settings.product_image_zoom_enable %}
+  {{ 'jquery.zoom.min.js' | asset_url | script_tag }}
+{% endif %}
+
+

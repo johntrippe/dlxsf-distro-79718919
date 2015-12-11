@@ -1,0 +1,39 @@
+<!-- 
+    This is just a regular add product form. 
+    You should be able to add any valid input fields to it 
+-->
+ <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
+    <!-- We can leave this in, since the select comes later, 
+        so it will override if user picks something different. -->
+    {% for variant in product.variants limit:1 %}
+        <input type="hidden" name="id" value="{{ variant.id }}" />
+    {% endfor %}
+
+    <!-- If you don't want the variants dropdown, just comment this out. -->
+    {% if  product.variants.size > 1 %}    
+    <select name="id" id="id">{% for variant in product.variants %}{% if variant.available %}
+		<option value="{{ variant.id }}">{{ variant.title | escape }} ({{ variant.price | money }})</option>{% else %}
+		<option value="{{ variant.id }}" disabled="disabled">{{ variant.title | escape }} ({{ variant.price | money }}) - SOLD OUT</option>{% endif %}{% endfor %}
+	</select>
+    {% endif %}
+    <!-- end variants dropdown -->
+    
+    {% if settings.product_quantity_enable %}
+          <label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+        {% endif %}
+
+	<!-- START BUY -->
+	<div class="clear">
+	    {% if product.available %}
+		    <h2><span>{{ product.price | money }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}</h2>
+		    <button type="submit" name="add" id="addToCart" style="background: #FD0000;" class="btn">
+          <span class="icon icon-cart"></span>
+          <span id="addToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+        </button>
+		{% else %}
+		    <h6>Sold Out</h6>
+		{% endif %}
+	</div>
+	<!-- END BUY --> 
+</form>

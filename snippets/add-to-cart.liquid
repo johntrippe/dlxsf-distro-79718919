@@ -1,0 +1,129 @@
+<div style="border-style: solid; padding: 8px;  border-width: 1px; border-color: #dbdada;">
+
+	<a href="{{ product.url | within: current_collection }}" class="product-grid-item">
+    <div class="product-grid-image">
+      <div class="product-grid-image--centered">
+        {% if sold_out %}
+          <div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
+        {% endif %}
+        
+        <img src="{{ product.featured_image.src | img_url: image_size }}" alt="{{ product.featured_image.alt | escape }}">
+      </div>
+    </div>
+  </a>
+	    
+	    <!-- 
+    This is just a regular add product form. 
+    You should be able to add any valid input fields to it 
+-->
+
+<!-- Bold: Customer Pricing - Step 6 (product.liquid) -->
+
+{% assign tag_price = 0 %}
+{% assign tag = 'default' %}
+{% if customer.tags.size > 0 %}
+{% for cust_tag in customer.tags %}
+{% if product.metafields.shappify_csp[cust_tag] %}
+{% assign tag = cust_tag %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if product.metafields.shappify_csp[tag] %}
+{% assign tag_price = 1 %}
+{% endif %}
+{% if tag_price != 1 %}
+
+                
+<!-- Bold: Customer Pricing - Step 6 (product.liquid) -->
+
+{% assign tag_price = 0 %}
+{% assign tag = 'default' %}
+{% if customer.tags.size > 0 %}
+{% for cust_tag in customer.tags %}
+{% if product.metafields.shappify_csp[cust_tag] %}
+{% assign tag = cust_tag %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if product.metafields.shappify_csp[tag] %}
+{% assign tag_price = 1 %}
+{% endif %}
+{% if tag_price != 1 %}
+
+                {{ product.price | money }}
+
+{% else %}
+{% capture attribute_price_min %}{{tag}}_raw_lownum{% endcapture %}
+{% capture attribute_price_max %}{{tag}}_price_high{% endcapture %}
+{% capture attribute_price %}{{tag}}{% endcapture %}
+
+{{ product.metafields.shappify_csp[attribute_price] }}
+
+{% endif %}
+<!-- // end Bold code -->
+
+{% else %}
+{% capture attribute_price_min %}{{tag}}_raw_lownum{% endcapture %}
+{% capture attribute_price_max %}{{tag}}_price_high{% endcapture %}
+{% capture attribute_price %}{{tag}}{% endcapture %}
+
+{{ product.metafields.shappify_csp[attribute_price] }}
+
+{% endif %}
+<!-- // end Bold code --></span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}
+
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
+    <!-- We can leave this in, since the select comes later, 
+        so it will override if user picks something different. -->
+        
+        <!-- START snippet turns off direct to cart after adding an item -->
+        <input type="hidden" name="return_to" value="back" />
+        <!-- END snippet turns off direct to cart after adding an item -->
+        
+    {% for variant in product.variants limit:1 %}
+        <input type="hidden" name="id" value="{{ variant.id }}" />
+    {% endfor %}
+
+    
+
+     
+    <!-- If you don't want the variants dropdown, just comment this out. -->
+    {% if  shappify_csp_options_count > 1 %}    
+    <select style="font-size:10px;" name="id" class="js--num" id="id">{% for variant in product.variants %}
+
+
+<!-- Bold: CSP 5 (for variant) -->
+{% include 'boldcsp_helper' with 'variants' %}
+<!-- // end bold code -->
+
+{% if variant.available %}
+		<option value="{{ variant.id }}">{{ variant.title | escape }}</option>{% else %}
+		<option value="{{ variant.id }}" disabled="disabled">{{ variant.title | escape }} ({{ variant.price | money }}) - SOLD OUT</option>{% endif %}{% endfor %}
+	</select>
+    {% endif %}
+    <!-- end variants dropdown -->
+    
+    {% if settings.product_quantity_enable %}
+          <!--<label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>-->
+          <input style="font-size:10px;" type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+    {% endif %}
+    
+    <!-- START INVENTORY AMOUNTS -->
+	{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity < 10 %}
+	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock
+	{% endif %}
+    <!-- END INVENTORY AMOUNTS -->
+
+	<!-- START BUY -->
+
+	    {% if product.available %}
+		    
+		    <button type="submit" name="add" id="addToCart" class="btn2">
+			</button>
+		{% else %}
+		    <h6>Sold Out</h6>
+		{% endif %}
+
+	<!-- END BUY --> 
+</form>
+</div>
