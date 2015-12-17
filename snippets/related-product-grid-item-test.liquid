@@ -45,7 +45,7 @@
   {% endcomment %}
   <div align="center">
   <a href="{{ product.url | within: collection }}">
-    <img src="{{ product.featured_image.src | product_img_url: 'compact' }}" alt="{{ product.featured_image.alt | escape }}">
+    <img vspace="10" src="{{ product.featured_image.src | product_img_url: 'compact' }}" alt="{{ product.featured_image.alt | escape }}">
   </a>
      {% if on_sale or sold_out %}
      <div class="product-label">
