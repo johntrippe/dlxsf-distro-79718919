@@ -26,9 +26,7 @@
             {% if grid_results == false %}
 
               {% for item in search.results %}
-            <!-- Bold: CSP Step 3 (search) -->
-			{% include 'boldcsp_helper' with 'search' %}
-			<!-- // end bold code -->
+           
                 {% include 'search-result' %}
               {% endfor %}
 

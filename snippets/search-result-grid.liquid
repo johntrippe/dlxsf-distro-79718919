@@ -36,103 +36,14 @@
 
       <div class="product-item--price">
         <span class="h1 medium--left">
-          <!-- Bold: Customer Pricing - Step 6 (search-result.liquid) -->
-
-{% assign tag_price = 0 %}
-{% assign tag = 'default' %}
-{% if customer.tags.size > 0 %}
-{% for cust_tag in customer.tags %}
-{% if item.metafields.shappify_csp[cust_tag] %}
-{% assign tag = cust_tag %}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% if item.metafields.shappify_csp[tag] %}
-{% assign tag_price = 1 %}
-{% endif %}
-{% if tag_price != 1 %}
-
-    {% if item.compare_at_price > item.price %}
-      <span itemprop="price">
-        {{ item.price | money }}
-      </span>
-      <s><small>{{ item.compare_at_price_max | money }}</small></s>
-    {% else %}
-      <span itemprop="price">
-        {{ item.price | money }}
-      </span>
-    {% endif %}
-
-{% else %}
-{% capture attribute_price_min %}{{tag}}_raw_lownum{% endcapture %}
-{% capture attribute_price_max %}{{tag}}_price_high{% endcapture %}
-{% capture attribute_price %}{{tag}}{% endcapture %}
-
-
-    {% if item.compare_at_price > item.price %}
-      <span itemprop="price">
-        {{ item.metafields.shappify_csp[attribute_price] }}
-      </span>
-      <s><small>{{ item.compare_at_price_max | money }}</small></s>
-    {% else %}
-      <span itemprop="price">
-        {{ item.metafields.shappify_csp[attribute_price] }}
-      </span>
-    {% endif %}
-
-{% endif %}
-<!-- // end Bold code -->
+         {% include 'price' with item.price %}
         </span>
 
         {% if on_sale %}
           <span class="sale-tag medium--right">
-            <!-- Bold: Customer Pricing - Step 6 (search-result.liquid) -->
-
-{% assign tag_price = 0 %}
-{% assign tag = 'default' %}
-{% if customer.tags.size > 0 %}
-{% for cust_tag in customer.tags %}
-{% if item.metafields.shappify_csp[cust_tag] %}
-{% assign tag = cust_tag %}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% if item.metafields.shappify_csp[tag] %}
-{% assign tag_price = 1 %}
-{% endif %}
-{% if tag_price != 1 %}
-
-    {% if item.compare_at_price > item.price %}
-      <span itemprop="price">
-        {{ item.price | money }}
-      </span>
-      <s><small>{{ item.compare_at_price_max | money }}</small></s>
-    {% else %}
-      <span itemprop="price">
-        {{ item.price | money }}
-      </span>
-    {% endif %}
-
-{% else %}
-{% capture attribute_price_min %}{{tag}}_raw_lownum{% endcapture %}
-{% capture attribute_price_max %}{{tag}}_price_high{% endcapture %}
-{% capture attribute_price %}{{tag}}{% endcapture %}
-
-
-    {% if item.compare_at_price > item.price %}
-      <span itemprop="price">
-        {{ item.metafields.shappify_csp[attribute_price] }}
-      </span>
-      <s><small>{{ item.compare_at_price_max | money }}</small></s>
-    {% else %}
-      <span itemprop="price">
-        {{ item.metafields.shappify_csp[attribute_price] }}
-      </span>
-    {% endif %}
-
-{% endif %}
-<!-- // end Bold code -->
-          </span>
+           {% assign compare_price = item.compare_at_price %}
+            {% assign product_price = item.price %}
+            {% include 'price-sale' %}          </span>
         {% endif %}
       </div>
     {% else %}

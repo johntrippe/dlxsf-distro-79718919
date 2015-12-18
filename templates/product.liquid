@@ -1,7 +1,4 @@
 
-<!-- Bold: CSP Step 4 (product) -->
-{% include 'boldcsp_helper' with 'product' %}
-<!-- // end bold code -->
 
 {% include 'breadcrumb' %}
 
@@ -131,9 +128,6 @@
         <select name="id" id="productSelect" class="product-variants">
           {% for variant in product.variants %}
           
-<!-- Bold: CSP 5 (for variant) -->
-{% include 'boldcsp_helper' with 'variants' %}
-<!-- // end bold code -->
 
             {% if variant.available %}
 
@@ -300,7 +294,7 @@
     {% endif %}
 
     // Hide selectors if we only have 1 variant and its title contains 'Default'.
-    {% if shappify_csp_options_count == 1 and product.variants.first.title contains 'Default' %}
+    {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
       $('.selector-wrapper').hide();
     {% else %}
       $('#variantBreak').removeClass('hr--clear');

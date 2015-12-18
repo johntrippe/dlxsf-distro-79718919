@@ -34,9 +34,7 @@ Use the assign statement outside of this comment block at the top of your templa
   {% for product in collection.products %}
     {% if product.available %}
       {% for variant in product.variants %}
-      <!-- Bold: CSP 5 (for variant) -->
-{% include 'boldcsp_helper' with 'variants' %}
-<!-- // end bold code -->
+
         {% if variant.available %}
         <tr class="{% cycle 'pure-table-odd', '' %}">
           <td>

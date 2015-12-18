@@ -34,14 +34,10 @@ Use the assign statement outside of this comment block at the top of your templa
 <table class="pure-table pure-table-bordered">
   <tbody>
   {% for product in collection.products %}
-  <!-- Bold: CSP Step 2 (collection) -->
-{% include 'boldcsp_helper' with 'collection' %}
-<!-- // end bold code -->
+
     {% if product.available %}
       {% for variant in product.variants %}
-      <!-- Bold: CSP 5 (for variant) -->
-{% include 'boldcsp_helper' with 'variants' %}
-<!-- // end bold code -->
+
         {% if variant.available %}
         <tr class="{% cycle 'pure-table-odd', '' %}">
           <td>

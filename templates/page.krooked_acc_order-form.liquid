@@ -34,14 +34,10 @@ Use the assign statement outside of this comment block at the top of your templa
 <table class="pure-table pure-table-bordered">
   <tbody>
   {% for product in collection.products %}
-  <!-- Bold: CSP Step 2 (collection) -->
-{% include 'boldcsp_helper' with 'collection' %}
-<!-- // end bold code -->
+
     {% if product.available %}
       {% for variant in product.variants %}
-      <!-- Bold: CSP 5 (for variant) -->
-{% include 'boldcsp_helper' with 'variants' %}
-<!-- // end bold code -->
+
         {% if variant.available %}
         <tr class="{% cycle 'pure-table-odd', '' %}">
           <td>
@@ -55,33 +51,7 @@ Use the assign statement outside of this comment block at the top of your templa
             </a>
           </td>
           <td>
-             <!-- Bold: Customer Pricing - Step 6 (product.liquid) -->
-
-{% assign tag_price = 0 %}
-{% assign tag = 'default' %}
-{% if customer.tags.size > 0 %}
-{% for cust_tag in customer.tags %}
-{% if product.metafields.shappify_csp[cust_tag] %}
-{% assign tag = cust_tag %}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% if product.metafields.shappify_csp[tag] %}
-{% assign tag_price = 1 %}
-{% endif %}
-{% if tag_price != 1 %}
-
-                {{ product.price | money }}
-
-{% else %}
-{% capture attribute_price_min %}{{tag}}_raw_lownum{% endcapture %}
-{% capture attribute_price_max %}{{tag}}_price_high{% endcapture %}
-{% capture attribute_price %}{{tag}}{% endcapture %}
-
-{{ product.metafields.shappify_csp[attribute_price] }}
-
-{% endif %}
-<!-- // end Bold code -->
+{{ variant.price | money }}
           </td>
           <td style="text-align:right;">
             <input onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" />
