@@ -47,7 +47,7 @@ Use the assign statement outside of this comment block at the top of your templa
           </td>
           <td>
             <a href="{{ product.url | collection }}">
-             {{ product.title }}{% unless variant.title contains 'Default' %} - {{ variant.title }}{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}
+             <font color="#000">{{ product.title }}</font>{% unless variant.title contains 'Default' %} - <font color="#003399">{{ variant.title }}</font>{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}
             </a>
           </td>
           <td>

@@ -190,20 +190,11 @@
   <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
 {% endif %}
 
-<!-- FROM FRONTPAGE -->
+<!-- START FEATURED -->
 
-<div class="grid-item" style="padding: 0px;">
-	
-		<div class="grid-item large--one-half" style="padding: 0px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/real-skateboards-real-stale-fishes-skate-t-shirt-white-p13900-31170_image.jpg?1464098155150263771"></a></div>
-		
-		<div class="grid-item large--one-half" style="padding: 0px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/complete.jpg?13545694818308413886"></a></div>
-		
-		<div class="grid-item large--one-whole" style="padding: 0px; margin-top: 20px;"><a href="https://dlxsf.myshopify.com/collections/real-decks/products/r-142"><img  border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/stripes.gif?9783673008983848629"></a></div>
-	
-	
-</div>
+{% include 'featured' %} 
 
-<!-- END FROM FRONTPAGE -->
+<!-- END FEATURED -->
 
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
 <script>

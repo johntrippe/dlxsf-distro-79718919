@@ -42,12 +42,12 @@ Use the assign statement outside of this comment block at the top of your templa
         <tr class="{% cycle 'pure-table-odd', '' %}">
           <td>
             <a href="{{ product.url | collection }}">
-              <img src="{{ product.featured_image.src | product_img_url: 'small' }}" alt="{{ product.featured_image.alt | escape }}" />
+              <img src="{{ product.featured_image.src | product_img_url: 'compact' }}" alt="{{ product.featured_image.alt | escape }}" />
             </a>
           </td>
           <td>
             <a href="{{ product.url | collection }}">
-             {{ product.title }}{% unless variant.title contains 'Default' %} - {{ variant.title }}{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}
+             <font color="#000">{{ product.title }}</font>{% unless variant.title contains 'Default' %} - <font color="#003399">{{ variant.title }}</font>{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}
             </a>
           </td>
           <td>
