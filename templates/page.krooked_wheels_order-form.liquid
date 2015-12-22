@@ -19,6 +19,10 @@ Use the assign statement outside of this comment block at the top of your templa
 <h1>{% if template contains 'page' %}{{ page.title }}{% else %}{{ collection.title }}{% endif %}</h1>
 {% endif %}
 
+<!-- START NAV -->
+{% include 'order-form-nav' %}
+<!-- END NAV -->
+
 {% if template contains 'page' and page.content.size > 0 %}
 <div class="rte">
 {{ page.content }}
@@ -69,6 +73,10 @@ Use the assign statement outside of this comment block at the top of your templa
 {% else %}
 <p>There are no products in this view.</p>
 {% endif %}
+
+<!-- START NAV -->
+{% include 'order-form-nav' %}
+<!-- END NAV -->
 
 {% endpaginate %}
 
