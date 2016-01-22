@@ -7,160 +7,115 @@
   {% include 'advanced-tag-loop' %}
 {% endcomment %}
 
-{% if settings.collection_sidebar_filters == 'groups' %}
-  {% if collection.all_tags.size > 0 %}
+<!-- START DROPDOWNS -->
 
     <div class="grid-uniform">
-      {% comment %}
-        Loop through tag categories
-      {% endcomment %}
-      {% for cat_item in cat_array %}
-        {% comment %}
-          Ignore if tag category is empty
-        {% endcomment %}
-        {% unless cat_item == '' %}
+
         <div class="grid-item small--one-half medium--one-third" style="background-color: white; margin-right: 5px;">
-	        
-	        
-					
-	        
-	        
-	        
-          <h3>{{ cat_item }}</h3>
-          <ul class="advanced-filters">
-            {% comment %}
-              Loop through collection tags
-            {% endcomment %}
-            {% for custom_tag in collection.all_tags %}
-              {% if custom_tag contains cat_item %}
-                {% comment %}
-                  Strip out tag category prefix and add/remove link for tag filtering
-                {% endcomment %}
-                {% if current_tags contains custom_tag %}
-                  <li class="advanced-filter active-filter" data-group="{{ cat_item }}" data-handle="{{ custom_tag | handleize }}">{{ custom_tag | remove_first: cat_item | remove: '_' | link_to_remove_tag: custom_tag }}</li>
-                {% else %}
-                  <li class="advanced-filter" data-group="{{ cat_item }}">{{ custom_tag | remove_first: cat_item | remove: '_' | link_to_add_tag: custom_tag }}</li>
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-					
-        </div>
-        {% endunless %}
+
+<ul class="clearfix filters">
+  <li class="clearfix filter">
+    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,143,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +' | split: ',' %}
+    <label>Filter by Size</label>
+    <select class="coll-filter">
+      <option value="">All</option>
+      {% for t in tags %}
+      {% assign tag = t | strip %}
+      {% if current_tags contains tag %}
+      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+      {% elsif collection.all_tags contains tag %}
+      <option value="{{ tag | handle }}">{{ tag }}</option>
+      {% endif %}
       {% endfor %}
+    </select>
+  </li>
+  <li class="clearfix filter">
+    {% assign tags = 'Andrew Allen, Mike Anderson,Raney Beres, Justin Brock, Dennis Busenitz, John Cardiel,Brad Cromer, Jake Donnelly,Dan Drehobl, Chima Ferguson,  Frank Gerwer, Mark Gonzales, Jeff Grosso, James Hardy, Peter Hewitt,Tony Miorana, Chris Pfanner, Peter Ramondetta, Andy Roy, Robbie Russo,Max Schaaf,  Julien Stranger, Grant Taylor, Davis Torgerson, Tony Trujillo, Ishod Wair, Kyle Walker, Sebo Walker, Bobby Worrest' | split: ',' %}
+    <label>Filter by Pro</label>
+    <select class="coll-filter">
+      <option value="">All</option>
+      {% for t in tags %}
+      {% assign tag = t | strip %}
+      {% if current_tags contains tag %}
+      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+      {% elsif collection.all_tags contains tag %}
+      <option value="{{ tag | handle }}">{{ tag }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </li>
+ <li class="clearfix filter">
+    {% assign tags = 'Antihero, Real, Spitfire, Krooked, Thunder, Venture' | split: ',' %}
+    <label>Filter by Brand</label>
+    <select class="coll-filter">
+      <option value="">All</option>
+      {% for t in tags %}
+      {% assign tag = t | strip %}
+      {% if current_tags contains tag %}
+      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+      {% elsif collection.all_tags contains tag %}
+      <option value="{{ tag | handle }}">{{ tag }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </li>
+</ul>
+
+<script>
+  /* Product Tag Filters - Good for any number of filters on any type of collection page.
+     Give you product tag filter select element a class of coll-filter.
+     Give your collection select a class of coll-picker.
+     Brought to you by Caroline Schnapp. */
+  Shopify.queryParams = {};
+  if (location.search.length) {
+    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+      aKeyValue = aCouples[i].split('=');
+      if (aKeyValue.length > 1) {
+        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+      }
+    }
+  }
+  jQuery('.coll-picker').change(function() {
+    if (jQuery(this).val()) {
+      location.href = '/collections/' + jQuery(this).val();
+    }
+    else {
+      location.href = '/collections/all';
+    }
+  });
+  var collFilters = jQuery('.coll-filter');
+  collFilters.change(function() {
+    delete Shopify.queryParams.page;
+    var newTags = [];
+    collFilters.each(function() {
+      if (jQuery(this).val()) {
+        newTags.push(jQuery(this).val());
+      }
+    });
+    {% if collection.handle %}
+    var newURL = '/collections/{{ collection.handle }}';
+    if (newTags.length) {
+      newURL += '/' + newTags.join('+');
+    }
+    var search = jQuery.param(Shopify.queryParams);
+    if (search.length) {
+      newURL += '?' + search;
+    }
+    location.href = newURL;
+    {% else %}
+    if (newTags.length) {
+      Shopify.queryParams.constraint = newTags.join('+');
+    }
+    else {
+      delete Shopify.queryParams.constraint;
+    }
+    location.search = jQuery.param(Shopify.queryParams);
+    {% endif %}
+  });
+</script>
+
+        </div>
     </div>
 
-    <script>
-    $(function() {
-      var currentTags = '{{ current_tags }}',
-          filters = $('.advanced-filter'),
-          activeTag,
-          activeHandle;
+<!-- END DROPDOWNS -->
 
-      filters.each(function() {
-        var el = $(this),
-            group = el.data('group'),
-            isActive = el.hasClass('active-filter');
-      });
-
-      filters.on('click', function(e) {
-        var el = $(this),
-            group = el.data('group'),
-            url = el.find('a').attr('href');
-
-        // Continue as normal if we're clicking on the active link
-        if ( el.hasClass('active-filter') ) {
-          return;
-        }
-
-        // Get active group link (unidentified if there isn't one)
-        activeTag = $('.active-filter[data-group="'+ group +'"]');
-
-        // If a tag from this group is already selected, remove it from the new tag's URL and continue
-        if ( activeTag && activeTag.data('group') === group ) {
-          e.preventDefault();
-          activeHandle = activeTag.data('handle') + '+';
-
-          // Create new URL without the currently active handle
-          url = url.replace(activeHandle, '');
-
-          window.location = url;
-        }
-      });
-    });
-    </script>
-
-  {% endif %}
-{% else %}
-  <h3>{{ 'collections.sidebar.shop_by' | t }}</h3>
-  {% if template contains 'collection' and collection.all_tags.size > 0 %}
-
-    {% comment %}
-      Provide a 'catch-all' link at the top of the list,
-      we'd check against the collection.handle, product type, and vendor.
-    {% endcomment %}
-    <ul>
-      {% if current_tags %}
-        <li class="active-filter">
-          {% comment %}
-            Good for /collections/all collection and regular collections
-          {% endcomment %}
-          {% if collection.handle %}
-            <a href="/collections/{{ collection.handle }}">
-              {{ 'collections.sidebar.all' | t }}
-              {% unless collection.title == 'Products' %}
-              {{ collection.title }}
-              {% endunless %}
-            </a>
-
-          {% comment %}
-            Good for automatic type collections
-          {% endcomment %}
-          {% elsif collection.current_type %}
-            <a href="{{ collection.current_type | url_for_type }}">{{ 'collections.sidebar.all_collection' | t: collection_title: collection.title }}</a>
-
-          {% comment %}
-            Good for automatic vendor collections
-          {% endcomment %}
-          {% elsif collection.current_vendor %}
-            <a href="{{ collection.current_vendor | url_for_vendor }}">{{ 'collections.sidebar.all_collection' | t: collection_title: collection.title }}</a>
-
-          {% endif %}
-        </li>
-      {% endif %}
-
-      {% comment %}
-        And for the good stuff, loop through the tags themselves.
-        Strip the prepended categories if they happen to exist.
-      {% endcomment %}
-      {% for tag in collection.all_tags %}
-        {% assign is_advanced_tag = false %}
-        {% for cat_item in cat_array %}
-          {% unless cat_item == '' %}
-            {% if tag contains cat_item %}
-              {% assign is_advanced_tag = true %}
-              {% if current_tags contains tag %}
-                <li class="active-filter">{{ tag | remove: cat_item | remove: '_' }}</li>
-              {% else %}
-                <li>{{ tag | remove: cat_item | remove: '_' | link_to_tag: tag }}</li>
-              {% endif %}
-            {% endif %}
-
-          {% endunless %}
-        {% endfor %}
-
-        {% if is_advanced_tag == false %}
-          {% if current_tags contains tag %}
-            <li class="active-filter">{{ tag }}</li>
-          {% else %}
-            <li>{{ tag | link_to_tag: tag }}</li>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-
-    </ul>
-
-  {% else %}
-    <p>{{ 'collections.sidebar.no_tags' | t }}</p>
-  {% endif %}
-{% endif %}

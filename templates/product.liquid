@@ -29,7 +29,7 @@
 									            Shop by board size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
 									            
 									            			{% if tag contains 'Size' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-decks/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
 															{% endif %}
 									            
 														{% endfor %}</div>
@@ -40,7 +40,7 @@
 									            Shop by wheel size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
 									            
 									            			{% if tag contains 'Size' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-wheels/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
 															{% endif %}
 									            
 														{% endfor %}</div>
@@ -51,7 +51,7 @@
 									            Shop by truck size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
 									            
 									            			{% if tag contains 'Size' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-Trucks/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
+																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-trucks/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
 															{% endif %}
 									            
 														{% endfor %}</div>
