@@ -9,13 +9,13 @@
 
 <!-- START DROPDOWNS -->
 
-    <div class="grid-uniform" style="padding-right: 20px;">
+    <div class="grid-uniform" style="padding-right: 10px;">
 
-        <div class="grid-item small--one-half medium--one-third" style="background-color: white; margin-right: 5px;">
+        <div class="grid-item small--one-half medium--one-third">
 
 <ul class="clearfix filters">
   <li class="clearfix filter">
-    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,143,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +' | split: ',' %}
+    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,143,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +,143, Lo 145, Hi 145, Lo 147, Hi 147, Hi 149, Hi 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
     <label>Filter by Size</label>
     <select class="coll-filter">
       <option value="">All</option>
@@ -30,8 +30,23 @@
     </select>
   </li>
   <li class="clearfix filter">
-    {% assign tags = 'Andrew Allen, Mike Anderson,Raney Beres, Justin Brock, Dennis Busenitz, John Cardiel,Brad Cromer, Jake Donnelly,Dan Drehobl, Chima Ferguson,  Frank Gerwer, Mark Gonzales, Jeff Grosso, James Hardy, Peter Hewitt,Tony Miorana, Chris Pfanner, Peter Ramondetta, Andy Roy, Robbie Russo,Max Schaaf,  Julien Stranger, Grant Taylor, Davis Torgerson, Tony Trujillo, Ishod Wair, Kyle Walker, Sebo Walker, Bobby Worrest' | split: ',' %}
+    {% assign tags = 'Andrew Allen, Youness Amrani, Mike Anderson, David Bachinsky, Theotis Beasley, Raney Beres, Brandon Biebel, Justin Brock, Dennis Busenitz, John Cardiel, Brad Cromer, Jake Donnelly,Dan Drehobl, Erik Ellington, Chima Ferguson,  Frank Gerwer, Mark Gonzales, Jeff Grosso, Felipe Gustavo, James Hardy, Peter Hewitt, Marc Johnson, Corey Kennedy, Sean Malto, Josh Matthews, Tony Miorana, Shane ONeill, Chris Pfanner, Torey Pudwill, Peter Ramondetta, Paul Rodriguez, Andy Roy, Robbie Russo, Max Schaaf,  Julien Stranger, Grant Taylor, Davis Torgerson, Tony Trujillo, Nick Tucker, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest' | split: ',' %}
     <label>Filter by Pro</label>
+    <select class="coll-filter">
+      <option value="">All</option>
+      {% for t in tags %}
+      {% assign tag = t | strip %}
+      {% if current_tags contains tag %}
+      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+      {% elsif collection.all_tags contains tag %}
+      <option value="{{ tag | handle }}">{{ tag }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+  </li>
+  <li class="clearfix filter">
+    {% assign tags = '80HD Softcruiser Wheels, Pro Classic Series, Team Classics, Formula Four Colored Wheels, Colored Wheels, Formula Four Pro Wheels, Formula Four Team Wheels' | split: ',' %}
+    <label>Filter by Style</label>
     <select class="coll-filter">
       <option value="">All</option>
       {% for t in tags %}

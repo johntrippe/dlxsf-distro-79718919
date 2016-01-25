@@ -18,50 +18,10 @@
 			    #radical { display: none; }
 			    }
 			</style>
-		    <div id="radical" style="margin-right:10px; padding: 10px; border-style: dashed; border-width: 1px; border-color: #717171;"> 
+		    <div id="radical" style="padding: 10px; border-style: dashed; border-width: 1px; border-color: #717171;"> 
 			    
-			    <!-- START SIZE PICKER BY JOHN TRIPPE -->
-									{% include 'advanced-tag-loop' %}
-							{% if collection.all_tags %}
-									{% if product.type == 'Decks' %}
-									
-												
-									            Shop by board size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
-									            
-									            			{% if tag contains 'Size' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-decks/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
-															{% endif %}
-									            
-														{% endfor %}</div>
-									{% endif %}
-									{% if product.type == 'Wheels' %}
-									
-												
-									            Shop by wheel size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
-									            
-									            			{% if tag contains 'mm' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-wheels/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag }}</b></font></a></div>
-															{% endif %}
-									            
-														{% endfor %}</div>
-									{% endif %}
-									{% if product.type == 'Trucks' %}
-									
-												
-									            Shop by truck size :<br><br><div style="height:85px;">{% for tag in collection.all_tags %}
-									            
-									            			{% if tag contains 'Size' %}
-																<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/{{product.vendor}}-trucks/{{tag | handleize}}" rel="tag"><font color="#FFFFFF"><b>{{ tag | remove: 'Size_' }}</b></font></a></div>
-															{% endif %}
-									            
-														{% endfor %}</div>
-									{% endif %}
-									
-									
-							{% endif %}<br><br>
-				<!-- END SIZE PICKER BY JOHN TRIPPE --> 
-				
-				       
+			    {% include 'collection-sidebar' %}
+			     
 		        
 				{% include 'related-products-test' %}
 				
