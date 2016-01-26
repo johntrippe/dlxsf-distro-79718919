@@ -246,7 +246,7 @@ var ajaxifyShopify = (function(module, $) {
   var $formContainer, $btnClass, $wrapperClass, $addToCart, $flipClose, $flipCart, $flipContainer, $cartCountSelector, $cartCostSelector, $toggleCartButton, $modal, $cartContainer, $drawerCaret, $modalContainer, $modalOverlay, $closeCart, $drawerContainer, $prependDrawerTo, $callbackData={};
 
   // Private functions
-  var updateCountPrice, flipSetup, revertFlipButton, modalSetup, showModal, sizeModal, hideModal, drawerSetup, showDrawer, hideDrawer, sizeDrawer, loadCartImages, formOverride, itemAddedCallback, itemErrorCallback, cartUpdateCallback, setToggleButtons, flipCartUpdateCallback, buildCart, cartTemplate, adjustCart, adjustCartCallback, createQtySelectors, qtySelectors, scrollTop, toggleCallback;
+  var updateCountPrice, flipSetup, revertFlipButton, modalSetup, showModal, sizeModal, hideModal, drawerSetup, showDrawer, hideDrawer, sizeDrawer, loadCartImages, formOverride, itemAddedCallback, itemErrorCallback, cartUpdateCallback, cartToggleCallback, setToggleButtons, flipCartUpdateCallback, buildCart, cartTemplate, adjustCart, adjustCartCallback, createQtySelectors, qtySelectors, scrollTop, toggleCallback;
 
   /*============================================================================
     Initialise the plugin and define global options
@@ -265,8 +265,8 @@ var ajaxifyShopify = (function(module, $) {
       wrapperClass: null,
       useCartTemplate: false,
       moneyFormat: '{% raw %}${{amount}}{% endraw %}',
-      disableAjaxCart: false,
-      enableQtySelectors: true,
+      disableAjaxCart: true,
+      enableQtySelectors: true, 
       prependDrawerTo: 'body',
       onToggleCallback: null
     };
@@ -457,13 +457,8 @@ var ajaxifyShopify = (function(module, $) {
   };
 
   showModal = function (toggle) {
-    $body.addClass('ajaxify-modal--visible');
-    // Build the cart if it isn't already there
-    if ( !cartInit && toggle ) {
-      Shopify.getCart(cartUpdateCallback);
-    } else {
-      sizeModal();
-    }
+    $body.addClass('ajaxcart--is-visible');
+    Shopify.getCart(cartToggleCallback);
   };
 
   sizeModal = function(isResizing) {
@@ -670,6 +665,28 @@ var ajaxifyShopify = (function(module, $) {
   };
 
   cartUpdateCallback = function (cart) {
+    // Update quantity and price
+    updateCountPrice(cart);
+
+    switch (settings.method) {
+      case 'flip':
+        $('.flip-cart span').html(cart.item_count);
+        break;
+      case 'modal':
+        <!-- buildCart(cart); -->
+        break;
+      case 'drawer':
+        buildCart(cart);
+        if ( !$drawerContainer.hasClass('is-visible') ) {
+          showDrawer();
+        } else {
+          scrollTop();
+        }
+        break;
+    }
+  };
+  
+    cartToggleCallback = function (cart) {
     // Update quantity and price
     updateCountPrice(cart);
 
