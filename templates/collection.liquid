@@ -104,8 +104,9 @@
     {% else %}
     <header class="section-header">
       <h1 class="section-header--title section-header--left">{{ collection.title }}</h1>
+     
       <div class="section-header--right">
-        {% include 'toggle-filters' %}
+        {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
       </div>
     </header>
     {% endif %}

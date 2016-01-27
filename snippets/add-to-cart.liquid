@@ -16,7 +16,10 @@
     This is just a regular add product form. 
     You should be able to add any valid input fields to it 
 -->
-{{ product.price | money | remove: '.00' }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}<form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
+
+{{ product.price | money | remove: '.00' }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}
+
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
     <!-- We can leave this in, since the select comes later, 
         so it will override if user picks something different. -->
         
@@ -32,7 +35,7 @@
 
      
     <!-- If you don't want the variants dropdown, just comment this out. -->
-    {% if  product.variants.size > 1 %}    
+        {% if  product.variants.size > 1 %}    
     <select style="font-size:10px;" name="id" class="js--num" id="id">{% for variant in product.variants %}{% if variant.available %}
 		<option value="{{ variant.id }}">{{ variant.title | escape }}</option>{% else %}
 		<option value="{{ variant.id }}" disabled="disabled">{{ variant.title | escape }} ({{ variant.price | money }}) - SOLD OUT</option>{% endif %}{% endfor %}
@@ -42,11 +45,11 @@
     
     {% if settings.product_quantity_enable %}
           <!--<label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>-->
-          <input style="font-size:10px;" type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+          <input style="font-size:10px;" type="number" id="quantity" name="quantity" value="{% if  product.type == "Trucks" %}2{% else %}1{% endif %}" min="1" class="quantity-selector">
     {% endif %}
     
     <!-- START INVENTORY AMOUNTS -->
-	{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity < 10 %}
+	{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity < 10 and product.variants.first.inventory_quantity > 0 %}
 	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock
 	{% endif %}
     <!-- END INVENTORY AMOUNTS -->
@@ -58,9 +61,12 @@
 		    <button type="submit" name="add" id="addToCart" class="btn2">
 			</button>
 		{% else %}
-		    <h6>Sold Out</h6>
+		    <h6></h6>
 		{% endif %}
 
 	<!-- END BUY --> 
+	
+        
+
 </form>
 </div>
