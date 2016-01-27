@@ -157,6 +157,7 @@ Shopify.addItem = function(variant_id, quantity, callback) {
     - Allow use of form element instead of id
     - Allow custom error callback
 ==============================================================================*/
+
 Shopify.addItemFromForm = function(form, callback, errorCallback) {
   var params = {
     type: 'POST',
@@ -164,6 +165,7 @@ Shopify.addItemFromForm = function(form, callback, errorCallback) {
     data: jQuery(form).serialize(),
     dataType: 'json',
     success: function(line_item) {
+	    document.getElementById("ajax-message").style.display='inline';
       if ((typeof callback) === 'function') {
         callback(line_item, form);
       }
