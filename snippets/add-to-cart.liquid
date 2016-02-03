@@ -7,6 +7,10 @@
           <div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
         {% endif %}
         
+        {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 and product.available %}
+		<div class="badge badge--sold-out"><span class="badge-label">On Back Order</span></div>
+		{% endif %}
+        
         <img src="{{ product.featured_image.src | img_url: image_size }}" alt="{{ product.featured_image.alt | escape }}">
       </div>
     </div>

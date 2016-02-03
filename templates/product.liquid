@@ -79,6 +79,10 @@
           </li>
         {% endif %}
       </ul>
+      
+      {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 and product.available %}
+		<span class="badge-label">On Back Order</span>
+		{% endif %}
 
       <hr id="variantBreak" class="hr--clear hr--small">
 
