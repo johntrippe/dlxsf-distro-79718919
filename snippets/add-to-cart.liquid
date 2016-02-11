@@ -53,8 +53,13 @@
     {% endif %}
     
     <!-- START INVENTORY AMOUNTS -->
-	{% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity < 10 and product.variants.first.inventory_quantity > 0 %}
+	{% if product.variants.first.inventory_management == "shopify" and product.type == "Apparel" and product.variants.first.inventory_quantity < 4 and product.variants.first.inventory_quantity > 0 %}
 	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock
+	
+	{% elsif product.variants.first.inventory_management == "shopify" and product.type != "Apparel"  and product.variants.first.inventory_quantity < 11 and product.variants.first.inventory_quantity > 0 %}
+	
+	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock
+	
 	{% endif %}
     <!-- END INVENTORY AMOUNTS -->
 
