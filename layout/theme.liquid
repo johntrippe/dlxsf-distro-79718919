@@ -158,6 +158,24 @@ if($(window).width() >= 900){
 
 </script>
 
+<script type="text/javascript">	
+
+	jQuery("document").ready(function($){
+	
+	var nav3 = $('.order-form-add-to-cart');
+	
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 136) {
+			nav3.addClass("f-nav3");
+		} else {
+			nav3.removeClass("f-nav3");
+		}
+	});
+
+});
+
+</script>
+
 			
 <div class="nav-container">
   <nav class="nav-bar" role="navigation">
