@@ -1,15 +1,3 @@
-{% unless customer %}
-    {% if template contains 'customers' %}
-        {% assign send_to_login = false %}
-    {% else %}
-        {% assign send_to_login = true %}
-    {% endif %}
-{% endunless %}
-
-{% if send_to_login %}
-<meta content="0; url=/account/login?checkout_url={{ shop.url }}" http-equiv="refresh" />
-{% endif %}
-
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
