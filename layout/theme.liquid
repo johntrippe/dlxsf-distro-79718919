@@ -109,6 +109,7 @@
                   {% endif %}
                 </span>
               {% endif %}
+              <br>{{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
             </div>
 
             <br class="medium-down--hide">
