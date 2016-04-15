@@ -114,6 +114,14 @@
         {% endif %}
       </ul>
       
+    {% for variant in product.variants %}
+  {% if variant.inventory_quantity == 0 and variant.title != "Default Title" %}
+    <b>*</b>Size: {{ variant.title }} is on Back Order*<br>
+  {% else %}
+  {% endif %}
+{% endfor %}
+
+  
       {% assign product_qty = 0 %}
 {% for variant in product.variants %}
   {% if variant.inventory_quantity > 0 %}
