@@ -114,7 +114,14 @@
         {% endif %}
       </ul>
       
-      {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 and product.available %}
+      {% assign product_qty = 0 %}
+{% for variant in product.variants %}
+  {% if variant.inventory_quantity > 0 %}
+    {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+  {% endif %}
+{% endfor %}
+
+        {% if product_qty > 0 %}{% else %}
 		<span class="badge-label">On Back Order</span>
 		{% endif %}
 
