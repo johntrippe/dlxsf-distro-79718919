@@ -173,6 +173,7 @@ Shopify.addItemFromForm = function(form, callback, errorCallback) {
         Shopify.onItemAdded(line_item, form);
       }
       document.getElementById("ajax-message").style.display='inline';
+      $('.fade').delay(2000).fadeOut(500);
     },
     error: function(XMLHttpRequest, textStatus) {
       if ((typeof errorCallback) === 'function') {
