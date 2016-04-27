@@ -13,6 +13,55 @@
 
         <div class="grid-item small--one-half medium--one-third">
 
+<!-- START CART SUMMARY SIDEBAR -->
+
+    <h1 class="h2">{{ 'cart.general.title' | t }}</h1>
+    
+    {% assign num = 0 %}
+    {% assign num_trucks = 0 %} 
+    {% assign num_wheels = 0 %}
+    
+     
+{% for item in cart.items %}
+    {% if item.product.type == "Decks" %}       
+         {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num = temp %}
+{% endfor %}
+ 
+{% for item in cart.items %}   
+    {% if item.product.type == "Trucks" %}       
+         {% capture temp2 %}{{ num_trucks | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_trucks = temp2 %}
+{% endfor %}
+
+{% for item in cart.items %}   
+    {% if item.product.type == "Wheels" %}       
+         {% capture temp3 %}{{ num_wheels | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_wheels = temp3 %}
+{% endfor %}
+
+
+
+# of Decks: {{ num }}
+<br># of Truck Sets: {{ num_trucks | divided_by: 2 }}
+<br># of Wheel Sets: {{ num_wheels }}
+<br>--
+<br>Total: {{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
+<br><a href="/cart/"><u>View Cart</u></a> - <a href="javascript:window.location.reload();">refresh</a>
+<br><br>
+
+<!-- END CART SUMMARY SIDEBAR -->
+
+
+<!-- START DROPDOWNS -->
+
+    <div class="grid-uniform" style="padding-right: 10px;">
+
+        <div class="grid-item small--one-half medium--one-third">
+
 
 
 	
