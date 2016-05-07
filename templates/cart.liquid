@@ -44,6 +44,17 @@
 <br><br>Note: Price Point decks don't count towards quantity discounts. 
 <br><a href="/cart/clear"><font color="red"><u>clear cart</u></font></a>
 
+<div class="grid-item text-right">
+          <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
+
+          <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
+            <span class="icon icon-cart"></span>
+            {{ 'cart.general.checkout' | t }}
+          </button>
+</div>
+
+<br><br>
+
     {% for item in cart.items %}
     <div class="cart-row" data-id="{{ item.id }}">
       <div class="grid">

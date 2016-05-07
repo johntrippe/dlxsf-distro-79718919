@@ -7,6 +7,21 @@
 
 
 <head>
+{% unless customer %}
+    {% if template contains 'customers' %}
+        {% assign send_to_login = false %}
+    {% else %}
+        {% assign send_to_login = true %}
+    {% endif %}
+{% endunless %}
+
+{% if send_to_login %}
+<script type="text/javascript"><!--
+
+location.replace("/account/login?checkout_url={{ shop.url }}");
+
+//--></script>
+{% endif %}
 
   <!-- Basic page needs ================================================== -->
   <meta charset="utf-8">

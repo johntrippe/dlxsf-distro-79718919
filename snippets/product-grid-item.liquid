@@ -21,6 +21,13 @@
 {% endcomment %}
 {% assign image_size = settings.collection_prod_image_sizes %}
 
+{% assign product_qty = 0 %}
+{% for variant in product.variants %}
+  {% if variant.inventory_quantity > 0 %}
+    {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+  {% endif %}
+{% endfor %}
+
 <div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 %} sold-out{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
 
 
