@@ -23,6 +23,8 @@
 
 {{ product.price | money | remove: '.00' }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}
 
+<br><font color="#e1e1e1">----------------</font><br>
+
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
     <!-- We can leave this in, since the select comes later, 
         so it will override if user picks something different. -->
@@ -40,7 +42,7 @@
      
     <!-- If you don't want the variants dropdown, just comment this out. -->
         {% if  product.variants.size > 1 %}    
-    <select style="font-size:10px;" name="id" class="js--num" id="id">{% for variant in product.variants %}{% if variant.available %}
+    <select style="font-size:11px; background-color:#cefcf7;" name="id" class="js--num" id="id">{% for variant in product.variants %}{% if variant.available %}
 		<option value="{{ variant.id }}">{{ variant.title | escape }}</option>{% else %}
 		<option value="{{ variant.id }}" disabled="disabled">{{ variant.title | escape }} ({{ variant.price | money }}) - SOLD OUT</option>{% endif %}{% endfor %}
 	</select>
