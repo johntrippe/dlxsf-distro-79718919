@@ -106,6 +106,31 @@
       <h1 class="section-header--title section-header--left">{{ collection.title }}</h1>
      
       <div class="section-header--right">
+	<!-- START SHOW ONLY AVAILABLE -->
+	
+	{% if  collection.title == "Antihero Decks" %}
+	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small>
+	{% endif %}
+	{% if  collection.title == "Antihero Decks - On Hand" %}
+	 <br><br><small><a href="/collections/antihero-decks">Show All Decks</a></small>
+	{% endif %}
+	
+	{% if  collection.title == "Real Decks" %}
+	 <br><br><small><a href="/collections/real-decks-on-hand">Show Only On Hand</a></small>
+	{% endif %}
+	{% if  collection.title == "Real Decks - On Hand" %}
+	 <br><br><small><a href="/collections/real-decks">Show All Decks</a></small>
+	{% endif %}
+	
+	{% if  collection.title == "Krooked Decks" %}
+	 <br><br><small><a href="/collections/krooked-decks-on-hand">Show Only On Hand</a></small>
+	{% endif %}
+	{% if  collection.title == "Krooked Decks - On Hand" %}
+	 <br><br><small><a href="/collections/krooked-decks">Show All Decks</a></small>
+	{% endif %}
+	
+	<!-- END SHOW ONLY AVAILABLE -->
+	
         {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
       </div>
     </header>
