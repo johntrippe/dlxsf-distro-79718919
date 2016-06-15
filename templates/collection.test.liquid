@@ -34,7 +34,7 @@
  });
 </script>
 
-{% paginate collection.products by 140 %}
+{% paginate collection.products by 40 %}
 
 {% include 'breadcrumb' %}
 
@@ -74,7 +74,7 @@
 					
 					<div class="nav-container2">
 						
-						{% include 'collection-sidebar' %}
+						{% include 'collection-sidebar-TEST' %}
 						
 					</div>
   </aside>
@@ -147,7 +147,7 @@
         {% else %}
           {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
         {% endif %}
-        {% include 'product-grid-item' %}
+        {% include 'product-grid-item-TEST' %}
 		
       {% else %}
 
