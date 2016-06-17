@@ -30,7 +30,7 @@
 
 {% if product.available %}
 
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
+
 		
 		
         
@@ -39,13 +39,13 @@
 		
 		<!-- START VARIANTS -->
 		{% for variant in product.variants %}
+		{% if variant.available %}
 		<div>
 		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity == 0 %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
-		<input type="hidden" name="id[]" value="{{ variant.id }}" />
-    {% if settings.product_quantity_enable %}
-		<div style="display:inline-block;"><input id="quantity" class="quantity-selector" name="updates[{{ variant.id }}]" onfocus="this.select()" min="0" {% unless variant.inventory_management == blank or variant.inventory_policy == 'continue' %} max="{{ variant.inventory_quantity }}" {% endunless %} type="number" value="{% if product.variants.size == 1 %}{% if  product.type == "Trucks" %}2{% else %}1{% endif %}{% else %}0{% endif %}" /></div>
+		
+		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
 		</div>
-	    {% endif %}
+		{% endif %}
 	    {% endfor %}
 	    <!-- END VARIANTS -->
 	    
@@ -73,9 +73,9 @@
 {% endfor %}
 
 	<!-- END VARIANT BACK ORDER -->
-	    <div style="display: block;"><button type="submit" name="add" id="addToCart" class="btn2"></button></div>
+	    
     </div>
-</form>
+
 
 
 
@@ -85,7 +85,3 @@
 
 {% endif %}
 </div>
-
-
-
-<p><hr><p>
