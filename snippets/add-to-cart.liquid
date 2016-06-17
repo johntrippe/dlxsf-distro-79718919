@@ -23,72 +23,65 @@
 
 {{ product.price | money | remove: '.00' }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}
 
+
+
 <br><font color="#e1e1e1">----------------</font><br>
 
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="addToCartForm">
-    <!-- We can leave this in, since the select comes later, 
-        so it will override if user picks something different. -->
-        
-        <!-- START snippet turns off direct to cart after adding an item -->
-        <input type="hidden" name="return_to" value="back" />
-        <!-- END snippet turns off direct to cart after adding an item -->
-        
-    {% for variant in product.variants limit:1 %}
-        <input type="hidden" name="id" value="{{ variant.id }}" />
-    {% endfor %}
 
-    
+{% if product.available %}
 
-     
-    <!-- If you don't want the variants dropdown, just comment this out. -->
-        {% if  product.variants.size > 1 %}    
-    <select style="font-size:11px; background-color:#cefcf7;" name="id" class="js--num" id="id">{% for variant in product.variants %}{% if variant.available %}
-		<option value="{{ variant.id }}">{{ variant.title | escape }}</option>{% else %}
-		<option value="{{ variant.id }}" disabled="disabled">{{ variant.title | escape }} ({{ variant.price | money }}) - SOLD OUT</option>{% endif %}{% endfor %}
-	</select>
-    {% endif %}
-    <!-- end variants dropdown -->
-    
-    {% if settings.product_quantity_enable %}
-          <!--<label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>-->
-          <input style="font-size:10px;" type="number" id="quantity" name="quantity" value="{% if  product.type == "Trucks" %}2{% else %}1{% endif %}" min="1" class="quantity-selector">
-    {% endif %}
-    
-    <!-- START INVENTORY AMOUNTS -->
-	{% if product.variants.first.inventory_management == "shopify" and product.type == "Apparel" and product.variants.first.inventory_quantity < 4 and product.variants.first.inventory_quantity > 0 %}
-	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock
-	
-	{% elsif product.variants.first.inventory_management == "shopify" and product.type != "Apparel"  and product.variants.first.inventory_quantity < 11 and product.variants.first.inventory_quantity > 0 %}
-	
-	<font color="red">Low Stock</font> - <b>{{ product.variants.first.inventory_quantity }}</b> in stock<br>
-	
-	{% endif %}
+
+		
+		
+        
+	<div align="right" style="background-color: #fbfbfb; padding: 8px;">
+		
+		
+		<!-- START VARIANTS -->
+		{% for variant in product.variants %}
+		{% if variant.available %}
+		<div>
+		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity == 0 %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
+		
+		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
+		</div>
+		{% endif %}
+	    {% endfor %}
+	    <!-- END VARIANTS -->
+	    
+	    
+	    <!-- START INVENTORY AMOUNTS -->
+	{% for variant in product.variants %}
+		{% if product.variant.inventory_management == "shopify" and product.type == "Apparel" and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %} - Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+		
+		{% elsif variant.inventory_management == "shopify" and product.type != "Apparel"  and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
+		
+		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+		{% endif %}
+	{% endfor %}
     <!-- END INVENTORY AMOUNTS -->
+    
     
         <!-- START VARIANT BACK ORDER -->
     
-    {% for variant in product.variants %}
+  {% for variant in product.variants %}
   {% if variant.inventory_quantity == 0 and variant.title != "Default Title" %}
-   <b>*</b>{{ variant.title }} is on Back Order*<br>
+   <div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
   {% else %}
   {% endif %}
 {% endfor %}
 
 	<!-- END VARIANT BACK ORDER -->
+	    
+    </div>
 
-	<!-- START BUY -->
 
-	    {% if product.available %}
-		    
-		    <button type="submit" name="add" id="addToCart" class="btn2">
-			</button>
-		{% else %}
-		    <h6></h6>
-		{% endif %}
 
-	<!-- END BUY --> 
-	
-        
 
-</form>
+{% else %}
+
+<p class="bold-red">This product is temporarily unavailable</p>
+
+{% endif %}
 </div>
