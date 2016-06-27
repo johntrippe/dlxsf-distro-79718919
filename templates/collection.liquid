@@ -88,7 +88,7 @@
         {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
       
       <div class="order-form-add-to-cart">
-	      <a href="/cart" class="header-cart-btn cart-toggle">
+	      <a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>
@@ -117,24 +117,24 @@
 	<!-- START SHOW ONLY AVAILABLE -->
 	
 	{% if  collection.title == "Antihero Decks" %}
-	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small>
+	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small><br><br>
 	{% endif %}
 	{% if  collection.title == "Antihero Decks - On Hand" %}
-	 <br><br><small><a href="/collections/antihero-decks">Show All Decks</a></small>
+	 <br><br><small><a href="/collections/antihero-decks">Show All Decks</a></small><br><br>
 	{% endif %}
 	
 	{% if  collection.title == "Real Decks" %}
-	 <br><br><small><a href="/collections/real-decks-on-hand">Show Only On Hand</a></small>
+	 <br><br><small><a href="/collections/real-decks-on-hand">Show Only On Hand</a></small><br><br>
 	{% endif %}
 	{% if  collection.title == "Real Decks - On Hand" %}
-	 <br><br><small><a href="/collections/real-decks">Show All Decks</a></small>
+	 <br><br><small><a href="/collections/real-decks">Show All Decks</a></small><br><br>
 	{% endif %}
 	
 	{% if  collection.title == "Krooked Decks" %}
-	 <br><br><small><a href="/collections/krooked-decks-on-hand">Show Only On Hand</a></small>
+	 <br><br><small><a href="/collections/krooked-decks-on-hand">Show Only On Hand</a></small><br><br>
 	{% endif %}
 	{% if  collection.title == "Krooked Decks - On Hand" %}
-	 <br><br><small><a href="/collections/krooked-decks">Show All Decks</a></small>
+	 <br><br><small><a href="/collections/krooked-decks">Show All Decks</a></small><br><br>
 	{% endif %}
 	
 	<!-- END SHOW ONLY AVAILABLE -->
@@ -142,7 +142,7 @@
         {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
       
       <div class="order-form-add-to-cart">
-	      <a href="/cart" class="header-cart-btn cart-toggle">
+	      <a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>

@@ -18,7 +18,7 @@
 {% if send_to_login %}
 <script type="text/javascript"><!--
 
-location.replace("/account/login?checkout_url={{ shop.url }}");
+location.replace("/account/login");
 
 //--></script>
 {% endif %}
@@ -131,7 +131,7 @@ location.replace("/account/login?checkout_url={{ shop.url }}");
 
           {% include 'search-bar' %}
 
-          <a href="/cart" class="header-cart-btn cart-toggle">
+          <a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>

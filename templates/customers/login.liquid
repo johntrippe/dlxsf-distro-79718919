@@ -9,6 +9,7 @@
     </div>
 
     {% form 'customer_login' %}
+    <input type="hidden" name="checkout_url" value="/" />
 
       <h1>{{ 'customer.login.title' | t }}</h1>
       
@@ -34,7 +35,6 @@
         <p>
           <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
         </p>
-        {{ 'customer.login.or' | t }} <a href="{{ shop.url }}">{{ 'customer.login.cancel' | t }}</a>
 
     {% endform %}
 
