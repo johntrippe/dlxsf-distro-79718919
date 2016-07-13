@@ -183,7 +183,7 @@
     	<div class="tags">
 		          <i class="icon-tags"><br><br><hr>Tags: <br>
 					{% for tag in product.tags %}
-					<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/search?type=product&q={{tag}}" rel="tag"><font color="#FFFFFF">{{ tag }}</font></a></div>
+					<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/all/{{ tag | handleize }}" rel="tag"><font color="#FFFFFF">{{ tag }}</font></a></div>
 					{% endfor %}
 		          </i> </div>
 
