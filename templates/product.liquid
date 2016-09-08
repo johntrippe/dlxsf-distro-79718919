@@ -115,12 +115,13 @@
       </ul>
       
     {% for variant in product.variants %}
-  {% if variant.inventory_quantity == 0 and variant.title != "Default Title" %}
+  {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" %}
     <b>*</b>Size: {{ variant.title }} is on Back Order*<br>
   {% else %}
   {% endif %}
 {% endfor %}
 
+		{% if  product.type == "Trucks" %}<b>*Please note that trucks are sold as singles.</b><br>{% endif %}
   
       {% assign product_qty = 0 %}
 {% for variant in product.variants %}
@@ -132,6 +133,8 @@
         {% if product_qty > 0 %}{% else %}
 		<span class="badge-label">On Back Order</span>
 		{% endif %}
+		
+
 
       <hr id="variantBreak" class="hr--clear hr--small">
 
@@ -156,7 +159,7 @@
 
         {% if settings.product_quantity_enable %}
           <label for="quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+          <input type="number" id="quantity" name="quantity" value="{% if product.type == "Trucks" %}2{% else %}1{% endif %}" min="1" class="quantity-selector">
         {% endif %}
 
         <button type="submit" name="add" id="addToCart" style="background: #FD0000;" class="btn">
@@ -181,7 +184,7 @@
     {% endif %}
     
     	<div class="tags">
-		          <i class="icon-tags"><br><br><hr>Tags: <br>
+		          <i class="icon-tags">Tags: <br>
 					{% for tag in product.tags %}
 					<div style="float: left; background: #b4bcbf; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/all/{{ tag | handleize }}" rel="tag"><font color="#FFFFFF">{{ tag }}</font></a></div>
 					{% endfor %}
