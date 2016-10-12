@@ -1,6 +1,18 @@
 <style>
 	img.Image { max-width: 40px;}
-</style>	
+</style>
+
+<!-- START ARE YOU SURE CLEAR CART -->	
+
+<script type="text/javascript">
+function confirm_click()
+{
+return confirm("Are you sure you want to clear your cart?");
+}
+
+</script>
+
+<!-- START ARE YOU SURE CLEAR CART -->
 
 
 	{% if cart.item_count > 0 %}
@@ -42,7 +54,10 @@
 <br>--
 <br>Total: {{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
 <br><br>Note: Price Point decks don't count towards quantity discounts. 
-<br><a href="/cart/clear"><font color="red"><u>clear cart</u></font></a>
+<br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
+
+
+
 
 <div class="grid-item text-right">
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
@@ -53,7 +68,10 @@
           </button>
 </div>
 
+
 <br><br>
+
+
 
     {% for item in cart.items %}
     <div class="cart-row" data-id="{{ item.id }}">
@@ -129,7 +147,7 @@
 
     <div class="cart-row">
       <div class="grid">
-
+<a name="notes"></a>
         {% if settings.cart_notes_enable %}
           <div class="grid-item large--one-half">
 	        <p class="cart-attribute__field">

@@ -28,7 +28,7 @@
   {% endif %}
 {% endfor %}
 
-<div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 %} sold-out{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
+<div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity <= 0 %} sold-out{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
 
 
 	 <!-- START QUANITY AND ADD TO CART -->

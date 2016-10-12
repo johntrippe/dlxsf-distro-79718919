@@ -7,7 +7,7 @@
           <div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
         {% endif %}
         
-        {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity == 0 and product.available %}
+        {% if product.variants.first.inventory_management == "shopify" and product.variants.first.inventory_quantity <= 0 and product.available %}
 		<div class="badge badge--sold-out"><span class="badge-label">On Back Order</span></div>
 		{% endif %}
         
@@ -41,7 +41,7 @@
 		{% for variant in product.variants %}
 		{% if variant.available %}
 		<div>
-		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity == 0 %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
+		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
 		
 		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
 		</div>
@@ -66,7 +66,7 @@
         <!-- START VARIANT BACK ORDER -->
     
   {% for variant in product.variants %}
-  {% if variant.inventory_quantity == 0 and variant.title != "Default Title" %}
+  {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" %}
    <div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
   {% else %}
   {% endif %}
