@@ -1,6 +1,6 @@
 <style>
 	img.Image { max-width: 40px;}
-</style>
+</style>	
 
 <!-- START ARE YOU SURE CLEAR CART -->	
 
@@ -12,7 +12,27 @@ return confirm("Are you sure you want to clear your cart?");
 
 </script>
 
-<!-- START ARE YOU SURE CLEAR CART -->
+<!-- END ARE YOU SURE CLEAR CART -->
+
+<!-- START MIXING PRE-BOOK WITH AT-ONCE ALERT -->
+
+
+{% assign pre_book = '0' %}
+{% assign at_once = '0' %}
+
+
+{% for item in cart.items %}
+
+  {% if item.product.tags contains 'PreBook' %}{% capture pre_book %}{{ pre_book | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'AtOnce' %}{% capture at_once %}{{ at_once | plus:1 }}{% endcapture %}{% endif %}
+
+{% endfor %}
+
+
+
+
+
+<!-- END MIXING PRE-BOOK WITH AT-ONCE ALERT -->
 
 
 	{% if cart.item_count > 0 %}
@@ -56,23 +76,25 @@ return confirm("Are you sure you want to clear your cart?");
 <br><br>Note: Price Point decks don't count towards quantity discounts. 
 <br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
 
-
-
+{% if at_once > '0' and pre_book > '0' %}
+<br><br>
+<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
+{% endif %}
 
 <div class="grid-item text-right">
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
+          {% if at_once == '0' or pre_book == '0' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
           </button>
+          {% endif %}
 </div>
 
-
 <br><br>
-
-
-
+        
+        
     {% for item in cart.items %}
     <div class="cart-row" data-id="{{ item.id }}">
       <div class="grid">
@@ -88,7 +110,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }}
+                {{ item.product.title }} {% if at_once > '0' and pre_book > '0' %}{% if item.product.tags contains 'PreBook' %} <font color="red">*prebook</font> {% endif %}{% endif %}
               </a>
               {% unless item.variant.title contains 'Default' %}
                 <br>
@@ -170,10 +192,12 @@ return confirm("Are you sure you want to clear your cart?");
 
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
+          {% if at_once == '0' or pre_book == '0' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
           </button>
+          {% endif %}
 
           {% if additional_checkout_buttons %}
             <p>{{ content_for_additional_checkout_buttons }}</p>
