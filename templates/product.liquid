@@ -115,7 +115,7 @@
       </ul>
       
     {% for variant in product.variants %}
-  {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" %}
+  {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" and product.tags contains 'Atonce' %}
     <b>*</b>Size: {{ variant.title }} is on Back Order*<br>
   {% else %}
   {% endif %}
@@ -130,7 +130,7 @@
   {% endif %}
 {% endfor %}
 
-        {% if product_qty > 0 %}{% else %}
+        {% if product_qty <= 0 and product.tags contains 'Atonce' %}
 		<span class="badge-label">On Back Order</span>
 		{% endif %}
 		
