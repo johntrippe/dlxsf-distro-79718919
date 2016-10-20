@@ -17,10 +17,6 @@
 
     <h1 class="h2">{{ 'cart.general.title' | t }}</h1>
     
-    {% assign num = 0 %}
-    {% assign num_trucks = 0 %} 
-    {% assign num_wheels = 0 %}
-    
      
 {% for item in cart.items %}
     {% if item.product.type == "Decks" %}       
@@ -46,7 +42,7 @@
 
 
 # of Decks: {{ num }}
-<br># of Truck Sets: {{ num_trucks | divided_by: 2 }}
+<br># of Truck Sets: {% if num_trucks != null %}{{ num_trucks | divided_by: 2 }}{% endif %}
 <br># of Wheel Sets: {{ num_wheels }}
 <br>--
 <br>Total: {{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
