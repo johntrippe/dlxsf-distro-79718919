@@ -42,7 +42,7 @@ return confirm("Are you sure you want to clear your cart?");
     
      
 {% for item in cart.items %}
-    {% if item.product.type == "Decks" %}       
+    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Pricepoint' %}{% elsif item.product.type == "Decks" %}       
          {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num = temp %}
@@ -62,9 +62,17 @@ return confirm("Are you sure you want to clear your cart?");
     {% assign num_wheels = temp3 %}
 {% endfor %}
 
+{% for item in cart.items %}
+    {% if item.product.tags contains 'Pricepoint' and item.product.type == "Decks" %}       
+         {% capture temp5 %}{{ num_pricepoint | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_pricepoint = temp5 %}
+{% endfor %}
 
 
-# of Decks: {{ num }}
+
+# of Reg Decks: {{ num }}
+<br># of Pricepoint Decks: {{ num_pricepoint }}
 <br># of Truck Sets: {{ num_trucks | divided_by: 2 }}
 <br># of Wheel Sets: {{ num_wheels }}
 <br>--
