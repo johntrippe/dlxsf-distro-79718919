@@ -138,6 +138,7 @@
 			{% endfor %}
 
 		{% if out_of_stock == true and product.tags contains 'Atonce' %}
+				<span class="badge-label">On Back Order</span>
 		<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ product.handle }}">Get notified when in stock</a>]</div>
 		{% endif %}
 		
