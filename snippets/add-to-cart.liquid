@@ -70,7 +70,18 @@
    <div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
   {% else %}
   {% endif %}
-{% endfor %}
+  {% endfor %}
+  		
+  		{% assign out_of_stock = false %}
+			{% for variant in product.variants %}
+				{% if variant.inventory_quantity <= 0 %}
+					{% assign out_of_stock = true %}
+				{% endif %}
+			{% endfor %}
+
+		{% if out_of_stock == true and product.tags contains 'Atonce' %}
+		<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ product.handle }}">notify</a>]</div>
+		{% endif %}
 
 	<!-- END VARIANT BACK ORDER -->
 	    
