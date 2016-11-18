@@ -1,5 +1,5 @@
 <div style="border-style: solid; padding: 8px;  border-width: 1px; border-color: #dbdada;">
-
+<div class="quickview">
 	<a href="{{ product.url | within: current_collection }}" class="product-grid-item">
     <div class="product-grid-image">
       <div class="product-grid-image--centered">
@@ -15,13 +15,14 @@
       </div>
     </div>
   </a>
+</div>
 	    
 	    <!-- 
     This is just a regular add product form. 
     You should be able to add any valid input fields to it 
 -->
 
-{{ product.price | money | remove: '.00' }}</span>{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %} - {{ product.title }}
+{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}<a href="{{ product.url | within: current_collection }}">{{ product.title }}<font size="1"><br>{{ product.price | money | remove: '.00' }}</font></a>
 
 
 
