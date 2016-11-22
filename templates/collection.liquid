@@ -197,7 +197,10 @@
     <div class="grid-uniform">
 
       {% for product in collection.products %}
-      
+	  	
+	  	{% if product.tags contains '8upsell' %}
+  		{% continue %}
+		{% endif %}
 
         
         {% if has_sidebar %}

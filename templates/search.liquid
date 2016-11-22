@@ -1,3 +1,19 @@
+ {% if search.results %}
+  {% assign upsellProducts = '' %}
+  {% for product in search.results %}
+   {% if product.tags contains '8upsell' %}
+    {% if upsellProducts != '' %}
+     {% assign upsellProducts = upsellProducts | append:',' %}
+    {% endif %}
+    {% assign upsellProducts = upsellProducts | append:product.id %}
+   {% endif %}
+  {% endfor %}
+  {% if upsellProducts %}
+   {% assign upsellProducts = upsellProducts | split: ',' %}
+  {% endif %}
+ {% endif %}
+
+
 {% assign grid_results = true %}
 
 {% assign respond_js_secret_key = shop.domain | md5 %}
@@ -12,7 +28,7 @@
 
         {% paginate search.results by 20 %}
 
-          {% if search.results_count == 0 %}
+          {% if search.results == empty or search.results.size == upsellProducts.size %}
 
             <h2 class="text-center">{{ 'general.search.no_results_html' | t: terms: search.terms }}</h2>
             {% include 'search-bar' %}
@@ -34,6 +50,10 @@
 
               <div class="grid-uniform">
                 {% for item in search.results %}
+                {% assign currentSearchItem = item.id | strip_html %}
+ {% if upsellProducts contains currentSearchItem %}
+  {% continue %}
+ {% endif %}
                   {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
                   {% include 'search-result-grid' %}
                 {% endfor %}
