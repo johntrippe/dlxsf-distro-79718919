@@ -1,3 +1,7 @@
+<!-- SpurIT_8Upsell -->
+{% include '8upsell-popup' %}
+<!-- /SpurIT_8Upsell -->
+
 <style>
 	img.Image { max-width: 40px;}
 </style>	
@@ -42,7 +46,7 @@ return confirm("Are you sure you want to clear your cart?");
     
      
 {% for item in cart.items %}
-    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Pricepoint' %}{% elsif item.product.type == "Decks" %}       
+    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Point' %}{% elsif item.product.type == "Decks" %}       
          {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num = temp %}
@@ -63,7 +67,7 @@ return confirm("Are you sure you want to clear your cart?");
 {% endfor %}
 
 {% for item in cart.items %}
-    {% if item.product.tags contains 'Pricepoint' and item.product.type == "Decks" %}       
+    {% if item.product.tags contains 'Price Point' and item.product.type == "Decks" %}       
          {% capture temp5 %}{{ num_pricepoint | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num_pricepoint = temp5 %}
@@ -220,4 +224,5 @@ return confirm("Are you sure you want to clear your cart?");
   <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
 
 {% endif %}
+
 
