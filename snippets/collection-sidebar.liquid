@@ -60,7 +60,6 @@
 <!-- END CART SUMMARY SIDEBAR -->
 
 
-
 	
 		
 {% if  collection.title == "Apparel" or collection.title == "Spitfire Apparel"  or collection.title == "Krooked Apparel"  or collection.title == "Venture Apparel" or collection.title == "Antihero Apparel"  or collection.title == "Thunder Apparel" or collection.title == "Real Apparel" %}
@@ -85,11 +84,11 @@
 	  
 	  	<ul class="clearfix filters">
 		<li class="clearfix filters"><u>Brands</u></li>	
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/real-apparel">Real Apparel</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/antihero-apparel">Antihero Apparel</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/krooked-apparel">Krooked Apparel</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/spitfire-apparel">Spitfire Apparel</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/thunder-apparel">Thunder Apparel</a></li>
+		<li class="clearfix filters"><a href="/collections/real-apparel">Real Apparel</a></li>
+		<li class="clearfix filters"><a href="/collections/antihero-apparel">Antihero Apparel</a></li>
+		<li class="clearfix filters"><a href="/collections/krooked-apparel">Krooked Apparel</a></li>
+		<li class="clearfix filters"><a href="/collections/spitfire-apparel">Spitfire Apparel</a></li>
+		<li class="clearfix filters"><a href="/collections/thunder-apparel">Thunder Apparel</a></li>
 		</ul>
 		
 
@@ -116,12 +115,12 @@
 	  
 	  <ul class="clearfix filters">
 		<li class="clearfix filters"><u>Brands</u></li>	
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/real-accessories">Real Accessories</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/antihero-accessories">Antihero Accessories</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/krooked-accessories">Krooked Accessories</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/spitfire-accessories">Spitfire Accessories</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/thunder-accessories">Thunder Accessories</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/venture-accessories">Venture Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/real-accessories">Real Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/antihero-accessories">Antihero Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/krooked-accessories">Krooked Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/spitfire-accessories">Spitfire Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/thunder-accessories">Thunder Accessories</a></li>
+		<li class="clearfix filters"><a href="/collections/venture-accessories">Venture Accessories</a></li>
 		</ul>	
 		
 
@@ -129,77 +128,76 @@
 	<ul class="clearfix filters">
 	  <li class="clearfix filter">
 	    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,143,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +,143, Lo 145, Hi 145, Lo 147, Hi 147, Hi 149, Hi 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
-	    <label>Filter by Size</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    <label class="tree-toggle clearfix filter"><a style="cursor:pointer;">&nbsp;&nbsp;SIZE <span style="float:right; padding-right:30px;">+</span></a></label>
+	     <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
+	    </ul>
 	  </li>
+	  <li class="divider2"></li>
 	  <li class="clearfix filter">
 	    {% assign tags = 'Andrew Allen, Youness Amrani, Tom Asta, Brian Anderson, Mike Anderson, David Bachinsky, Theotis Beasley, Raney Beres, Brandon Biebel, Justin Brock, Robbie Brockel, Dennis Busenitz, John Cardiel, Chris Cole, Brad Cromer, Jake Donnelly, Dan Drehobl, Eric Dressen, Erik Ellington, Chima Ferguson,  Frank Gerwer, Mark Gonzales, Jeff Grosso, Tommy Guerrero, Felipe Gustavo, James Hardy, Peter Hewitt, Marc Johnson, Cory Kennedy, Sean Malto, Josh Matthews, Tony Miorana, Silas Baxter Neal, Shane ONeill, Chris Pfanner, Torey Pudwill, Peter Ramondetta, Andrew Reynolds, Paul Rodriguez, Andy Roy, Robbie Russo, Max Schaaf,  Julien Stranger, Mark Suciu, Grant Taylor, Raven Tershy, Davis Torgerson, Tony Trujillo, Daan Van Der Linden, Anthony Van Engelen, Nick Tucker, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest' | split: ',' %}
-	    <label>Filter by Pro</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    <label class="tree-toggle clearfix filter"><a style="cursor:pointer;">&nbsp;&nbsp;PRO <span style="float:right; padding-right:30px;">+</span></a></label>
+	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
+	    </ul>
 	  </li>
+	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Pro, Team, Specialty Shape, Slick, Price Point, Formula Four Pro Wheels, Formula Four Team Wheels, Formula Four Colored Wheels, 80HD Softcruiser Wheels, Pro Classic Series, Team Classics, Colored Wheels, Pro Trucks, Titanium Lights, Pro Titanium Lights, Hollow Lights, Pro Hollow Lights, Pro Lights, Lights, Polished, Color, Sonora' | split: ',' %}
-	    <label>Filter by Style</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    {% assign tags = 'Pro, Team, Specialty Shape, Slick, Price Point, Formula Four Pro Wheels, Formula Four Team Wheels, Formula Four Colored Wheels, 80HD Softcruiser Wheels, Pro Classic Series, Team Classics, Colored Wheels, Pro Trucks, Titanium Lights, Pro Titanium Lights, Hollow Lights, Pro Hollow Lights, Pro Lights, Lights, Polshed, Color, Sonora' | split: ',' %}
+	    <label class="tree-toggle clearfix filter"><a style="cursor:pointer;">&nbsp;&nbsp;STYLE <span style="float:right; padding-right:30px;">+</span></a></label>
+	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
+	    </ul>
 	  </li>
+	  <li class="divider2"></li>
 	 <li class="clearfix filter">
 	    {% assign tags = 'Antihero, Real, Spitfire, Krooked, Thunder' | split: ',' %}
-	    <label>Filter by Brand</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    <label class="tree-toggle clearfix filter"><a style="cursor:pointer;">&nbsp;&nbsp;BRAND <span style="float:right; padding-right:30px;">+</span></a></label>
+	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
+	    </ul>
 	  </li>
 	 </ul>
 	 
 {% elsif == "Hardware" or collection.title == "Hardware" or collection.title == "Bearings" or collection.title == "Bolts" or collection.title == "Bushings" or collection.title == "Griptape" or collection.title == "Misc Hardware" or collection.title == "Risers" or collection.title == "Skate Tools" or collection.title == "Wax" %}
 
 		<ul class="clearfix filters">
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/bearings">Bearings</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/bolts">Bolts</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/bushings">Bushings</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/griptape">Griptape</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/misc-hardware">Misc Hardware</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/risers">Risers</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/skate-tools">Skate Tools</a></li>
-		<li class="clearfix filters"><a href="http://distro.dlxsf.com/collections/wax">Wax</a></li>
+		<li class="clearfix filters"><a href="/collections/bearings">Bearings</a></li>
+		<li class="clearfix filters"><a href="/collections/bolts">Bolts</a></li>
+		<li class="clearfix filters"><a href="/collections/bushings">Bushings</a></li>
+		<li class="clearfix filters"><a href="/collections/griptape">Griptape</a></li>
+		<li class="clearfix filters"><a href="/collections/misc-hardware">Misc Hardware</a></li>
+		<li class="clearfix filters"><a href="/collections/risers">Risers</a></li>
+		<li class="clearfix filters"><a href="/collections/skate-tools">Skate Tools</a></li>
+		<li class="clearfix filters"><a href="/collections/wax">Wax</a></li>
 		</ul>
  
 	  
@@ -207,7 +205,24 @@
 
 	  
 {% endif %}
-	
+
+
+	<!-- BOOTSTRAP -->
+<script src="https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <script>
+    $('.tree-toggle').click(function () {
+    $(this).parent().children('ul.tree').toggle(200);
+});
+$(function () {
+    $('.tree-toggle').parent().children('ul.tree').toggle(200);
+});
+  //# sourceURL=pen.js
+  </script>
+<!-- END BOOTSTRAP -->
 
 
 <script>
