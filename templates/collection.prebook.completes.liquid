@@ -97,10 +97,11 @@
 
       
       <div class="f-nav4">
-	      <a href="/cart" class="header-cart-btn">
+	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>
+	      </span>
           <br><br>
           <input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add To Cart" />
       </div>

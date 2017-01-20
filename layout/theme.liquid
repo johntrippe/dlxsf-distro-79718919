@@ -171,6 +171,10 @@ if($(window).width() >= 900){
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 136) {
 			nav3.addClass("f-nav3");
+			
+			var ThisSpantwo = document.getElementById('hide-cart');
+			ThisSpantwo.style.display = "";
+			
 		} else {
 			nav3.removeClass("f-nav3");
 		}
