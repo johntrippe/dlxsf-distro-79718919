@@ -7,8 +7,6 @@
 
 
 <head>
-
-
 {% unless customer %}
     {% if template contains 'customers' %}
         {% assign send_to_login = false %}
@@ -24,6 +22,7 @@ location.replace("/account/login");
 
 //--></script>
 {% endif %}
+
 
   <!-- Basic page needs ================================================== -->
   <meta charset="utf-8">
@@ -79,7 +78,7 @@ location.replace("/account/login");
 	{% include 'magiczoomplus.headers' %}
 </head>
 
-<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+<body id="{{ page_title | handle }}" {% if  collection.title == "Krooked Decks" or collection.title == "Krooked Apparel" %} class="krooked" {% elsif collection.title == "Spitfire Wheels" or collection.title == "Spitfire Apparel" %} class="spitfire" {% elsif collection.title == "Thunder Trucks" or collection.title == "Thunder Apparel" %} class="thunder" {% elsif collection.title == "Venture Trucks" or collection.title == "Venture Apparel" %} class="venture" {% elsif collection.title == "Real Decks" or collection.title == "Real Apparel" %} class="real" {% elsif collection.title == "Antihero Decks" or collection.title == "Antihero Apparel" %} class="antihero" {% else %} class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" {% endif %}>
   <header class="site-header" role="banner">
     <div class="wrapper">
 
@@ -160,8 +159,8 @@ if($(window).width() >= 900){
 
 });
 }
-
 </script>
+
 
 <script type="text/javascript">	
 
@@ -180,6 +179,9 @@ if($(window).width() >= 900){
 });
 
 </script>
+
+
+
 
 			
 <div class="nav-container">
@@ -243,7 +245,11 @@ if($(window).width() >= 900){
   </script>
 {% endif %}
 
-
+<!-- START CART ATTRIBUTES CODE -->
+<script>
+jQuery(function(){jQuery("body").on("click",'[name="checkout"], [name="goto_pp"], [name="goto_gc"]',function(){var e=!0,r="Please fill this out and you will be able to check out.";return jQuery('[name^="attributes"], [name="note"]').filter('.required, [required]').each(function(){jQuery(this).removeClass("error"),e&&""==jQuery(this).val()&&(e=!1,r=jQuery(this).attr("data-error")||r,jQuery(this).addClass("error"))}),e?void jQuery(this).submit():(alert(r),!1)})}),jQuery(window).unload(function(){var e=jQuery('form[action="/cart"]');if(e.size()){var r={type:"POST",url:"/cart/update.js",data:e.serialize(),dataType:"json",async:!1};jQuery.ajax(r)}});
+</script>
+<!-- END CART ATTRIBUTES CODE -->
 <!--BeginCFFPersistentCartCart-->
 {% if customer %}
 <script>
@@ -264,5 +270,6 @@ if($(window).width() >= 900){
     window.cffPCLiquidPlaced = true
 </script>
 
-<!--EndCFFPersistentCartCart--></body>
+<!--EndCFFPersistentCartCart-->
+</body>
 </html>
