@@ -1,0 +1,224 @@
+<style>
+	img.Image { max-width: 40px;}
+</style>	
+
+<!-- START ARE YOU SURE CLEAR CART -->	
+
+<script type="text/javascript">
+function confirm_click()
+{
+return confirm("Are you sure you want to clear your cart?");
+}
+
+</script>
+
+<!-- END ARE YOU SURE CLEAR CART -->
+
+<!-- START MIXING PRE-BOOK WITH AT-ONCE ALERT -->
+
+
+{% assign pre_book = '0' %}
+{% assign at_once = '0' %}
+
+
+{% for item in cart.items %}
+
+  {% if item.product.tags contains 'Prebook' %}{% capture pre_book %}{{ pre_book | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'Atonce' %}{% capture at_once %}{{ at_once | plus:1 }}{% endcapture %}{% endif %}
+
+{% endfor %}
+
+
+
+
+
+<!-- END MIXING PRE-BOOK WITH AT-ONCE ALERT -->
+
+
+	{% if cart.item_count > 0 %}
+  <form action="/cart" method="post" novalidate>
+
+    <h1 class="h2">{{ 'cart.general.title' | t }}</h1>
+    
+     
+{% for item in cart.items %}
+    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Point' %}{% elsif item.product.type == "Decks" %}       
+         {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num = temp %}
+{% endfor %}
+ 
+{% for item in cart.items %}   
+    {% if item.product.type == "Trucks" %}       
+         {% capture temp2 %}{{ num_trucks | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_trucks = temp2 %}
+{% endfor %}
+
+{% for item in cart.items %}   
+    {% if item.product.type == "Wheels" %}       
+         {% capture temp3 %}{{ num_wheels | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_wheels = temp3 %}
+{% endfor %}
+
+{% for item in cart.items %}
+    {% if item.product.tags contains 'Price Point' and item.product.type == "Decks" %}       
+         {% capture temp5 %}{{ num_pricepoint | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_pricepoint = temp5 %}
+{% endfor %}
+
+
+
+# of Reg Decks: {{ num }}
+<br># of Pricepoint Decks: {{ num_pricepoint }}
+<br># of Truck Sets: {{ num_trucks | divided_by: 2 }}
+<br># of Wheel Sets: {{ num_wheels }}
+<br>--
+<br>Total: {{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
+<br><br>Note: Price Point & Sale decks don't count towards quantity discounts. 
+<br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
+
+{% if at_once > '0' and pre_book > '0' %}
+<br><br>
+<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
+{% endif %}
+
+<div class="grid-item text-right">
+          <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
+
+          {% if at_once == '0' or pre_book == '0' %}
+          <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
+            <span class="icon icon-cart"></span>
+            {{ 'cart.general.checkout' | t }}
+          </button>
+          {% endif %}
+</div>
+
+<br><br>
+        
+        
+    {% for item in cart.items %}
+    <div class="cart-row" data-id="{{ item.id }}">
+      <div class="grid">
+
+        <div class="grid-item large--seven-twelfths">
+          <div class="grid">
+
+            <div class="grid-item one-third large--one-quarter">
+              <a href="{{ item.url }}" class="cart-image">
+                <img {% if item.product.type == "Decks" %} class="Image" {% endif %}src="{{ item | img_url: 'medium' }}"  alt="{{ item.title | escape }}">
+              </a>
+            </div>
+
+            <div class="grid-item two-thirds large--three-quarters">
+              <a href="{{ item.url }}">
+                {{ item.product.title }} {% if at_once > '0' and pre_book > '0' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% endif %}
+              </a>
+              {% unless item.variant.title contains 'Default' %}
+                <br>
+                <small>{{ item.variant.title }}</small>
+              {% endunless %}
+
+              {% if item.properties.size > 0 %}
+              <p>
+                {% for p in item.properties %}
+                  {% unless p.last == blank %}
+                    {{ p.first }}:
+
+                    {% if p.last contains '/uploads/' %}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {% else %}
+                      {{ p.last }}
+                    {% endif %}
+
+                    <br>
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="grid-item large--five-twelfths medium--two-thirds push--medium--one-third">
+          <div class="grid">
+
+            <div class="grid-item one-half medium-down--one-third text-right">
+              <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}">
+            </div>
+
+            <div class="grid-item one-third medium-down--one-third medium-down--text-left text-right">
+              <span class="h2">
+                {% include 'price' with item.price %}
+              </span>
+            </div>
+
+            <div class="grid-item one-sixth medium-down--one-third text-right">
+              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}" class="icon-fallback-text btn-secondary remove">
+                <span class="icon icon-x" aria-hidden="true"></span>
+                <span class="fallback-text">{{ 'cart.general.remove' | t }}</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+    <div class="cart-row">
+      <div class="grid">
+<a name="notes"></a>
+        {% if settings.cart_notes_enable %}
+          <div class="grid-item large--one-half">
+	        <p class="cart-attribute__field">
+			  <label for="po">PO#</label>
+			  <input id="po" type="text" name="attributes[PO#]" value="{{ cart.attributes["PO#"] }}">
+			</p>
+            <label for="cartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea name="note" class="input-full" id="cartSpecialInstructions">{{ cart.note }}</textarea>
+          </div>
+        {% endif %}
+
+        <div class="grid-item text-right {% if settings.cart_notes_enable %}large--one-half{% endif %}">
+
+          <div class="cart-subtotal">
+            {{ 'cart.general.subtotal' | t }}
+            <span class="h1 cart-subtotal--price">
+              {% include 'price' with cart.total_price %}
+            </span>
+          </div>
+
+          <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
+
+          {% if at_once == '0' or pre_book == '0' %}
+          <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
+            <span class="icon icon-cart"></span>
+            {{ 'cart.general.checkout' | t }}
+          </button>
+          {% endif %}
+
+          {% if additional_checkout_buttons %}
+            <p>{{ content_for_additional_checkout_buttons }}</p>
+          {% endif %}
+
+        </div>
+
+      </div>
+    </div>
+
+  </form>
+
+{% else %}
+
+  <h2>{{ 'cart.general.empty' | t }}</h2>
+  <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+
+{% endif %}
+
+

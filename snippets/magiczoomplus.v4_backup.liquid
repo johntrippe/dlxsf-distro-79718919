@@ -2,13 +2,13 @@
 {% assign MagicToolboxSirvSpinsPath = 'products/{product-id}/{product-id}.spin' %}
 {% assign MagicToolboxShowMessage = 'No' %}
 {% assign MagicToolboxMessage = 'Move your mouse over image or click to enlarge' %}
-{% assign MagicToolboxBigImageSize = 'original' %}
+{% assign MagicToolboxBigImageSize = 'master' %}
 {% assign MagicToolboxThumbnailImageSize = 'large' %}
 {% assign MagicToolboxSelectorImageSize = 'small' %}
 {% assign MagicToolboxUseCustomWidth = 'No' %}
 {% assign MagicToolboxThumbnailImageWidth = '480' %}
 {% if MagicToolboxUseCustomWidth == 'Yes' %}
-<style type="text/css">.MagicZoomPlus > figure > img { max-width: {{ MagicToolboxThumbnailImageWidth }}px !important; }</style>
+<style type="text/css">.MagicZoomPlus > img { max-width: {{ MagicToolboxThumbnailImageWidth }}px !important; }</style>
 {% endif %}
 <div class="MagicToolboxContainer">
     <a href="{{ product.images[0] | product_img_url: MagicToolboxBigImageSize }}" class="MagicZoomPlus" id="zoom{{ product.id }}" title="{{ product.images[0].alt | escape }}"><img itemprop="image" src="{{ product.images[0] | product_img_url: MagicToolboxThumbnailImageSize }}" alt="{{ product.images[0].alt | escape }}" /></a>

@@ -7,6 +7,8 @@ function SirvToggleMT(zoom, spin) {
             jQuery('#ImageContainer').show();
         }, 500);
     } else {
+        var spinObj = document.getElementById('sirv-spin');
+        if (!Sirv.exists(spinObj)) { Sirv.start(spinObj); }
         jQuery('#SirvContainer').show();
         jQuery('#ImageContainer').hide();
     }
@@ -15,20 +17,21 @@ function SirvToggleMT(zoom, spin) {
 
 function SirvOnDocumentReady() {
 
-    if(SirvID == '') return;
+    if(typeof(SirvID)=='undefined' || SirvID == '') return;
 
     var spinURL = document.location.protocol.replace('file:', 'http:')+'//'+SirvID+'.sirv.com/'+SirvSpinsPath.replace(/{product\-id}/g, SirvProductID);
 
     JSONP.get(spinURL, {}, function(data) {
+        jQuery('.MagicToolboxSelectorsContainer').show();
         jQuery('.MagicZoomPlus').after('<div class="MTGallery"><div id="ImageContainer"><div></div></div><div style="display:none;" id="SirvContainer"></div></div>');
         jQuery('.MagicZoomPlus').appendTo('#ImageContainer div');
         jQuery('#SirvContainer').append('<div class="Sirv" id="sirv-spin" data-src="'+spinURL+'"></div>');
-        jQuery('a[rel*="zoom-id"]').each(function() {
+        jQuery('a[data-zoom-id^="zoom"]').each(function() {
             $(this).attr('onclick', 'SirvToggleMT(true, false)');
         });
-        jQuery('a[rel*="zoom-id"]:last').after(' <a onclick="return SirvToggleMT(false, true)" href="#"><img id="SirvIcon" style="display:none;" src="'+SirvIconURL+'"/></a>');
-        jQuery('a[rel*="zoom-id"]:first img').one('load', function() {
-            jQuery('#SirvIcon').attr('height', jQuery(this).height()).show();
+        jQuery('a[data-zoom-id^="zoom"]:last').after(' <a onclick="return SirvToggleMT(false, true)" href="#"><img id="SirvIcon" style="display:none;" src="'+SirvIconURL+'"/></a>');
+        jQuery('a[data-zoom-id^="zoom"]:first img').one('load', function() {
+            jQuery('#SirvIcon').css('height', jQuery(this).height()+'px').show();
         }).each(function() {
             if(this.complete) $(this).load();
         });
@@ -41,35 +44,47 @@ function SirvOnDocumentReady() {
 
 }
 
-jQuery(function() {  
+var SirvOptions = { autostart: false };
 
-SirvOnDocumentReady();
+var initMagicToolboxFunction = function() {
 
-if (document.body.innerHTML.replace(/(\r\n|\n|\r)/gm,"").match(/onVariantSelected/gm)) {
-	var funcName = document.body.innerHTML.replace(/(\r\n|\n|\r)/gm,"").replace(/.*onVariantSelected *: *(.*?)( |,|}).*/igm,'$1')
-    
-    if ( funcName!='') {
+    SirvOnDocumentReady();
 
-    	window[funcName+'_old'] = window[funcName];
-  		window[funcName] = function(){
+    if (document.body.innerHTML.replace(/(\r\n|\n|\r)/gm,"").match(/onVariantSelected/gm)) {
+        var funcName = document.body.innerHTML.replace(/(\r\n|\n|\r)/gm,"").replace(/.*onVariantSelected *: *(.*?)( |,|}).*/igm,'$1')
+        
+        if ( funcName!='') {
 
-  			if (arguments[0].featured_image!=null) {
-    
-	    		var largeImage = arguments[0].featured_image.src;
-				var isize = Shopify.Image.imageSize(jQuery('a.MagicZoomPlus img').first().attr('src'));
-    			var smallImage = Shopify.Image.getSizedImageUrl(arguments[0].featured_image.src, isize); 
+            window[funcName+'_old'] = window[funcName];
+            window[funcName] = function(){
 
-    			if (jQuery('.MagicZoomPup').length==0) {
-	    			jQuery('a.MagicZoomPlus').attr('href',largeImage)
-        			jQuery('a.MagicZoomPlus img').first().attr('src',smallImage);
-    			} else {
-  					MagicZoomPlus.update(jQuery('a.MagicZoomPlus').attr('id'),largeImage,smallImage);
-	    		}
+                if (arguments.length && arguments[0]!=null && arguments[0].featured_image!=null) {
+        
+                    var largeImage = arguments[0].featured_image.src;
+                    var isize = Shopify.Image.imageSize(jQuery('a.MagicZoomPlus img').first().attr('src'));
+                    var smallImage = Shopify.Image.getSizedImageUrl(arguments[0].featured_image.src, isize); 
 
-    		}
-    		window[funcName+'_old'](arguments[0],arguments[1],arguments[2])
-  		}
+                    if (arguments[0].featured_image.product_id!=SirvProductID) return;
+
+                    if (jQuery('.mz-lens').length==0) {
+                        jQuery('a.MagicZoomPlus').attr('href',largeImage)
+                        jQuery('a.MagicZoomPlus img').first().attr('src',smallImage);
+                    } else {
+                        MagicZoom.update(jQuery('a.MagicZoomPlus').attr('id'),largeImage,smallImage);
+                    }
+
+                }
+                window[funcName+'_old'](arguments[0],arguments[1],arguments[2])
+            }
+        }
     }
-}
 
-});  
+};
+
+if(typeof(jQuery) == 'undefined') {
+    $mjs(window).jAddEvent('load', function() {
+        jQuery(initMagicToolboxFunction);
+    });
+} else {
+    jQuery(initMagicToolboxFunction);
+}
