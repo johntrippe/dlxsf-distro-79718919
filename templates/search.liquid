@@ -50,12 +50,14 @@
 
               <div class="grid-uniform">
                 {% for item in search.results %}
+                {% unless item.tags contains 'HiddenProduct' %}
                 {% assign currentSearchItem = item.id | strip_html %}
  {% if upsellProducts contains currentSearchItem %}
   {% continue %}
  {% endif %}
                   {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
                   {% include 'search-result-grid' %}
+                  {% endunless %}
                 {% endfor %}
               </div>
 
