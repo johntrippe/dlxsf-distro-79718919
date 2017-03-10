@@ -220,7 +220,10 @@
       {% endfor %}
 
     </div>
+	
 
+	
+	
   </div>
 
   {% if paginate.pages > 1 %}
@@ -236,6 +239,11 @@
   {% endif %}
 
 </div>
+
+	<div style="background-color: #f0f0f0; padding-left:40px; border-radius:10px;">
+	{% include 'recently-viewed' %}
+	</div>
+<p>
 
 {% include 'featured' %}
 
