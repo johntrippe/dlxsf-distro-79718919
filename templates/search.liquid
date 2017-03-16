@@ -57,9 +57,9 @@
                 {% for item in search.results %}
                 {% unless item.tags contains 'HiddenProduct' %}
                 {% assign currentSearchItem = item.id | strip_html %}
- {% if upsellProducts contains currentSearchItem %}
-  {% continue %}
- {% endif %}
+ 					{% if upsellProducts contains currentSearchItem %}
+					  {% continue %}
+					{% endif %}
                   {% include 'search-result-grid2' %}
                   {% endunless %}
                 {% endfor %}

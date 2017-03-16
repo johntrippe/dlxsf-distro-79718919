@@ -1,5 +1,5 @@
 {% unless grid_item_width %}
-  {% assign grid_item_width = 'large--one-quarter medium-down--one-half' %}
+  {% assign grid_item_width = 'large--one-fifth medium--one-half small--one-half' %}
 {% endunless %}
 
 {% unless current_collection %}
@@ -31,126 +31,105 @@
 <div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or item.variants.first.inventory_management == "shopify" and item.variants.first.inventory_quantity <= 0 %} sold-out{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
 
 
-	 <!-- START QUANITY AND ADD TO CART -->
+<!-- START QUANITY AND ADD TO CART -->
 	    
 	    
 	    
-	    <div style="border-style: solid; padding: 8px;  border-width: 1px; border-color: #dbdada;">
-<div class="quickview">
-	<a href="{{ item.url | within: current_collection }}" class="product-grid-item">
-    <div class="product-grid-image">
-      <div class="product-grid-image--centered">
-        {% if sold_out %}
-          <div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
-        {% endif %}
+<div style="border-style: solid; padding: 8px;  border-width: 1px; border-color: #dbdada;">
+				<div class="quickview">
+					<a href="{{ item.url | within: current_collection }}" class="product-grid-item">
+					<div class="product-grid-image">
+					<div class="product-grid-image--centered">
+				        
+				        {% if sold_out %}
+				         		<div class="badge badge--sold-out"><span class="badge-label">{{ 'products.product.sold_out' | t }}</span></div>
+				        {% endif %}
+				        
+				        {% if item.variants.first.inventory_management == "shopify" and item.variants.first.inventory_quantity <= 0 and product.available and item.tags contains 'Atonce' %}
+								<div class="badge badge--sold-out"><span class="badge-label">On Back Order</span></div>
+						{% endif %}
         
-        {% if item.variants.first.inventory_management == "shopify" and item.variants.first.inventory_quantity <= 0 and product.available and item.tags contains 'Atonce' %}
-		<div class="badge badge--sold-out"><span class="badge-label">On Back Order</span></div>
-		{% endif %}
-        
-        <img src="{{ item.featured_image.src | img_url: image_size }}" alt="{{ item.featured_image.alt | escape }}">
-      </div>
-    </div>
-  </a>
-</div>
+						<img src="{{ item.featured_image.src | img_url: image_size }}" alt="{{ item.featured_image.alt | escape }}">
+					</div>
+					</div>
+					</a>
+				</div>
 	    
-	    <!-- 
-    This is just a regular add product form. 
-    You should be able to add any valid input fields to it 
--->
+	<!-- This is just a regular add product form. You should be able to add any valid input fields to it -->
 
-{% if item.compare_at_price_max > item.price %} <del>{{ item.compare_at_price_max | money }}</del>{% endif %}<a href="{{ item.url | within: current_collection }}">{{ item.title }}<font size="1"><br>{{ item.price | money | remove: '.00' }}</font></a>
+	<a href="{{ item.url | within: current_collection }}">{{ item.title }}<font size="1"><br>{{ item.price | money | remove: '.00' }}</font></a>
 
 
 
-<br><font color="#e1e1e1">----------------</font><br>
+	<br><font color="#e1e1e1">----------------</font><br>
 
-
-{% if item.available %}
-
-
-		
-		
-        
+	<!-- START IF PRODUCT IS AVAILABLE -->
+	
+	{% if item.available %}
 	<div align="right" style="background-color: #fbfbfb; padding: 8px;">
-		
-		
-		<!-- START VARIANTS -->
-		{% for variant in item.variants %}
-		{% if variant.available %}
-		<div>
-		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 and item.tags contains 'Atonce' %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
-		
-		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
-		</div>
-		{% endif %}
-	    {% endfor %}
-	    <!-- END VARIANTS -->
-	    
-	    
-	    <!-- START INVENTORY AMOUNTS -->
-	{% for variant in item.variants %}
-		{% if item.variant.inventory_management == "shopify" and item.type == "Apparel" and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
-		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %} - Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
-		
-		{% elsif variant.inventory_management == "shopify" and item.type != "Apparel"  and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
-		
-		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
-		{% endif %}
-	{% endfor %}
-    <!-- END INVENTORY AMOUNTS -->
-    
-    
-        <!-- START VARIANT BACK ORDER -->
-    
-  {% for variant in item.variants %}
-  {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" and item.tags contains 'Atonce' %}
-   <div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
-  {% else %}
-  {% endif %}
-  {% endfor %}
-  		
-  		{% assign out_of_stock = false %}
-			{% for variant in item.variants %}
-				{% if variant.inventory_quantity <= 0 %}
-					{% assign out_of_stock = true %}
+			
+			
+			<!-- START VARIANTS -->
+				{% for variant in item.variants %}
+				{% if variant.available %}
+				<div>
+						<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 and item.tags contains 'Atonce' %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
+			
+						<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
+				</div>
 				{% endif %}
-			{% endfor %}
-
-		{% if out_of_stock == true and item.tags contains 'Atonce' %}
-		<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ item.handle }}">notify</a>]</div>
-		{% endif %}
-
-	<!-- END VARIANT BACK ORDER -->
+				{% endfor %}
+			<!-- END VARIANTS -->
+		    
+		    
+			<!-- START INVENTORY AMOUNTS -->
+				{% for variant in item.variants %}
+				{% if item.variant.inventory_management == "shopify" and item.type == "Apparel" and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+					
+					<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %} - Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+			
+				{% elsif variant.inventory_management == "shopify" and item.type != "Apparel"  and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
+			
+					<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+					
+				{% endif %}
+				{% endfor %}
+			<!-- END INVENTORY AMOUNTS -->
 	    
-    </div>
+	    
+			<!-- START VARIANT BACK ORDER -->
+	    
+				{% for variant in item.variants %}
+				{% if variant.inventory_quantity <= 0 and variant.title != "Default Title" and item.tags contains 'Atonce' %}
+					
+					<div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
+					
+				{% endif %}
+				{% endfor %}
+	  		
+				{% assign out_of_stock = false %}
+				
+				{% for variant in item.variants %}
+				{% if variant.inventory_quantity <= 0 %}
+				{% assign out_of_stock = true %}
+				{% endif %}
+				{% endfor %}
+	
+				{% if out_of_stock == true and item.tags contains 'Atonce' %}
+					<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ item.handle }}">notify</a>]</div>
+				{% endif %}
+	
+				<!-- END VARIANT BACK ORDER -->
+		    
+	</div>
+	{% endif %}
+	
+	<!-- END IF PRODUCT IS AVAILABLE -->
 
 
-
-
-{% else %}
-
-<p class="bold-red">This product is temporarily unavailable</p>
-
-{% endif %}
-</div>
+</div><br><br>
 
 	    
     <!-- END QUANITY AND ADD TO CART -->
-	<a href="{{ item.url | within: current_collection }}" class="product-grid-item">
-    </p>
 
-    <div class="product-item--price">
-      
-
-      {% if on_sale %}
-        <span class="sale-tag medium--right{% if settings.product_reviews_enable %} has-reviews{% endif %}">
-          {% assign compare_price = product.compare_at_price %}
-          {% assign product_price = item.price %}
-          {% include 'price-sale' %}
-        </span>
-      {% endif %}
-    </div>
-
-  </a>
 </div> 
