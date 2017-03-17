@@ -1,23 +1,9 @@
-<div>
 
-
-
-<script type="text/javascript">
-	$(window).scroll(function() {
-
-    if ($(this).scrollTop()>0)
-     {
-        $('.fade').fadeOut();
-     }
- });
-</script>
 
 {% include 'breadcrumb' %}
 
 
-
-
-<div class="grid grid-border" itemscope itemtype="http://schema.org/Product">
+<div class="grid grid-border">
 	
 	
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
@@ -34,7 +20,7 @@
 			</style>
 				
 				
-		    	<div class="nav-container2" style="background-color: white;"> 
+		    	<div class="nav-container2" style="background-color: white;">
 			    {% include 'collection-sidebar' %}
 				</div> 
 		    
