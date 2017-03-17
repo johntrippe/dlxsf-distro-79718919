@@ -28,6 +28,13 @@
   Set a class for sold-out and on-sale items
 {% endcomment %}
 
+{% assign product_qty = 0 %}
+{% for variant in product.variants %}
+  {% if variant.inventory_quantity > 0 %}
+    {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+  {% endif %}
+{% endfor %}
+
 {% assign productIndex = forloop.index |minus:1 %}
 {% assign delayTime = 200 | times : productIndex %}
 

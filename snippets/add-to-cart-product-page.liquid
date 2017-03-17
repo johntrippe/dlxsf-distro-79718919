@@ -1,0 +1,85 @@
+<div>
+
+	    
+{% if product.available %}
+
+
+		
+		
+        
+	<div align="left" style="background-color: #fbfbfb; padding: 8px;">
+		
+		
+		<!-- START VARIANTS -->
+		{% for variant in product.variants %}
+		{% if variant.available %}
+		<div>
+		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
+		
+		<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 and product.tags contains 'Atonce' %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
+		
+		
+		</div>
+		{% endif %}
+	    {% endfor %}
+	    <!-- END VARIANTS -->
+	    
+	    {% assign out_of_stock = false %}
+			
+			{% for variant in product.variants %}
+				{% if variant.inventory_quantity <= 0 %}
+					{% assign out_of_stock = true %}
+				{% endif %}
+				{% if variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
+					{% assign out_of_stock1 = true %}
+				{% endif %}
+			{% endfor %}
+	    
+	    
+	    <!-- START INVENTORY AMOUNTS -->
+	    
+	    {% if out_of_stock1 == true%}<br>{% endif %}
+	    
+	{% for variant in product.variants %}
+		{% if product.variant.inventory_management == "shopify" and product.type == "Apparel" and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %} - Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+		
+		{% elsif variant.inventory_management == "shopify" and product.type != "Apparel"  and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
+		
+		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+		{% endif %}
+	{% endfor %}
+    <!-- END INVENTORY AMOUNTS -->
+    
+    
+        <!-- START VARIANT BACK ORDER -->
+        	
+			
+			{% if out_of_stock == true%}<br>{% endif %}
+			
+			{% for variant in product.variants %}
+			{% if variant.inventory_quantity <= 0 and variant.title != "Default Title" and product.tags contains 'Atonce' %}
+			<div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
+			{% else %}
+			{% endif %}
+			{% endfor %}
+  		
+  		
+
+		{% if out_of_stock == true and product.tags contains 'Atonce' %}
+		<br><div style="font-size: 11px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ product.handle }}">Get notified when item is in stock</a>]</div>
+		{% endif %}
+
+	<!-- END VARIANT BACK ORDER -->
+	    
+    </div>
+
+
+
+
+{% else %}
+
+<p class="bold-red">This product is temporarily unavailable</p>
+
+{% endif %}
+</div>
