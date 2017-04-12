@@ -64,10 +64,11 @@
 
       
       <div class="order-form-add-to-cart">
-	      <a href="/cart" class="header-cart-btn">
+	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>
+	      </span>
           <br><br>
           <input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add To Cart" />
       </div>
@@ -87,7 +88,7 @@
       </div>
     {% else %}
     
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/united-header-3.jpg?6827395415474989671e">
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/2017_Holiday_Header.jpg?10261959936324407717">
     <header class="section-header">
      
       
@@ -97,10 +98,11 @@
 
       
       <div class="f-nav4">
-	      <a href="/cart" class="header-cart-btn">
+	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
           </a>
+	      </span>
           <br><br>
           <input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add To Cart" />
       </div>
@@ -110,19 +112,65 @@
     </header>
     {% endif %}
 
-    "The day after the first Travel ban was rolled out I got a call from Phil at Humidity. He said we should do something. I agreed. It was that simple. Skateboarders can do anything they want.  Phil and I went back and forth on a Sat & and Sunday with ideas and what we should do. By Monday the concept and plan were formalized. Chris Wright nailed the art.
-<br><br>
-There will be a limited, all white Humidity Edition United We Stand deck available exclusively from Humidity skate shop that will be released two weeks before these hit the streets. Please support Phil and Humidity with this one - he’s a true lifer." -Jim
-<br><br>
-<div style="font-size: medium;" align="right"><b>ORDERS DUE: APRIL 4TH / ORDERS SHIP: JUNE 5TH</b></div>
-<br><br>
 
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/SF-HEADER.jpg?16657586068414848310"><br><br>
     
     <div class="grid-uniform">
 		{% for product in collection.products %}
-        {% include 'product-grid-item' %}
+		{% if product.vendor == 'Spitfire' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
 		{% endfor %}
-     
+	</div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/antihero_header.jpg?9930134242600258590"><br><br>
+    
+    <div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Antihero' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+	</div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooked_header.jpg?9930134242600258590"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Krooked' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+	<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Real' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/thunder_banner.jpg?16657586068414848310"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Thunder' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/venture_header.jpg?16657586068414848310"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Venture' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
     </div>
     
 
