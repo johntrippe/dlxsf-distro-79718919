@@ -53,12 +53,12 @@
 	    
 	    <!-- START INVENTORY AMOUNTS -->
 	{% for variant in product.variants %}
-		{% if product.variant.inventory_management == "shopify" and product.type == "Apparel" and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
+		{% if product.variant.inventory_management == "shopify" and product.type == "Apparel" and product.tags contains 'Atonce' and variant.inventory_quantity < 4 and variant.inventory_quantity > 0 %}
 		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %} - Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
 		
-		{% elsif variant.inventory_management == "shopify" and product.type != "Apparel"  and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
+		{% elsif variant.inventory_management == "shopify" and product.type != "Apparel" and product.tags contains 'Atonce' and variant.inventory_quantity < 11 and variant.inventory_quantity > 0 %}
 		
-		<div style="font-size: 10px;">{% if variant.title != "Default Title" %}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
+		<div style="font-size: 10px;">{% if variant.title != "Default Title"%}{{ variant.title }} - {% endif %}Only <b>{{variant.inventory_quantity}}</b> in stock<br></div>
 		{% endif %}
 	{% endfor %}
     <!-- END INVENTORY AMOUNTS -->
