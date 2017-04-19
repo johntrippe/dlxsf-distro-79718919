@@ -22,7 +22,11 @@
     You should be able to add any valid input fields to it 
 -->
 
-{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}<a href="{{ product.url | within: current_collection }}">{{ product.title }}<font size="1"><br>{{ product.price | money | remove: '.00' }}</font></a>
+{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}<a href="{{ product.url | within: current_collection }}">{{ product.title }}<font size="1"><br>{% if product.price_max > product.price %}
+        {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
+        {% else %}
+        {{ product.price | money | remove: '.00' }}
+        {% endif %}</font></a>
 
 
 
