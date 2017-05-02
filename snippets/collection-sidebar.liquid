@@ -105,6 +105,22 @@ function changeText(idElement) {
 		<li class="clearfix filters"><a href="/collections/thunder-apparel">Thunder Apparel</a></li>
 		</ul>
 		
+		
+{% elsif collection.title == "SPRING DROP 3"   %}
+
+
+	   <hr>
+	    <label><b>2017 Spring Drop 3</b></label>
+	    
+	    <ul class="clearfix filters">
+	      <li class="clearfix filters"><a href="/collections/spring-drop-3/real">&#183; Real</a></li>
+	      <li class="clearfix filters"><a href="/collections/spring-drop-3/antihero">&#183; Antihero</a></li>
+		  <li class="clearfix filters"><a href="/collections/spring-drop-3/krooked">&#183; Krooked</a></li>
+		  <li class="clearfix filters"><a href="/collections/spring-drop-3/spitfire">&#183; Spitfire</a></li>
+		  <li class="clearfix filters"><a href="/collections/spring-drop-3/thunder">&#183; Thunder</a></li>
+	      
+	    </ul>
+		
 
 {% elsif == "Accessories" or collection.title == "Accessories" or collection.title == "Real Accessories" or collection.title == "Antihero Accessories" or collection.title == "Spitfire Accessories" or collection.title == "Thunder Accessories" or collection.title == "Krooked Accessories" or collection.title == "Venture Accessories"   %}
 
@@ -144,7 +160,7 @@ function changeText(idElement) {
 {% elsif == "Real Decks" or collection.title == "Real Decks" or collection.title == "Krooked Decks" or collection.title == "Krooked Decks - On Hand" or collection.title == "Real Decks - On Hand" or collection.title == "Antihero Decks - On Hand" or collection.title == "Decks" collection.title == "Real Decks" or collection.title == "Antihero Decks" or collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" or collection.title == "Wheels" or collection.title == "Spitfire Wheels" or collection.title == "Krooked Wheels"   %}
 	<ul class="clearfix filters">
 	  <li class="clearfix filter">
-	    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,143,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +,143, Lo 145, Hi 145, Lo 147, Hi 147, Hi 149, Hi 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
+	    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +, 143, Lo 145, 145, Lo 147, 147, 149, 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(1)" class="tree-toggle clearfix filter">&nbsp;&nbsp;SIZE<span id="element1" style="float:right; padding-right:30px;">+</a></label>
 	     <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}

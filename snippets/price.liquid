@@ -1,4 +1,4 @@
-{% assign formatted_price = product.price | money %}
+{% assign formatted_price = price | money %}
 {% assign formatted_price_min = product.price_min | money %}
 {% assign formatted_price_max = product.price_max | money %}
 
@@ -28,7 +28,7 @@
   {% endif %}
 {% endunless %}
 
-<font color="#323131">{% if product.price_max > product.price %}
+<font color="#323131">{% if product.price_max > price %}
         {{ formatted_price_min }} - {{ formatted_price_max }}
         {% else %}
         {{ formatted_price }}
