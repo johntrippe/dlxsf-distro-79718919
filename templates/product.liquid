@@ -119,7 +119,36 @@
     <div class="product-description rte" itemprop="description">
       {{ product.description }}
     </div>  
-    
+    <!-- START INSERT COLLAPSIBLE TEXT -->
+    {% if  collection.title == "Thunder Trucks" %}
+			 <li class="clearfix filter">
+			    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle2 clearfix filter">&nbsp;&nbsp;SIZE GUIDE<span id="element5" style="float:right; padding-right:30px;">+</a></label>
+			    <ul class="nav nav-list tree2 bullets">
+			      <li><a href="https://cdn.shopify.com/s/files/1/0714/9533/files/TH2_size_dimensions.jpg?8065062943502995291" target="_Blank"><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/TH2_size_dimensions.jpg?8065062943502995291" border="0"></a><br>Thunder Size Guide</li>
+			    </ul>
+			  </li>
+		    
+		    <script>
+		    $('.tree-toggle2').click(function () {
+		    $(this).parent().children('ul.tree2').toggle(200);
+		});
+		$(function () {
+		    $('.tree-toggle2').parent().children('ul.tree2').toggle(200);
+		});
+		  //# sourceURL=pen.js
+		  
+		  function changeText(idElement) {
+    var element = document.getElementById('element' + idElement);
+    if (idElement === 5) {
+        if (element.innerHTML === '+') element.innerHTML = '-';
+        else {
+            element.innerHTML = '+';
+        }
+    }
+    }
+			</script><br>
+  {% endif %}
+  <!-- END INSERT COLLAPSIBLE TEXT -->
 
     {% if settings.social_sharing_products %}
       {% include 'social-sharing' %}
