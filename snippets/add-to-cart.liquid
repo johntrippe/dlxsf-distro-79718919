@@ -1,5 +1,4 @@
 <div style="border-style: solid; padding: 8px;  border-width: 1px; border-color: #dbdada;">
-<div class="quickview">
 	<a href="{{ product.url | within: current_collection }}" class="product-grid-item">
     <div class="product-grid-image">
       <div class="product-grid-image--centered">
@@ -11,11 +10,14 @@
 		<div class="badge badge--sold-out"><span class="badge-label">On Back Order</span></div>
 		{% endif %}
         
-        <img src="{{ product.featured_image.src | img_url: image_size }}" alt="{{ product.featured_image.alt | escape }}">
+                <div class="reveal"><img {% if product.images.size > 1 %}class="gotit" {% endif %}src="{{ product.featured_image.src | product_img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}">
+	        				{% if product.images.size > 1 %}
+							<img class="hidden" src="{{ product.images[1] | product_img_url: 'medium' }}" alt="{{ product.images[1].alt | escape }}" />
+							{% endif %}
+        </div>
       </div>
     </div>
   </a>
-</div>
 	    
 	    <!-- 
     This is just a regular add product form. 
