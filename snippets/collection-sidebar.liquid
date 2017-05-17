@@ -64,7 +64,7 @@
 <script language="javascript">
 function changeText(idElement) {
     var element = document.getElementById('element' + idElement);
-    if (idElement === 1 || idElement === 2 || idElement === 3 || idElement === 4) {
+    if (idElement === 1 || idElement === 2 || idElement === 3 || idElement === 4 || idElement === 5 || idElement === 6) {
         if (element.innerHTML === '+') element.innerHTML = '-';
         else {
             element.innerHTML = '+';
@@ -80,20 +80,20 @@ function changeText(idElement) {
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
 	    {% assign tags = 'Hats, Beanies, Tees, Jackets, Socks, Misc Apparel, Hoodies, Bearings, Bolts, Bushings, Griptape, Misc Hardware, Patches, Risers, Skate Tools, Wax' | split: ',' %}
-	    <label>Filter by Style</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;TYPE<span id="element5" style="float:right; padding-right:30px;">-</a></label>
+	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
-	  </li>
-	  </ul>
+	    </ul>
+		</li>
+	  	</ul>
+	  	<li class="divider2"></li>
 	  
 	  
 	  	<ul class="clearfix filters">
@@ -128,18 +128,17 @@ function changeText(idElement) {
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
 	    {% assign tags = 'Stickers, Bags, DVDs, Lighters, Patches, Pins, Air Fresheners, Misc' | split: ',' %}
-	    <label>Filter by Type</label>
-	    <select class="coll-filter">
-	      <option value="">All</option>
+	    <label style="cursor:pointer;" onClick="javascript:changeText(6)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;TYPE<span id="element6" style="float:right; padding-right:30px;">-</a></label>
+	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
-	      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% elsif collection.all_tags contains tag %}
-	      <option value="{{ tag | handle }}">{{ tag }}</option>
+	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
 	      {% endif %}
 	      {% endfor %}
-	    </select>
+	    </ul>
 	  </li>
 	  </ul>
 	  
@@ -161,8 +160,8 @@ function changeText(idElement) {
 	<ul class="clearfix filters">
 	  <li class="clearfix filter">
 	    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +, 143, Lo 145, 145, Lo 147, 147, 148, 149, 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
-	    <label style="cursor:pointer;" onClick="javascript:changeText(1)" class="tree-toggle clearfix filter">&nbsp;&nbsp;SIZE<span id="element1" style="float:right; padding-right:30px;">+</a></label>
-	     <ul class="nav nav-list tree bullets">
+	    <label style="cursor:pointer;" onClick="javascript:changeText(1)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;SIZE<span id="element1" style="float:right; padding-right:30px;">-</a></label>
+	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
 	      {% if current_tags contains tag %}
@@ -247,13 +246,26 @@ function changeText(idElement) {
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 
     <script>
+	// START MENU STARTS UP
     $('.tree-toggle').click(function () {
     $(this).parent().children('ul.tree').toggle(200);
-});
-$(function () {
+	});
+	
+	$(function () {
     $('.tree-toggle').parent().children('ul.tree').toggle(200);
-});
-  //# sourceURL=pen.js
+	});
+	// END MENU STARTS UP
+	
+	// START MENU STARTS DOWN
+    $('.tree-toggle-down').parent().children('ul.tree-down').toggle(200);
+    $('.tree-toggle-down').click(function () {
+    $(this).parent().children('ul.tree-down').toggle(200);
+	});
+	
+	$(function () {
+    $('.tree-toggle-down').parent().children('ul.tree-down').toggle(200);
+	});
+	// END MENU STARTS DOWN
   </script>
 <!-- END BOOTSTRAP -->
 
