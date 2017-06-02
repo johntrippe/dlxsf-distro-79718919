@@ -73,7 +73,22 @@ return confirm("Are you sure you want to clear your cart?");
     {% assign num_pricepoint = temp5 %}
 {% endfor %}
 
+<!-- START LIMIT ON SPECIAL PRODUCT -->
+{% assign limit_item = '0' %}
+{% for item in cart.items %}
+    {% if item.product.tags contains 'Limit' %}       
+         {% capture temp6 %}{{ limit_item | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign limit_item = temp6 %}
+{% endfor %}
 
+{% assign limit_item_amount = '5' %}
+{% assign checkout_limit_item = '0' %}
+
+{% if limit_item > limit_item_amount %}
+	{% assign checkout_limit_item = '1' %}
+{% endif %}
+<!-- END LIMIT ON SPECIAL PRODUCT -->
 
 # of Reg Decks: {{ num }}
 <br># of Pricepoint Decks: {{ num_pricepoint }}
@@ -89,10 +104,16 @@ return confirm("Are you sure you want to clear your cart?");
 <h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
 {% endif %}
 
+{% if limit_item > limit_item_amount %}
+<br><br>
+<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: The Krooked Guest board is a one per customer order item. 
+	<br>Please adjust QTY to 1.</h1>
+{% endif %}
+
 <div class="grid-item text-right">
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
-          {% if at_once == '0' or pre_book == '0' %}
+          {% if checkout_limit_item == '0' and at_once == '0' or pre_book == '0' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
@@ -118,7 +139,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }} {% if at_once > '0' and pre_book > '0' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% endif %}
+                {{ item.product.title }} {% if at_once > '0' and pre_book > '0' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
               {% unless item.variant.title contains 'Default' %}
                 <br>
@@ -200,7 +221,7 @@ return confirm("Are you sure you want to clear your cart?");
 
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
-          {% if at_once == '0' or pre_book == '0' %}
+          {% if checkout_limit_item == '0' and at_once == '0' or pre_book == '0' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
