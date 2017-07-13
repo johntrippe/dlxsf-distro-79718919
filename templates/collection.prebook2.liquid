@@ -88,7 +88,7 @@
       </div>
     {% else %}
     
-    <img src="https://cdn.shopify.com/s/files/1/1092/4144/files/distro_spring_prebook_header.jpg?1253116977499785602">
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/sf_lockins_flyer_web_header.jpg?1337823584112838332">
     <header class="section-header">
      
       
@@ -113,55 +113,15 @@
     {% endif %}
 
 
-    <a name="spitfire"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/SF-HEADER.jpg?16657586068414848310"><br><br>
+
     
     <div class="grid-uniform">
 		{% for product in collection.products %}
-		{% if product.vendor == 'Spitfire' %}
 		{% include 'product-grid-item' %}
-        {% endif %}
 		{% endfor %}
 	</div>
     
-    <a name="antihero"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/antihero_header.jpg?9930134242600258590"><br><br>
-    
-    <div class="grid-uniform">
-		{% for product in collection.products %}
-		{% if product.vendor == 'Antihero' %}
-		{% include 'product-grid-item' %}
-        {% endif %}
-		{% endfor %}
-	</div>
-    
-   <a name="krooked"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooked_header.jpg?9930134242600258590"><br><br>
-    
-	<div class="grid-uniform">
-		{% for product in collection.products %}
-		{% if product.vendor == 'Krooked' %}
-		{% include 'product-grid-item' %}
-        {% endif %}
-		{% endfor %}
-    </div>
-    
-	<a name="real"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
-    
-	<div class="grid-uniform">
-		{% for product in collection.products %}
-		{% if product.vendor == 'Real' %}
-		{% include 'product-grid-item' %}
-        {% endif %}
-		{% endfor %}
-    </div>
-    
-    <a name="thunder"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/thunder_banner.jpg?16657586068414848310"><br><br>
-    
-	<div class="grid-uniform">
-		{% for product in collection.products %}
-		{% if product.vendor == 'Thunder' %}
-		{% include 'product-grid-item' %}
-        {% endif %}
-		{% endfor %}
-    </div>
+
     
 
 

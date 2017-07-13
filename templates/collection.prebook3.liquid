@@ -88,7 +88,9 @@
       </div>
     {% else %}
     
+    <!--
     <img src="https://cdn.shopify.com/s/files/1/1092/4144/files/distro_spring_prebook_header.jpg?1253116977499785602">
+    -->
     <header class="section-header">
      
       
@@ -112,16 +114,16 @@
     </header>
     {% endif %}
 
-
-    <a name="spitfire"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/SF-HEADER.jpg?16657586068414848310"><br><br>
+	
+	<a name="real"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
     
-    <div class="grid-uniform">
+	<div class="grid-uniform">
 		{% for product in collection.products %}
-		{% if product.vendor == 'Spitfire' %}
+		{% if product.vendor == 'Real' %}
 		{% include 'product-grid-item' %}
         {% endif %}
 		{% endfor %}
-	</div>
+    </div>
     
     <a name="antihero"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/antihero_header.jpg?9930134242600258590"><br><br>
     
@@ -142,22 +144,33 @@
         {% endif %}
 		{% endfor %}
     </div>
+
+    <a name="spitfire"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/spitfire_header.jpg?9904638556387123286"><br><br>
     
-	<a name="real"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
-    
-	<div class="grid-uniform">
+    <div class="grid-uniform">
 		{% for product in collection.products %}
-		{% if product.vendor == 'Real' %}
+		{% if product.vendor == 'Spitfire' %}
 		{% include 'product-grid-item' %}
         {% endif %}
 		{% endfor %}
-    </div>
+	</div>
+    
     
     <a name="thunder"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/thunder_banner.jpg?16657586068414848310"><br><br>
     
 	<div class="grid-uniform">
 		{% for product in collection.products %}
 		{% if product.vendor == 'Thunder' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/venture_header.jpg?6238154316337374966"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Venture' %}
 		{% include 'product-grid-item' %}
         {% endif %}
 		{% endfor %}
