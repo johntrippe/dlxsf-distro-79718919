@@ -22,18 +22,17 @@ return confirm("Are you sure you want to clear your cart?");
 
 
 {% assign pre_book = '0' %}
+{% assign pre_book2 = '0' %}
 {% assign at_once = '0' %}
 
 
 {% for item in cart.items %}
 
   {% if item.product.tags contains 'Prebook' %}{% capture pre_book %}{{ pre_book | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'Prebook2' %}{% capture pre_book2 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
   {% if item.product.tags contains 'Atonce' %}{% capture at_once %}{{ at_once | plus:1 }}{% endcapture %}{% endif %}
 
 {% endfor %}
-
-
-
 
 
 <!-- END MIXING PRE-BOOK WITH AT-ONCE ALERT -->
@@ -99,9 +98,14 @@ return confirm("Are you sure you want to clear your cart?");
 <br><br>Note: Price Point & Sale decks don't count towards quantity discounts. 
 <br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
 
-{% if at_once > '0' and pre_book > '0' %}
+{% if at_once > '0' and pre_book > '0' or pre_book2 > '0' %}
 <br><br>
 <h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
+{% endif %}
+
+{% if pre_book > '0' and pre_book2 > '0' %}
+<br><br>
+<h1 class="section-header--title section-header--left"><font color="red">ERROR</font>: Customers can not mix 2 different Pre-Book orders in the same order. Please only order from one Pre-Book per order. Thank you!</h1>
 {% endif %}
 
 {% if limit_item > limit_item_amount %}
@@ -113,7 +117,20 @@ return confirm("Are you sure you want to clear your cart?");
 <div class="grid-item text-right">
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
-          {% if checkout_limit_item == '0' and at_once == '0' or pre_book == '0' %}
+          
+          <!-- START CHECK OUT TEST -->
+          
+          {% if pre_book > '0' and pre_book2 > '0' %}
+          	{% assign checkout_button = 'fail' %}
+          {% endif %}
+          
+          {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' %}
+          	{% assign checkout_button = 'fail' %}
+          {% endif %}
+          
+          <!-- END CHECK OUT TEST -->
+          
+          {% if checkout_button != 'fail' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
@@ -139,7 +156,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }} {% if at_once > '0' and pre_book > '0' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
+                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
               {% unless item.variant.title contains 'Default' %}
                 <br>
@@ -221,7 +238,7 @@ return confirm("Are you sure you want to clear your cart?");
 
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
-          {% if checkout_limit_item == '0' and at_once == '0' or pre_book == '0' %}
+          {% if checkout_button != 'fail' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
             <span class="icon icon-cart"></span>
             {{ 'cart.general.checkout' | t }}
