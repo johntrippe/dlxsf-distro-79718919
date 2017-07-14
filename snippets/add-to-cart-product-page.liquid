@@ -9,12 +9,20 @@
         
 	<div align="left" style="background-color: #fbfbfb; padding: 8px;">
 		
+		<!-- START IF ONLY 1 VARIANT AND QTY 1 -->
+		{% for variant in product.variants %}
+		{% capture qty_amount %}{{ qty_amount | plus:1 }}{% endcapture %}
+		{% endfor %}
+		<!-- END IF ONLY 1 VARIANT AND QTY 1 -->
+		
 		
 		<!-- START VARIANTS -->
 		{% for variant in product.variants %}
 		{% if variant.available %}
+		
+		
 		<div>
-		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
+		<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="{% if qty_amount == '1' %}1{% endif %}" tabindex="1" /></div>
 		
 		<div style="display:inline-block; font-size: 10px;">{% if variant.title == 'Default Title' %}: QTY{% else %}{% if variant.inventory_quantity <= 0 and product.tags contains 'Atonce' %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endif %}</div>
 		
