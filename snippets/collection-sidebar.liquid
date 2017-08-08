@@ -19,7 +19,7 @@
     
      
 {% for item in cart.items %}
-    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Point' %}{% elsif item.product.type == "Decks" %}   
+    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Points' %}{% elsif item.product.type == "Decks" %}   
          {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num = temp %}
@@ -40,7 +40,7 @@
 {% endfor %}
 
 {% for item in cart.items %}
-    {% if item.product.tags contains 'Price Point' and item.product.type == "Decks" %}       
+    {% if item.product.tags contains 'Price Points' and item.product.type == "Decks" %}       
          {% capture temp5 %}{{ num_pricepoint | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num_pricepoint = temp5 %}
@@ -156,7 +156,7 @@ function changeText(idElement) {
  
  <!-- END + CHANGER ON FILTERS -->
  
-{% elsif == "REAL Decks" or collection.title == "REAL Decks" or collection.title == "Krooked Decks" or collection.title == "Krooked Decks - On Hand" or collection.title == "Real Decks - On Hand" or collection.title == "Antihero Decks - On Hand" or collection.title == "Decks" collection.title == "Real Decks" or collection.title == "Antihero Decks" or collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" or collection.title == "Wheels" or collection.title == "Spitfire Wheels" or collection.title == "Krooked Wheels"   %}
+{% elsif == "REAL Decks" or collection.title == "REAL Decks" or collection.title == "REAL" or collection.title == "Krooked Decks" or collection.title == "Krooked Decks - On Hand" or collection.title == "Real Decks - On Hand" or collection.title == "Antihero Decks - On Hand" or collection.title == "Decks" collection.title == "Real Decks" or collection.title == "Antihero Decks" or collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" or collection.title == "Wheels" or collection.title == "Spitfire Wheels" or collection.title == "Krooked Wheels"   %}
 	<ul class="clearfix filters">
 	  <li class="clearfix filter">
 	    {% assign tags = '48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +, 143, Lo 145, 145, Lo 147, 147, 148, 149, 151, Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8' | split: ',' %}
@@ -189,7 +189,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Point, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Pro Trucks, Titanium Lights, Pro Titanium Lights, Hollow Lights, Pro Hollow Lights, Pro Lights, Lights, Polshed, Color, Sonora' | split: ',' %}
+	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Pro Trucks, Titanium Lights, Pro Titanium Lights, Hollow Lights, Pro Hollow Lights, Pro Lights, Lights, Polshed, Color, Sonora' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(3)" class="tree-toggle clearfix filter">&nbsp;&nbsp;STYLE<span id="element3" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
