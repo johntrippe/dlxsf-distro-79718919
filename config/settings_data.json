@@ -97,7 +97,7 @@
     "collection_prod_image_sizes": "medium",
     "collection_sidebar_filters": "groups",
     "cart_notes_enable": true,
-    "ajax_cart_enable": false,
+    "ajax_cart_enable": true,
     "ajax_cart_method": "modal",
     "twittercard_handle": "@",
     "social_sharing_products": false,
@@ -134,9 +134,7 @@
     "checkout_banner_background_color": "#ffffff",
     "checkout_headline": "",
     "checkout_call_to_action_color": "#8fc243",
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Blue": {
