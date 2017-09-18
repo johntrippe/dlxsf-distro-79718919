@@ -79,7 +79,7 @@ function changeText(idElement) {
 {% if  collection.title == "Apparel" or collection.title == "Spitfire Apparel"  or collection.title == "Krooked Apparel"  or collection.title == "Venture Apparel" or collection.title == "Antihero Apparel"  or collection.title == "Thunder Apparel" or collection.title == "Real Apparel" %}
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
-	    {% assign tags = 'Hats, Beanies, Tees, Jackets, Socks, Misc Apparel, Hoodies, Bearings, Bolts, Bushings, Griptape, Misc Hardware, Patches, Risers, Skate Tools, Wax' | split: ',' %}
+	    {% assign tags = 'Hats, Beanies, Tees, Jackets, Socks, Misc Apparel, Hoodies, Bearings, Bolts, Bushings, Griptape, Misc Hardware, Patches, Risers, Skate Tools, Wax, Youths, Girls/Juniors' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;TYPE<span id="element5" style="float:right; padding-right:30px;">-</a></label>
 	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
