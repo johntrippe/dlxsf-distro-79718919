@@ -146,7 +146,7 @@ snippets/collection-list-item.liquid:
 snippets/collection-sidebar-TEST.liquid:
   development: 2016-06-14T14:40:34-07:00   6b8782a7c5e6972e798e2a3c8428837e
 snippets/collection-sidebar.liquid:
-  development: 2017-09-18T15:26:59-07:00   5a39dc126c9992bfb2f1395561ae2d78
+  development: 2017-09-19T09:12:29-07:00   5a39dc126c9992bfb2f1395561ae2d78
 snippets/collection-sorting.liquid:
   development: 2015-12-11T09:35:15-08:00   47fc9865d11eaf0e3e2bcb702105f298
 snippets/collection-views.liquid:
@@ -248,7 +248,7 @@ templates/article.liquid:
 templates/blog.liquid:
   development: 2015-12-11T09:35:16-08:00   36c25818338143925266dc6dfbd400da
 templates/cart.liquid:
-  development: 2017-09-18T16:05:10-07:00   f055665e8b1582d82f51b6f4329803b5
+  development: 2017-09-20T14:44:23-07:00   220fa1f4679dacb247a712a662fa64fe
 templates/cart.liquid-without-spurit_upsell.liquid:
   development: 2016-11-23T11:43:14-08:00   3449a7c39a60a68dfe001743ec0e7711
 templates/collection-TEST.liquid:

@@ -143,6 +143,8 @@ return confirm("Are you sure you want to clear your cart?");
 
 {% assign pre_book = '0' %}
 {% assign pre_book2 = '0' %}
+{% assign pre_book3 = '0' %}
+{% assign pre_book4 = '0' %}
 {% assign at_once = '0' %}
 
 
@@ -150,12 +152,22 @@ return confirm("Are you sure you want to clear your cart?");
 
   {% if item.product.tags contains 'Prebook' %}{% capture pre_book %}{{ pre_book | plus:1 }}{% endcapture %}{% endif %}
   {% if item.product.tags contains 'Prebook2' %}{% capture pre_book2 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'Prebook3' %}{% capture pre_book3 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'Prebook4' %}{% capture pre_book4 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
   {% if item.product.tags contains 'Atonce' %}{% capture at_once %}{{ at_once | plus:1 }}{% endcapture %}{% endif %}
 
 {% endfor %}
 
 
 <!-- END MIXING PRE-BOOK WITH AT-ONCE ALERT -->
+
+<!-- START PREBOOK AMOUNT CHECK -->
+          
+    {% assign prebook_total = pre_book | plus: pre_book2 | plus: pre_book3 | plus: pre_book4 %}
+          
+    {{ prebook_total }}
+          
+<!-- END PREBOOK AMOUNT CHECK -->
 
 
 	{% if cart.item_count > 0 %}
@@ -218,12 +230,12 @@ return confirm("Are you sure you want to clear your cart?");
 <br><br>Note: Price Point & Sale decks don't count towards quantity discounts. 
 <br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
 
-{% if at_once > '0' and pre_book > '0' or pre_book2 > '0' %}
+{% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0'  %}
 <br><br>
 <h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
 {% endif %}
 
-{% if pre_book > '0' and pre_book2 > '0' %}
+{% if prebook_total > 1 %}
 <br><br>
 <h1 class="section-header--title section-header--left"><font color="red">ERROR</font>: Customers can not mix 2 different Pre-Book orders in the same order. Please only order from one Pre-Book per order. Thank you!</h1>
 {% endif %}
@@ -240,11 +252,11 @@ return confirm("Are you sure you want to clear your cart?");
           
           <!-- START CHECK OUT TEST -->
           
-          {% if pre_book > '0' and pre_book2 > '0' %}
+          {% if prebook_total > 1 %}
           	{% assign checkout_button = 'fail' %}
           {% endif %}
           
-          {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' %}
+          {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0' %}
           	{% assign checkout_button = 'fail' %}
           {% endif %}
           
@@ -276,7 +288,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
+                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
               {% unless item.variant.title contains 'Default' %}
                 <br>
