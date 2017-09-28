@@ -150,11 +150,11 @@ return confirm("Are you sure you want to clear your cart?");
 
 {% for item in cart.items %}
 
-  {% if item.product.tags contains 'Prebook' %}{% capture pre_book %}{{ pre_book | plus:1 }}{% endcapture %}{% endif %}
-  {% if item.product.tags contains 'Prebook2' %}{% capture pre_book2 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
-  {% if item.product.tags contains 'Prebook3' %}{% capture pre_book3 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
-  {% if item.product.tags contains 'Prebook4' %}{% capture pre_book4 %}{{ pre_book2 | plus:1 }}{% endcapture %}{% endif %}
-  {% if item.product.tags contains 'Atonce' %}{% capture at_once %}{{ at_once | plus:1 }}{% endcapture %}{% endif %}
+  {% if item.product.tags contains 'Prebook' %}{% assign pre_book = '1' %}{% endif %}
+  {% if item.product.tags contains 'Prebook2' %}{% assign pre_book2 = '1' %}{% endif %}
+  {% if item.product.tags contains 'Prebook3' %}{% assign pre_book3 = '1' %}{% endif %}
+  {% if item.product.tags contains 'Prebook4' %}{% assign pre_book4 = '1' %}{% endif %}
+  {% if item.product.tags contains 'Atonce' %}{% assign at_once = '1' %}{% endif %}
 
 {% endfor %}
 
@@ -164,8 +164,7 @@ return confirm("Are you sure you want to clear your cart?");
 <!-- START PREBOOK AMOUNT CHECK -->
           
     {% assign prebook_total = pre_book | plus: pre_book2 | plus: pre_book3 | plus: pre_book4 %}
-          
-    {{ prebook_total }}
+    
           
 <!-- END PREBOOK AMOUNT CHECK -->
 
@@ -288,7 +287,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
+                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Atonce' %} <font color="blue">*AT-ONCE</font> {% endif %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
               {% unless item.variant.title contains 'Default' %}
                 <br>
