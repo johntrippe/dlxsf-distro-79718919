@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2017-09-25T11:41:44-07:00   abfe0b3743b21d3a2cc66b46f99a3629
+  development: 2017-09-28T08:41:18-07:00   153a4bae96c95fc9d0df705e52a6d42d
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2017-09-25T11:41:50-07:00   604ec8c898220b194d3a581a8fd38a53
+  development: 2017-10-02T11:35:42-07:00   ba5458ecf9412a63fccb793656482f00
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -300,7 +300,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2015-12-11T09:35:17-08:00   9090ee2eab86042b9113a031c68b52dc
 templates/index.liquid:
-  development: 2017-09-25T11:41:20-07:00   c0b56004cde99d079f94c6cf1b5f4eed
+  development: 2017-10-02T11:35:10-07:00   eac24e57891310a5138a9da0491ce7c4
 templates/index_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   a266cf35837722a83d1b3f831229b3f7
 templates/list-collections.liquid:
@@ -308,73 +308,73 @@ templates/list-collections.liquid:
 templates/magiczoomplus_backup_pattern_2015.03.30_18.14.42.liquid:
   development: 2015-12-11T09:35:17-08:00   703f147ccb3032265235f93de972993f
 templates/page.anti_app_order-form.liquid:
-  development: 2016-06-23T14:31:40-07:00   1284771f82cb5ddc767bc81ed43b5614
+  development: 2017-10-04T08:34:57-07:00   d0589f07691aa530742aec0bdad3feb9
 templates/page.anti_decks_order-form.liquid:
-  development: 2016-06-23T14:31:35-07:00   9c728b19772b8c4ecae60b9929b065d3
+  development: 2017-10-04T08:34:56-07:00   ef98f27c41ada055b4ef7f43d49ff43d
 templates/page.antihero_acc_order-form.liquid:
-  development: 2016-06-23T14:31:37-07:00   7a97b9a6ffb98fe560dc50ba0ec9d673
+  development: 2017-10-04T08:34:55-07:00   a74586fbf8602af7c5ac920f4b08b2f1
 templates/page.bearings_order-form.liquid:
-  development: 2016-06-23T14:31:39-07:00   135ec868ed3600abaf716e777f65ca79
+  development: 2017-10-04T08:34:54-07:00   1fe626272523b22f596549523ca676b6
 templates/page.bolts_order-form.liquid:
-  development: 2016-06-23T14:31:37-07:00   6f3d4fab3c0e314555c801ccb06f190f
+  development: 2017-10-04T08:34:53-07:00   f0c7d306365bdc5a9bf53977d1988acb
 templates/page.bulk-order.liquid:
   development: 2015-12-11T09:35:17-08:00   e5c53804c9d808343512a5845d6e235f
 templates/page.bushings_order-form.liquid:
-  development: 2016-06-23T14:31:38-07:00   7917b8294475037cee2206876600ce7d
+  development: 2017-10-04T08:34:30-07:00   a1e00900f23d8f72f388ade5b018aa60
 templates/page.contact.liquid:
   development: 2017-06-19T15:56:30-07:00   6cadad93eda71dcf5a28071031a0180f
 templates/page.dlxcafe.liquid:
   development: 2016-03-24T16:04:08-07:00   f3bdb62df1fe70514be3f0d2fdc728da
 templates/page.griptape_order-form.liquid:
-  development: 2016-06-23T14:31:36-07:00   a751d2e2ac97c1e45910fb33a58094e6
+  development: 2017-10-04T08:34:50-07:00   767575968c74276a1c3b396b8237ad83
 templates/page.krooked_acc_order-form.liquid:
-  development: 2016-06-23T14:31:35-07:00   4305d761e44cd353d25fe6fa263ffcfc
+  development: 2017-10-04T08:34:48-07:00   5487b4b335fc7f2d732f089909bccb8c
 templates/page.krooked_app_order-form.liquid:
-  development: 2016-06-23T14:31:33-07:00   bca0b4b606e824f071a63fa4b4b22307
+  development: 2017-10-04T08:34:34-07:00   52d7e0b8ae6b9ac7d3a4aa738d5e5282
 templates/page.krooked_decks_order-form.liquid:
-  development: 2016-06-23T14:31:31-07:00   9059ba9322ef6174de1922be80aa8164
+  development: 2017-10-04T08:34:51-07:00   f8e6f1500570ef7a37ee85d69f7dd2c6
 templates/page.krooked_wheels_order-form.liquid:
-  development: 2016-06-23T14:31:34-07:00   28ee9f515511d4058841a259610f6461
+  development: 2017-10-04T08:34:36-07:00   cfc2afb28549f691277fcaad9b3504c8
 templates/page.liquid:
   development: 2015-12-11T09:35:17-08:00   9e264d02df278c51d9d1a0083da16189
 templates/page.misc-hardware_order-form.liquid:
-  development: 2016-06-23T14:31:30-07:00   c2a58077801dc806c6b687ae7313513f
+  development: 2017-10-04T08:34:37-07:00   0f297c32e4c053b0e345bf17eb9039e0
 templates/page.order-form-links.liquid:
   development: 2016-02-10T15:34:00-08:00   fb6d5c6c770d646a1df562f12a851462
 templates/page.order-form.liquid:
   development: 2016-06-23T14:31:33-07:00   ec09e348a756a50bf60ac378557cf784
 templates/page.real_acc_order-form.liquid:
-  development: 2016-06-23T14:31:32-07:00   235c05bf82d1438435550949109a2fa9
+  development: 2017-10-04T08:34:45-07:00   118aa3a64d48c21d6b0bca5d63ec8e82
 templates/page.real_app_order-form.liquid:
-  development: 2016-06-23T14:31:29-07:00   12005f3619a991cf2e80fae2d5775664
+  development: 2017-10-04T08:34:47-07:00   b8282c0bdf1e3334e75c0b45976d3537
 templates/page.real_decks_order-form.liquid:
-  development: 2016-06-23T14:31:26-07:00   d4601de64afa567a1bc2d912aa26f30b
+  development: 2017-10-04T08:27:13-07:00   66558e2f942406866ff54d1f669cfe39
 templates/page.risers_order-form.liquid:
-  development: 2016-06-23T14:31:27-07:00   e46ee64c85eb88df42ee95cd55ed492a
+  development: 2017-10-04T08:35:35-07:00   1addbdf24eb8fbfdb63a43d998d3909d
 templates/page.skate-tools_order-form.liquid:
-  development: 2016-06-23T14:31:28-07:00   113d0869fb28916a7315ff1a3456131f
+  development: 2017-10-04T08:35:30-07:00   b5523d86ceed5c9c0e8f0fb466db1cf5
 templates/page.spit_wheels_order-form.liquid:
-  development: 2016-06-23T14:31:18-07:00   eefee6b0002f76949285864f1121c0cc
+  development: 2017-10-04T08:30:51-07:00   678f982c9e2ac5d3ea24c3f77ecbfc6f
 templates/page.spitfire_acc_order-form.liquid:
-  development: 2016-06-23T14:31:29-07:00   26cda5aecbb15a39868d6f282861ca9e
+  development: 2017-10-04T08:31:20-07:00   351594ec8b85ad9b61a5637558183855
 templates/page.spitfire_app_order-form.liquid:
-  development: 2016-06-23T14:31:27-07:00   bd6225da88575c6f4775c02231f8029c
+  development: 2017-10-04T08:31:26-07:00   cd0df4c7326e22423d7bdf604d20294c
 templates/page.th_trucks_order-form.liquid:
-  development: 2016-06-23T14:31:18-07:00   d0915e9a445623905c1f5021974ceccd
+  development: 2017-10-04T08:31:32-07:00   aa7fc88f75bd20eaa35a5cd77ef1bcc9
 templates/page.thunder_acc_order-form.liquid:
-  development: 2016-06-23T14:31:17-07:00   02a519c44c66467cfdd6d1244abba3ed
+  development: 2017-10-04T08:31:38-07:00   c821e79a21e8a3d5e570f7888185e3c9
 templates/page.thunder_app_order-form.liquid:
-  development: 2016-06-23T14:31:16-07:00   5741e7b53041633d59e1f1be43c34a54
+  development: 2017-10-04T08:35:27-07:00   a171b0cde13f02fe16619c17f6b0fd6b
 templates/page.userguide.liquid:
   development: 2016-05-13T13:33:40-07:00   5c0be3255a93f9914f3736829ddfe832
 templates/page.venture_acc_order-form.liquid:
-  development: 2016-06-23T14:31:15-07:00   3cea4e314c9d53f9725991f32d0648b3
+  development: 2017-10-04T08:35:24-07:00   2785c11b8d81ee0edcecfb3183177746
 templates/page.venture_app_order-form.liquid:
-  development: 2016-06-23T14:31:15-07:00   afaed23cb09d79e7000b3e6b190c69cc
+  development: 2017-10-04T08:35:19-07:00   62df0cb44bdac6e2a637d693e818f03c
 templates/page.venture_trucks_order-form.liquid:
   development: 2016-06-23T14:31:15-07:00   a55ea98f6794d8805c88a353835a86a2
 templates/page.wax_order-form.liquid:
-  development: 2016-06-23T14:31:16-07:00   673b13fafebec8f7a491cfa916869f25
+  development: 2017-10-04T08:30:08-07:00   8ce5eab6788d9a43fed6a08054bbd8d5
 templates/password.liquid:
   development: 2016-03-21T14:41:19-07:00   293ef6ab41be15713f839ec0dc5265b4
 templates/product.liquid:

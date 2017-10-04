@@ -51,7 +51,7 @@ Use the assign statement outside of this comment block at the top of your templa
           </td>
           <td>
             <a href="{{ product.url | collection }}">
-             <font color="#000">{{ product.title }}</font>{% unless variant.title contains 'Default' %} - <font color="#003399">{{ variant.title }}</font>{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}       {% if variant.inventory_quantity == 0 and variant.title != "Default Title" %}<font color="red">[ On Back Order ]</font>{% endif %}
+             <font color="#000">{{ product.title }}</font>{% unless variant.title contains 'Default' %} - <font color="#003399">{{ variant.title }}</font>{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}       {% if variant.inventory_quantity <= 0 and variant.title != "Default Title" %}<font color="red">[ On Back Order ]</font>{% endif %}
             </a>
           </td>
           <td>
