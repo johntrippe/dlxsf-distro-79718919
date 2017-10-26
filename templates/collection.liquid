@@ -1,6 +1,6 @@
 
 
-{% paginate collection.products by 100 %}
+{% paginate collection.products by 1000 %}
 
 {% include 'breadcrumb' %}
 
@@ -9,12 +9,12 @@
   {% assign has_sidebar = true %}
 {% endif %}
 
-<div class="grid grid-border" itemscope itemtype="http://schema.org/Product">
+<div class="grid grid-border">
 	
 
   {% if has_sidebar %}
   <aside class="sidebar grid-item large--one-fifth collection-filters" id="collectionFilters">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 					
 					<script type="text/javascript">	
 					if($(window).width() >= 900){	
@@ -60,32 +60,8 @@
         </div>
         
         <div class="section-header--right">
-	<!-- START SHOW ONLY AVAILABLE -->
-	
-	{% if  collection.title == "Antihero Decks" %}
-	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small>
-	{% endif %}
-	{% if  collection.title == "Antihero Decks - On Hand" %}
-	 <br><br><small><a href="/collections/antihero-decks">Show All Decks</a></small>
-	{% endif %}
-	
-	{% if  collection.title == "REAL Decks" %}
-	 <br><br><small><a href="/collections/real-decks-on-hand">Show Only On Hand</a></small>
-	{% endif %}
-	{% if  collection.title == "REAL Decks - On Hand" %}
-	 <br><br><small><a href="/collections/real-decks">Show All Decks</a></small>
-	{% endif %}
-	
-	{% if  collection.title == "Krooked Decks" %}
-	 <br><br><small><a href="/collections/krooked-decks-on-hand">Show Only On Hand</a></small>
-	{% endif %}
-	{% if  collection.title == "Krooked Decks - On Hand" %}
-	 <br><br><small><a href="/collections/krooked-decks">Show All Decks</a></small>
-	{% endif %}
-	
-	<!-- END SHOW ONLY AVAILABLE -->
-	
-        {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
+
+
       
       <div class="order-form-add-to-cart">
 	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
@@ -111,8 +87,9 @@
         </div>
       </div>
     {% else %}
-    <header class="section-header">
-      <h1 class="section-header--title section-header--left">{% if collection.title == "All" %} {% for tag in current_tags %}
+    
+    <!-- START COLLECTION ALL COLLECTION TITLE -->
+    		{% if collection.title == "All" %} {% for tag in current_tags %}
         {% assign is_advanced_tag = false %}
         {% assign additional_tag = true %}
         {% if forloop.first %}
@@ -144,17 +121,36 @@
           We have a regular tag that wasn't printed, so print it now
         {% endcomment %}
         {% unless found_tag %}
-          <span>{{ tag }}</span>
+          <h1 class="section-header--title">{{ tag }}</h1>
         {% endunless %}
 
-      {% endfor %} {% else %} <!-- START BRAND HEADERS -->
-    {% if  collection.title contains "REAL" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header_2.jpg?5703579906325659270" width="500"><br><br>
-    {% elsif  collection.title contains "Antihero" %}<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/antiheroooooo.jpg?13246087572366442842" width="500"><br><br>{% elsif  collection.title contains "Krooked" %}<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooooked.jpg?725793528956681251" width="500"><br><br>{% elsif  collection.title contains "Spitfire" %}<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/spit_fireeeee.jpg?16784746170743121625" width="500"><br><br>{% elsif  collection.title contains "Thunder" %}<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/thunder_tilt.jpg?1285884868642122877" width="500"><br><br>{% elsif  collection.title contains "Venture" %}<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/venture_header.jpg?4823303926833150067" width="500"><br><br>{% else %}{{ collection.title }}{% endif %}
-     <!-- END BRAND HEADERS --> {% endif %}</h1>
-     
-      <div class="section-header--right">
-	<!-- START SHOW ONLY AVAILABLE -->
+
+      {% endfor %} {% else %} 
+      
+    <!-- START BRAND BANNERS -->
+    {% if  collection.title == "REAL Decks" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "REAL Apparel" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "REAL Accessories" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "Antihero" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/AH-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "Krooked" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/KR-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "Spitfire" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/SF-1000x200.jpg?6002256310486082427">
+    {% elsif  collection.title contains "Thunder" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/TH-1000x200_9f730e8a-efc6-4a30-a756-d0fd622bf60a.jpg?6002256310486082427">
+    {% elsif  collection.title contains "Venture" %}
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/VE-1000x200.jpg?6002256310486082427">
+    {% else %}
+    <h1 class="section-header--title">{{ collection.title }}</h1>
+    {% endif %}
+    <!-- END BRAND BANNERS -->
+    {% endif %}
+    <!-- END COLLECTION ALL COLLECTION TITLE -->
+    <!-- START SHOW ONLY AVAILABLE -->
 	
 	{% if  collection.title == "Antihero Decks" %}
 	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small><br><br>
@@ -179,9 +175,18 @@
 	
 	<!-- END SHOW ONLY AVAILABLE -->
 	
-        {% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br><font color="red">*Please note that trucks are sold as singles.</font> {% endif %}
+	<!-- START TRUCK NOTE -->
+	{% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br>*<B>Please note</B>* that trucks are sold as singles. {% endif %}
+	<!-- END TRUCK NOTE -->
+    <header class="section-header">
+     
       
-      <div class="order-form-add-to-cart">
+      	
+     
+      <div class="section-header--right">
+
+      
+      <div class="f-nav4">
 	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
             <span class="icon icon-cart"></span>
             {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
@@ -196,34 +201,14 @@
     </header>
     {% endif %}
 
+    
     <div class="grid-uniform">
+		{% for product in collection.products %}
+		{% include 'product-grid-item' %}
+		{% endfor %}
+	</div>
 
-      {% for product in collection.products %}
-	  	
-	  	{% if product.tags contains '8upsell' %}
-  		{% continue %}
-		{% endif %}
 
-        
-        {% if has_sidebar %}
-          {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
-        {% else %}
-          {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
-        {% endif %}
-        {% include 'product-grid-item' %}
-		
-      {% else %}
-
-        <div class="grid-item">
-          <p>{{ 'collections.general.no_matches' | t }}</p>
-        </div>
-      {% endfor %}
-
-    </div>
-	
-
-	
-	
   </div>
 
   {% if paginate.pages > 1 %}
