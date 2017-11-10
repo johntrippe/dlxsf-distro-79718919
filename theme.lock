@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2017-10-27T14:28:47-07:00   4c1b96bf70490959699d67ee9b2b912d
+  development: 2017-11-07T09:39:08-08:00   51c841c1357574302f8cedc3b14af2ca
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2017-10-30T13:31:09-07:00   950c9e5c8d83fc037c0a3326100e1ebc
+  development: 2017-11-07T09:42:11-08:00   dddf6f4ebf1f48d1e85a7cba374784ea
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -285,6 +285,8 @@ templates/collection.test.liquid:
   development: 2016-06-17T11:11:58-07:00   b546daeeea2f21396018c958cf2e6d0b
 templates/collection.video.liquid:
   development: 2017-05-22T11:46:37-07:00   2fb8e93088172757084061bf1d1d36fb
+templates/collection.zion.liquid:
+  development: 2017-11-08T16:31:23-08:00   cb8a6901b833ec8f4c23633499674348
 templates/customers/account.liquid:
   development: 2015-12-11T09:35:16-08:00   f748601a9c8e8e13509ff899a665f1ff
 templates/customers/activate_account.liquid:
@@ -302,7 +304,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2015-12-11T09:35:17-08:00   9090ee2eab86042b9113a031c68b52dc
 templates/index.liquid:
-  development: 2017-10-30T13:31:05-07:00   0946ad815eba06109a7ebb44757c6564
+  development: 2017-11-07T09:36:57-08:00   d7df1b2a441c82ae0ca8491eff13ed24
 templates/index_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   a266cf35837722a83d1b3f831229b3f7
 templates/list-collections.liquid:
