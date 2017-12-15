@@ -126,7 +126,7 @@ snippets/add-to-cart-product-page.liquid:
 snippets/add-to-cart-related.liquid:
   development: 2016-07-11T15:33:36-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart.liquid:
-  development: 2017-05-15T14:02:30-07:00   7fe9a07a845a7295a0b55a53e5c19138
+  development: 2017-12-15T14:02:55-08:00   095d1c499d4caab4e3576d4abd4930d3
 snippets/add-to-cart_8-7-15.liquid:
   development: 2015-12-11T09:35:15-08:00   00316f460d3a9d454632bb377ea2d780
 snippets/advanced-tag-loop.liquid:
