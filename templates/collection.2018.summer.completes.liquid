@@ -9,8 +9,6 @@
   {% assign has_sidebar = true %}
 {% endif %}
 
-
-
 <div class="grid grid-border">
 	
 
@@ -40,7 +38,7 @@
 					
 					
 					
-					<div class="nav-container2" style="background-color: white;">
+					<div class="nav-container2">
 						
 						{% include 'collection-sidebar' %}
 						
@@ -90,7 +88,10 @@
       </div>
     {% else %}
     
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/B2B-1000x500.jpg?4130526615365538606">
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/hdr_distro_DLX-SUM18-Completes-NODATES-1000x500.jpg?5421709265099603465">
+
+    
     <header class="section-header">
      
       
@@ -115,17 +116,35 @@
     {% endif %}
 
 
-
+	<img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
     
- 
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Real' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/antihero_header.jpg?9930134242600258590"><br><br>
     
     <div class="grid-uniform">
 		{% for product in collection.products %}
+		{% if product.vendor == 'Antihero' %}
 		{% include 'product-grid-item' %}
+        {% endif %}
 		{% endfor %}
 	</div>
-
-
+    
+    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooked_header.jpg?9930134242600258590"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Krooked' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
     
 
 
@@ -216,155 +235,3 @@ table.pure-table img { float:left; padding: 5px 0; }
 table.pure-table td { vertical-align: middle; }
 .quantity { text-align: center; width: 60px !important; margin: 0 !important; }
 </style>
-
-
-<!-- START ALERT BOX -->
-<!--
-  <div id="popUp">
-    <div id="close" class="close"><i class="fa fa-times"></i></div>
-    <div id="new"><span>NOTE!</span></div>
-    <h2>Order your Zion Oval Decks NOW. More arrived in our warehouse this morning! <br><br>Zion King is SOLD OUT though.</h2>
-    <br>
-  </div>
-  <div id="plus"><span>NEW<br>&nbsp;&nbsp;<i class="fa fa-plus"></i></span></div>
-</header>
-
-<div id="body"></div>
-
-<style>
-	* {
-
-}
-
-a {
-  text-decoration: none;
-}
-
-
-
-#popUp {
-  position: fixed;
-  max-width: 350px;
-  height: 225px;
-  background: #d9f6ff;
-  border: 7px solid #fff;
-  bottom: 0;
-  margin-left: 0;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-#new span {
-  background: #fff;
-  position: absolute;
-  color: #FF0000;
-  padding: 4px 10px;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-top: -5px;
-}
-
-#popUp .close {
-  color: #464646;
-  right: 8px;
-  top: 0px;
-  position: absolute;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-#popUp h2 {
-  font-size: 17px;
-  color: #464646;
-  line-height: 24px;
-  font-weight: 400;
-  text-align: center;
-  margin-top: 40px;
-  padding: 0 20px;
-}
-
-#body {
-  height: 1200px;
-  background: #eee;
-}
-
-a.button {
-  margin: 0 auto;
-  text-align: center;
-  right: 0;
-  left: 0;
-  position: absolute;
-  width: 120px;
-  font-size: 15px;
-  color: #fff;
-  border-bottom: 2px solid #18729f;
-  background: #1c8dc4;
-  border-radius: 4px;
-  padding: 8px 0;
-}
-
-#plus {
-  position: fixed;
-  color: #fff;
-  bottom: 15%;
-  font-size: 15px;
-  margin-left: -425px;
-  -webkit-transition: all 1.25s ease;
-  -moz-transition: all 1.25s ease;
-  -o-transition: all 1.25s ease;
-  transition: all 1.25s ease;
-  cursor: pointer;
-  text-align: left;
-  letter-spacing: 1px;
-}
-
-#plus span {
-  position: absolute;
-  margin-top: 38px;
-  left: 4px;
-}
-
-#plus::after {
-  content: '';
-  display: block;
-  display: relative;
-  border-top: 55px solid transparent;
-  border-bottom: 55px solid transparent;
-  border-left: 55px solid #1c8dc4;
-}
-
-@media all and (max-width: 900px) {
-  #popUp {
-    margin-left: -425px;
-  }
-  #plus {
-    margin-left: 0px;
-  }
-}
-</style>
-
-<script>
-	$(document).scroll(function() {
-  var scroll = $(this).scrollTop();
-  if (scroll >= 150) {
-    $("#popUp").css("margin-left", "-825px");
-    $("#plus").css("margin-left", "0px");
-  }
-});
-
-$("#plus").click(function() {
-  $("#popUp").css("margin-left", "0px");
-  $("#plus").css("margin-left", "-825px");
-});
-
-$("#close").click(function() {
-  $("#popUp").css("margin-left", "-825px");
-  $("#plus").css("margin-left", "0px");
-});
-</script>
--->
-<!-- END ALERT BOX -->
-

@@ -231,7 +231,8 @@ return confirm("Are you sure you want to clear your cart?");
 
 {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0'  %}
 <br><br>
-<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. Thank you!</h1>
+<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. 
+	<br><br>Please adjust your cart to check-out. Thank you!</h1>
 {% endif %}
 
 {% if prebook_total > 1 %}
@@ -281,7 +282,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item one-third large--one-quarter">
               <a href="{{ item.url }}" class="cart-image">
-                <img {% if item.product.type == "Decks" or item.product.type == "Complete" %} class="Image" {% endif %}src="{{ item | img_url: 'medium' }}"  alt="{{ item.title | escape }}">
+                <img {% if item.product.type == "Decks" or item.product.type == "Complete" or item.product.tags contains 'Completes' %} class="Image" {% endif %}src="{{ item | img_url: 'medium' }}"  alt="{{ item.title | escape }}">
               </a>
             </div>
 
