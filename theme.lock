@@ -146,7 +146,7 @@ snippets/collection-list-item.liquid:
 snippets/collection-sidebar-TEST.liquid:
   development: 2016-06-14T14:40:34-07:00   6b8782a7c5e6972e798e2a3c8428837e
 snippets/collection-sidebar.liquid:
-  development: 2017-11-10T14:33:49-08:00   a947321c6485c653d65dd20857df082a
+  development: 2018-01-03T10:23:45-08:00   534f8d153c28b4644e4c4fab3cbcea0a
 snippets/collection-sorting.liquid:
   development: 2015-12-11T09:35:15-08:00   47fc9865d11eaf0e3e2bcb702105f298
 snippets/collection-views.liquid:
@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2017-12-05T16:05:42-08:00   8aae76bbeeea5fa1b4b628d73f6a8578
+  development: 2018-01-03T10:22:19-08:00   110ff91c8bb61a7268078a348e4661a5
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2017-12-11T11:11:57-08:00   f3ea85f90bfc88241d946760fb289e19
+  development: 2018-01-03T10:21:41-08:00   f5aa768d746f65babf52b98d887eb573
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -261,8 +261,10 @@ templates/collection.2017.summer.dr1.liquid:
   development: 2017-09-11T11:28:10-07:00   0125c7680d8f02aa2194aef49a928d46
 templates/collection.2018.summer.completes.liquid:
   development: 2017-12-05T09:12:45-08:00   d8d75144688efce6a47f5ce492ba4fc3
+templates/collection.all-brands-2.liquid:
+  development: 2018-01-03T10:16:55-08:00   002e1c1770edc8cee754aa99e19fc355
 templates/collection.all-brands.liquid:
-  development: 2017-12-13T09:04:46-08:00   70b2702069a70a86e83c66b395fd5d16
+  development: 2018-01-03T10:20:06-08:00   c832bf02cbfa19c5679b562618c3c05a
 templates/collection.by-brand.liquid:
   development: 2017-11-21T08:34:00-08:00   14fe04b2919a3eaa0cabce27ea000b6e
 templates/collection.liquid:
@@ -310,7 +312,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2015-12-11T09:35:17-08:00   9090ee2eab86042b9113a031c68b52dc
 templates/index.liquid:
-  development: 2017-12-11T11:10:43-08:00   7d6c65fbc2287fa853357a0825093be0
+  development: 2018-01-03T09:56:47-08:00   9908cb080f13c5c23eb505b98a1c6867
 templates/index_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   a266cf35837722a83d1b3f831229b3f7
 templates/list-collections.liquid:
