@@ -126,7 +126,7 @@ snippets/add-to-cart-product-page.liquid:
 snippets/add-to-cart-related.liquid:
   development: 2016-07-11T15:33:36-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart.liquid:
-  development: 2017-12-15T14:02:55-08:00   095d1c499d4caab4e3576d4abd4930d3
+  development: 2018-01-04T14:03:36-08:00   d93451c7b10db84e17defc9975302b5d
 snippets/add-to-cart_8-7-15.liquid:
   development: 2015-12-11T09:35:15-08:00   00316f460d3a9d454632bb377ea2d780
 snippets/advanced-tag-loop.liquid:
@@ -262,7 +262,7 @@ templates/collection.2017.summer.dr1.liquid:
 templates/collection.2018.summer.completes.liquid:
   development: 2017-12-05T09:12:45-08:00   d8d75144688efce6a47f5ce492ba4fc3
 templates/collection.all-brands-2.liquid:
-  development: 2018-01-03T10:16:55-08:00   002e1c1770edc8cee754aa99e19fc355
+  development: 2018-01-04T13:48:28-08:00   315e17ec66594088e17a4931628521ed
 templates/collection.all-brands.liquid:
   development: 2018-01-03T10:20:06-08:00   c832bf02cbfa19c5679b562618c3c05a
 templates/collection.by-brand.liquid:

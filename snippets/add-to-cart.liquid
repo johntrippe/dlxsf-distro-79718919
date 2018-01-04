@@ -26,11 +26,15 @@
     You should be able to add any valid input fields to it 
 -->
 
-{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}<a href="{{ product.url | within: current_collection }}"><span class="product-title">{{ product.title }}</span><font size="1"><br>{% if product.price_max > product.price %}
+{% if product.compare_at_price_max > product.price %} <del>{{ product.compare_at_price_max | money }}</del>{% endif %}<a href="{{ product.url | within: current_collection }}"><span class="product-title"><b>{{ product.title }}</b></span><br>{% if product.price_max > product.price %}
         {{ product.price_min | money | remove: '.00' }} - {{ product.price_max | money | remove: '.00' }}
         {% else %}
         {{ product.price | money | remove: '.00' }}
-        {% endif %}</font></a>
+        {% endif %}</a>
+        
+        {% if product.tags contains 'nbo' %}
+        	<br><font color="#0099cc">New Spring Drop 1<br><font size="1">Shipping 1/15</font></font>
+        {% endif %}
 
 
 
