@@ -102,7 +102,7 @@ config/settings_data.json:
 config/settings_schema.json:
   development: 2015-12-11T09:35:12-08:00   2f4307bd378e461686492dba15c8c75f
 layout/theme.liquid:
-  development: 2018-01-25T11:08:06-08:00   2caa221358a3b859726b7474499a3c2c
+  development: 2018-01-25T11:43:18-08:00   73b7bc01be8decec8311dd92826cb418
 layout/theme_backup_by_magiczoomplus_2015.03.30_18.14.36.liquid:
   development: 2015-12-11T09:35:15-08:00   bfa0d72a688da27dd8e4afb05122f15c
 locales/de.json:

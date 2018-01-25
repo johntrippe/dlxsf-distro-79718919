@@ -113,8 +113,8 @@ location.replace("/account/login");
               {% if shop.customer_accounts_enabled %}
                 <span class="site-header--meta-links medium-down--hide">
                   {% if customer %}
-                    {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                    {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }} &middot; {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                    <a href="/account">[ <font color="red">order history</font> ]</a>
+                     &middot; {{ 'layout.customer.log_out' | t | customer_logout_link }}
                   {% else %}
                     {{ 'layout.customer.sign_in' | t | customer_login_link }}
                     {% if shop.customer_accounts_optional %}
