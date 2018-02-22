@@ -113,7 +113,7 @@ location.replace("/account/login");
               {% if shop.customer_accounts_enabled %}
                 <span class="site-header--meta-links medium-down--hide">
                   {% if customer %}
-                    <a href="/account">[ <font color="red">order history</font> ]</a>
+                    <a href="/account">[ <font color="#0099cc">order history</font> ]</a>
                      &middot; {{ 'layout.customer.log_out' | t | customer_logout_link }}
                   {% else %}
                     {{ 'layout.customer.sign_in' | t | customer_login_link }}
