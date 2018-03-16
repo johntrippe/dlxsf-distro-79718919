@@ -98,6 +98,9 @@
 	  {% include "add-to-cart-product-page" %}
 	  
 	  
+	
+	  
+	  
 	  	<!-- START ADD TO CART BUTTON -->
 				<div class="order-form-add-to-cart">
 			      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
@@ -111,6 +114,10 @@
 		<!-- END ADD TO CART BUTTON -->
 <br><br>
 
+<!-- START LIST PART ID -->
+<p>&nbsp;<div class="tags"><b>Part IDs:</b><br>{% for variant in product.variants %}{{ variant.sku }}{% unless forloop.last %}, {% endunless %}{% endfor %} </p></div>
+<!-- START LIST PART ID -->
+
 
       <hr>
 
@@ -118,11 +125,17 @@
 
     <div class="product-description rte" itemprop="description">
       {{ product.description }}
-    </div>  
+    </div> 
+        <!-- START LINK TO PRODUCT PHOTOS -->
+    <div class="product-description rte" itemprop="description">
+      <a href="https://www.dlxcafe.com/search/{{ variant.sku }}?utm_source=B2Bs&utm_medium=B2B%20Button&utm_campaign=B2Bs%20Product%20Photos%20Button" target="_Blank" class="btn btn--small">Download Product Photos</a>
+    </div> 
+    <!-- END LINK TO PRODUCT PHOTOS --> 
+    
     <!-- START INSERT COLLAPSIBLE TEXT -->
     {% if  collection.title == "Thunder Trucks" %}
 			 <li class="clearfix filter">
-			    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle2 clearfix filter">&nbsp;&nbsp;SIZE GUIDE<span id="element5" style="float:right; padding-right:30px;">+</a></label>
+			    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle2 clearfix btn btn--small filter">&nbsp;&nbsp;SIZE GUIDE<span id="element5" style="float:right; padding-right:30px;">+</a></label>
 			    <ul class="nav nav-list tree2 bullets">
 			      <li><a href="https://cdn.shopify.com/s/files/1/0714/9533/files/TH2_size_dimensions.jpg?8065062943502995291" target="_Blank"><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/TH2_size_dimensions.jpg?8065062943502995291" border="0"></a><br>Thunder Size Guide</li>
 			    </ul>
