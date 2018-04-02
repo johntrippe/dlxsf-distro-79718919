@@ -146,7 +146,7 @@ snippets/collection-list-item.liquid:
 snippets/collection-sidebar-TEST.liquid:
   development: 2016-06-14T14:40:34-07:00   6b8782a7c5e6972e798e2a3c8428837e
 snippets/collection-sidebar.liquid:
-  development: 2018-03-12T15:27:08-07:00   4cd1c7f615c0195c06a05dfa451c4059
+  development: 2018-03-23T13:51:30-07:00   11c0c28cb85a12b6194d924b98785131
 snippets/collection-sorting.liquid:
   development: 2015-12-11T09:35:15-08:00   47fc9865d11eaf0e3e2bcb702105f298
 snippets/collection-views.liquid:
@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2018-03-13T09:11:41-07:00   6ca0b00d93f14407705ee45dbf9a81be
+  development: 2018-03-26T09:41:41-07:00   6642891a34bcc15302b8fc516ead8414
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2018-03-13T09:11:49-07:00   a10ddc90b68f8821d8f4289cbc86160f
+  development: 2018-04-02T09:07:12-07:00   b6c3f2d916bfbf0c5fb4cc293c62be42
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -266,7 +266,7 @@ templates/collection.all-brands-2.liquid:
 templates/collection.all-brands-4.liquid:
   development: 2018-02-06T13:52:34-08:00   e7ab3e7ca51a31718fb5e6f1505f6c2a
 templates/collection.all-brands.liquid:
-  development: 2018-01-03T10:20:06-08:00   c832bf02cbfa19c5679b562618c3c05a
+  development: 2018-03-19T14:37:14-07:00   bc08596d6a08aad07bd9c6e76c74df99
 templates/collection.by-brand.liquid:
   development: 2017-11-21T08:34:00-08:00   14fe04b2919a3eaa0cabce27ea000b6e
 templates/collection.liquid:
@@ -320,7 +320,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2015-12-11T09:35:17-08:00   9090ee2eab86042b9113a031c68b52dc
 templates/index.liquid:
-  development: 2018-03-12T09:41:28-07:00   0513312db0185907d8fd7f63e2f96627
+  development: 2018-04-02T09:07:31-07:00   d4a9a2cc24926ff6f9ff4eb586882ce1
 templates/index_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   a266cf35837722a83d1b3f831229b3f7
 templates/list-collections.liquid:

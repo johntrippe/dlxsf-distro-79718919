@@ -121,11 +121,11 @@ function changeText(idElement) {
 	      
 	    </ul>
 	    
-{% elsif collection.title == "2018 Spring Drop 1"   %}
+{% elsif collection.title == "2018 HOLIDAY PREBOOK"   %}
 
 
 	   <hr>
-	    <label><b>2018 Spring Drop 1</b></label>
+	    <label><b>2018 Holiday Prebook</b></label>
 	    
 	    <ul class="clearfix filters">
 	      <li class="clearfix filters"><a href="#real">&#183; Real</a></li>
@@ -133,6 +133,7 @@ function changeText(idElement) {
 		  <li class="clearfix filters"><a href="#krooked">&#183; Krooked</a></li>
 		  <li class="clearfix filters"><a href="#spitfire">&#183; Spitfire</a></li>
 		  <li class="clearfix filters"><a href="#thunder">&#183; Thunder</a></li>
+		  <li class="clearfix filters"><a href="#venture">&#183; Venture</a></li>
 	      
 	    </ul>
 		
@@ -204,7 +205,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Pro Trucks, Titanium Lights, Pro Titanium Lights, Hollow Lights, Pro Hollow Lights, Pro Lights, Lights, Polshed, Color, Sonora' | split: ',' %}
+	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Pro Trucks, Titanium Lights, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(3)" class="tree-toggle clearfix filter">&nbsp;&nbsp;STYLE<span id="element3" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}

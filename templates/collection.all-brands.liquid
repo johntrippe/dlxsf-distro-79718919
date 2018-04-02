@@ -88,7 +88,7 @@
       </div>
     {% else %}
     
-    <img src="https://cdn.shopify.com/s/files/1/1092/4144/files/2018_bts_prebook.png?3490074196470081722">
+    <img src="https://cdn.shopify.com/s/files/1/1092/4144/files/DISTRO-HOLIDAY-PRE.png?5804414813984541490">
     
     <header class="section-header">
      
@@ -134,7 +134,7 @@
 		{% endfor %}
 	</div>
     
-    <a name="krooked"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooked_header.jpg?9930134242600258590"><br><br>
+   <a name="krooked"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/krooked_header.jpg?9930134242600258590"><br><br>
     
 	<div class="grid-uniform">
 		{% for product in collection.products %}
@@ -159,6 +159,16 @@
 	<div class="grid-uniform">
 		{% for product in collection.products %}
 		{% if product.vendor == 'Thunder' %}
+		{% include 'product-grid-item' %}
+        {% endif %}
+		{% endfor %}
+    </div>
+    
+    <a name="venture"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/venture_header.jpg?16657586068414848310"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == 'Venture' %}
 		{% include 'product-grid-item' %}
         {% endif %}
 		{% endfor %}
