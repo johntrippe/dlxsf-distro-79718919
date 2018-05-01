@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2018-04-25T12:01:23-07:00   7641816cf4cb8ca0faa432a12a452352
+  development: 2018-04-27T14:13:55-07:00   5fefdade26f18a31afbd9c1ecef9a125
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2018-04-25T12:01:15-07:00   ce3f64e04cd494cf7f97a90892beddab
+  development: 2018-04-27T14:13:53-07:00   ecef3a58f8be8becfbe91a02232eb734
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -264,7 +264,7 @@ templates/collection.2018.summer.completes.liquid:
 templates/collection.all-brands-2.liquid:
   development: 2018-01-16T08:47:48-08:00   500e25cd06cea6481daa3d6388a0e38f
 templates/collection.all-brands-3.liquid:
-  development: 2018-04-25T09:51:36-07:00   a17c989b3811c5bf424ac262d2a066f3
+  development: 2018-04-27T14:13:01-07:00   cdd01b38f88d938772e6241719e714ab
 templates/collection.all-brands-4.liquid:
   development: 2018-02-06T13:52:34-08:00   e7ab3e7ca51a31718fb5e6f1505f6c2a
 templates/collection.all-brands.liquid:
@@ -400,7 +400,7 @@ templates/page.wax_order-form.liquid:
 templates/password.liquid:
   development: 2016-03-21T14:41:19-07:00   293ef6ab41be15713f839ec0dc5265b4
 templates/product.liquid:
-  development: 2018-03-16T15:01:37-07:00   3ed825b99da262bfb4f69f110a65b285
+  development: 2018-05-01T11:24:09-07:00   175733eff9b3e3213ab787b88c418843
 templates/product_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   ca20041dbdda326baa415163e15eb372
 templates/product_backup_4_7_15.liquid:
