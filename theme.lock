@@ -156,11 +156,11 @@ snippets/comment.liquid:
 snippets/featured-collection.liquid:
   development: 2015-12-11T09:35:15-08:00   32bb9d0aa40741d14b8ae53f1779b781
 snippets/featured-homepage.liquid:
-  development: 2018-04-27T14:13:55-07:00   5fefdade26f18a31afbd9c1ecef9a125
+  development: 2018-05-09T09:51:16-07:00   6e9825135c5a60dfd9bf32795bfa3c9c
 snippets/featured-row.liquid:
   development: 2015-12-11T09:35:15-08:00   b2bd408e97051f823ae9a5a9570630b9
 snippets/featured.liquid:
-  development: 2018-04-27T14:13:53-07:00   ecef3a58f8be8becfbe91a02232eb734
+  development: 2018-05-09T09:51:08-07:00   5590e3dcf1cdf167d8e830d79c310ab6
 snippets/footer.liquid:
   development: 2015-12-11T09:35:16-08:00   bf99cc9298b4aa6a2a352e731243ee1b
 snippets/form-errors-custom.liquid:
@@ -322,7 +322,7 @@ templates/customers/reset_password.liquid:
 templates/gift_card.liquid:
   development: 2015-12-11T09:35:17-08:00   9090ee2eab86042b9113a031c68b52dc
 templates/index.liquid:
-  development: 2018-04-23T09:21:47-07:00   5ad62b04fd134e87f91ed47c760733b4
+  development: 2018-05-07T09:42:18-07:00   2f4c314f0720e523047d67834f930809
 templates/index_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   a266cf35837722a83d1b3f831229b3f7
 templates/list-collections.liquid:
