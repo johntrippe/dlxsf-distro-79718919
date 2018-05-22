@@ -203,6 +203,21 @@ return confirm("Are you sure you want to clear your cart?");
     {% assign num_pricepoint = temp5 %}
 {% endfor %}
 
+{% for item in cart.items %}
+	{% assign prefix = item.sku | truncate: 1, '' %}
+	{% if prefix == '6' or prefix == '7' or prefix == '8' %}
+		{% capture temp8 %}{{ num_acc | plus: item.quantity }}{% endcapture %}
+    {% endif %}
+    {% assign num_acc = temp8 %}
+{% endfor %}
+
+{% for item in cart.items %}
+    {% if item.product.type == "Apparel" %}       
+         {% capture temp7 %}{{ num_apparel | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_apparel = temp7 %}
+{% endfor %}
+
 <!-- START LIMIT ON SPECIAL PRODUCT -->
 {% assign limit_item = '0' %}
 {% for item in cart.items %}
@@ -220,10 +235,26 @@ return confirm("Are you sure you want to clear your cart?");
 {% endif %}
 <!-- END LIMIT ON SPECIAL PRODUCT -->
 
+{% if num > '0' %}  
 # of Reg Decks: {{ num }}
+{% endif %}
+{% if num_pricepoint > '0' %} 
 <br># of Pricepoint Decks: {{ num_pricepoint }}
+{% endif %}
+{% if num_trucks > '0' %} 
 <br># of Truck Sets: {{ num_trucks | divided_by: 2 }}
+{% endif %}
+{% if num_wheels > '0' %} 
 <br># of Wheel Sets: {{ num_wheels }}
+{% endif %}
+
+{% if num_apparel > '0' %} 
+<br># of Apparel: {{ num_apparel }}
+{% endif %}
+{% if num_acc > '0' %} 
+<br># of Accessories: {{ num_acc }}
+{% endif %}
+
 <br>--
 <br>Total: {{ cart.item_count }} {{ cart.item_count | pluralize: 'Item', 'Items' }} ({{ cart.total_price | money }})
 <br><br>Note: Price Point & Sale decks don't count towards quantity discounts. 
