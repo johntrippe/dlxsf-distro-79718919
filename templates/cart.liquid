@@ -218,6 +218,13 @@ return confirm("Are you sure you want to clear your cart?");
     {% assign num_apparel = temp7 %}
 {% endfor %}
 
+{% for item in cart.items %}
+    {% if item.product.type == "Prebook" %}       
+         {% capture temp8 %}{{ num_prebook | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_prebook = temp8 %}
+{% endfor %}
+
 <!-- START LIMIT ON SPECIAL PRODUCT -->
 {% assign limit_item = '0' %}
 {% for item in cart.items %}
@@ -253,6 +260,9 @@ return confirm("Are you sure you want to clear your cart?");
 {% endif %}
 {% if num_acc > '0' %} 
 <br># of Accessories: {{ num_acc }}
+{% endif %}
+{% if num_prebook > '0' %} 
+<br># of Prebook: {{ num_prebook }}
 {% endif %}
 
 <br>--

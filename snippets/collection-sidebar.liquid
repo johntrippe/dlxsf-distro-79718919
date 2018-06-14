@@ -61,6 +61,13 @@
     {% assign num_apparel = temp7 %}
 {% endfor %}
 
+{% for item in cart.items %}
+    {% if item.product.type == "Prebook" %}       
+         {% capture temp8 %}{{ num_prebook | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_prebook = temp8 %}
+{% endfor %}
+
 
 
 
@@ -84,6 +91,9 @@
 {% endif %}
 {% if num_acc > '0' %} 
 <br># of Accessories: {{ num_acc }}
+{% endif %}
+{% if num_prebook > '0' %} 
+<br># of Prebook: {{ num_prebook }}
 {% endif %}
 
 <br>--
@@ -228,7 +238,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Andrew Allen, Youness Amrani, Tom Asta, Youness Amrani, Brian Anderson, Mike Anderson, David Bachinsky, Lacey Baker, Theotis Beasley, Raney Beres, Elijah Berle, Brandon Biebel, Justin Brock, Robbie Brockel, Dennis Busenitz, John Cardiel, Chris Cole, Brad Cromer, Jack Curtain, Jake Donnelly, Dan Drehobl, Eric Dressen, Erik Ellington, Chima Ferguson, Jamie Foy, Frank Gerwer, Mark Gonzales, Jeff Grosso, Tommy Guerrero, Felipe Gustavo, James Hardy, Peter Hewitt, Hjalte Halberg, Brian Hansen, Keith Hufnagel, Marc Johnson, Cory Kennedy, PJ Ladd, Louie Lopez, Sean Malto, Josh Matthews, Tony Miorana, Lance Mountain, Darren Navarrette, Silas Baxter Neal, Shane ONeill, Tyshawn Pedigree, Chris Pfanner, Collin Provost, Torey Pudwill, Peter Ramondetta, Andrew Reynolds, Paul Rodriguez, Andy Roy, Robbie Russo, Ronnie Sandoval, Max Schaaf, Miles Silvas, Evan Smith, Na-Kel Smith, Daewon Song, Julien Stranger, Mark Suciu, Grant Taylor, Raven Tershy, Davis Torgerson, Tony Trujillo, Daan Van Der Linden, Anthony Van Engelen, Nick Tucker, Rodrigo TX, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest, Zion Wright' | split: ',' %}
+	    {% assign tags = 'Andrew Allen, Youness Amrani, Tom Asta, Youness Amrani, Brian Anderson, Mike Anderson, David Bachinsky, Lacey Baker, Theotis Beasley, Raney Beres, Elijah Berle, Brandon Biebel, Justin Brock, Robbie Brockel, Dennis Busenitz, John Cardiel, Chris Cole, Brad Cromer, Jack Curtain, Jake Donnelly, Dan Drehobl, Eric Dressen, Erik Ellington, Chima Ferguson, Jamie Foy, Frank Gerwer, Mark Gonzales, Jeff Grosso, Tommy Guerrero, Felipe Gustavo, James Hardy, Peter Hewitt, Hjalte Halberg, Brian Hansen, Keith Hufnagel, Marc Johnson, Cory Kennedy, PJ Ladd, Louie Lopez, Sean Malto, Josh Matthews, Tony Miorana, Lance Mountain, Darren Navarrette, Silas Baxter Neal, Shane Oneill, Tyshawn Pedigree, Chris Pfanner, Collin Provost, Torey Pudwill, Peter Ramondetta, Andrew Reynolds, Paul Rodriguez, Andy Roy, Robbie Russo, Ronnie Sandoval, Max Schaaf, Miles Silvas, Evan Smith, Na-Kel Smith, Daewon Song, Julien Stranger, Mark Suciu, Grant Taylor, Raven Tershy, Davis Torgerson, Tony Trujillo, Daan Van Der Linden, Anthony Van Engelen, Nick Tucker, Rodrigo TX, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest, Zion Wright' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(2)" class="tree-toggle clearfix filter">&nbsp;&nbsp;PRO<span id="element2" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
@@ -243,7 +253,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Pro Trucks, Titanium Lights, Team Titaniums, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
+	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Lock-Ins, Team Classics, Colored, Pro Trucks, Titanium Lights, Team Titaniums, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(3)" class="tree-toggle clearfix filter">&nbsp;&nbsp;STYLE<span id="element3" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}

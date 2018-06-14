@@ -1,10 +1,13 @@
+
+
 <div class="grid-item" style="padding: 0px;">
 	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
 		<!-- START VIDEO -->
-		<a href="/collections/real-decks"><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/zion-thrasher-b2b-2.jpg?1898272223449223836" border="0"></a>
+		<a href="/collections/real-decks"><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/zion-thrasher-b2b.jpg?3885022666790525502" border="0"></a>
 		<!-- END VIDEO -->
 	</div>
 </div>
+
 <div class="grid-item" style="padding: 0px;">
 	
 	<!-- START 2 SECTION -->
@@ -28,8 +31,28 @@
 		
 		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="/collections/real-decks/elites"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/elite.gif?11811031185384581884"></a></div>
 		
-		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="/pages/dlx-cafe"><img border="0" src="https://cdn.shopify.com/s/files/1/0714/9533/files/dlx-coffeebeans.jpg?2268601405624649662"></a><br><br></div>
+		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="/pages/dlx-cafe"><img border="0" src="{{ section.settings.promo8 }}"></a><br><br></div>
 	
 	
 </div>
 </div>
+
+
+{% schema %}
+  {
+  "name": "Promo 8",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "promo8",
+      "label": "Promo 8"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
