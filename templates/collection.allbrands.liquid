@@ -38,7 +38,7 @@
 					
 					
 					
-					<div class="nav-container2" style="background-color: white;">
+					<div class="nav-container2">
 						
 						{% include 'collection-sidebar' %}
 						
@@ -88,96 +88,9 @@
       </div>
     {% else %}
     
-    <!-- START COLLECTION ALL COLLECTION TITLE -->
-    		{% if collection.title == "All" %} {% for tag in current_tags %}
-        {% assign is_advanced_tag = false %}
-        {% assign additional_tag = true %}
-        {% if forloop.first %}
-          {% assign additional_tag = false %}
-        {% endif %}
-
-        {% comment %}
-          Track whether the tag gets printed
-        {% endcomment %}
-        {% assign found_tag = false %}
-
-        {% for cat_item in cat_array %}
-          {% unless cat_item == '' %}
-
-            {% if tag contains cat_item %}
-              {% assign is_advanced_tag = true %}
-              {% if additional_tag %}
-                <span>+</span>
-              {% endif %}
-              {% assign found_tag = true %}
-              <span>
-                {{ tag | remove_first: cat_item | remove: '_' }}
-              </span>
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-
-        {% comment %}
-          We have a regular tag that wasn't printed, so print it now
-        {% endcomment %}
-        {% unless found_tag %}
-          <h1 class="section-header--title">{{ tag }}</h1>
-        {% endunless %}
-
-
-      {% endfor %} {% else %} 
-      
-    <!-- START BRAND BANNERS -->
-    {% if  collection.title == "REAL Decks" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "REAL Apparel" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "REAL Accessories" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/RS-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "Antihero" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/AH-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "Krooked" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/KR-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "Spitfire" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/SF-1000x200.jpg?6002256310486082427">
-    {% elsif  collection.title contains "Thunder" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/TH-1000x200_9f730e8a-efc6-4a30-a756-d0fd622bf60a.jpg?6002256310486082427">
-    {% elsif  collection.title contains "Venture" %}
-    <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/VE-1000x200.jpg?6002256310486082427">
-    {% else %}
-    <h1 class="section-header--title">{{ collection.title }}</h1>
-    {% endif %}
-    <!-- END BRAND BANNERS -->
-    {% endif %}
-    <!-- END COLLECTION ALL COLLECTION TITLE -->
-    <!-- START SHOW ONLY AVAILABLE -->
-	
-	{% if  collection.title == "Antihero Decks" %}
-	 <br><br><small><a href="/collections/antihero-decks-on-hand">Show Only On Hand</a></small><br><br>
-	{% endif %}
-	{% if  collection.title == "Antihero Decks - On Hand" %}
-	 <br><br><small><a href="/collections/antihero-decks">Show All Decks</a></small><br><br>
-	{% endif %}
-	
-	{% if  collection.title == "REAL Decks" %}
-	 <br><br><small><a href="/collections/real-decks-on-hand">Show Only On Hand</a></small><br><br>
-	{% endif %}
-	{% if  collection.title == "REAL Decks - On Hand" %}
-	 <br><br><small><a href="/collections/real-decks">Show All Decks</a></small><br><br>
-	{% endif %}
-	
-	{% if  collection.title == "Krooked Decks" %}
-	 <br><br><small><a href="/collections/krooked-decks-on-hand">Show Only On Hand</a></small><br><br>
-	{% endif %}
-	{% if  collection.title == "Krooked Decks - On Hand" %}
-	 <br><br><small><a href="/collections/krooked-decks">Show All Decks</a></small><br><br>
-	{% endif %}
-	
-	<!-- END SHOW ONLY AVAILABLE -->
-	
-	<!-- START TRUCK NOTE -->
-	{% include 'toggle-filters' %} {% if  collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %} <br><br>*<B>Please note</B>* that trucks are sold as singles. {% endif %}
-	<!-- END TRUCK NOTE -->
+    {% section 'collection-header' %}
+    
+    
     <header class="section-header">
      
       
@@ -201,12 +114,10 @@
     </header>
     {% endif %}
 
+	
     
-    <div class="grid-uniform">
-		{% for product in collection.products %}
-		{% include 'product-grid-item' %}
-		{% endfor %}
-	</div>
+{% section 'collection' %}
+    
 
 
   </div>

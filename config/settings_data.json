@@ -134,6 +134,50 @@
     "checkout_banner_background_color": "#ffffff",
     "checkout_headline": "",
     "checkout_call_to_action_color": "#8fc243",
+    "sections": {
+      "homepage": {
+        "type": "homepage",
+        "settings": {
+          "promo1": "shopify:\/\/shop_images\/zion-thrasher-b2b.jpg",
+          "promo1link": "\/collections\/real-decks",
+          "promo2": "shopify:\/\/shop_images\/5-sf-sticker.gif",
+          "promo2link": "\/collections\/stickers",
+          "promo3": "shopify:\/\/shop_images\/zion.png",
+          "promo3link": "\/collections\/real-decks\/zion-floral",
+          "promo4": "shopify:\/\/shop_images\/grip.gif",
+          "promo4link": "\/collections\/griptape",
+          "promo5": "shopify:\/\/shop_images\/KR-krouded.png",
+          "promo5link": "\/collections\/krooked-decks\/krouded",
+          "promo6": "shopify:\/\/shop_images\/covert.png",
+          "promo6link": "\/collections\/spitfire-covert",
+          "promo7": "shopify:\/\/shop_images\/elite.gif",
+          "promo7link": "\/collections\/real-decks\/elites",
+          "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
+          "promo8link": "\/pages\/dlx-cafe"
+        }
+      },
+      "featured": {
+        "type": "featured",
+        "settings": {
+          "promo1": "shopify:\/\/shop_images\/ronnie-NOD-b2b2.png",
+          "promo1link": "\/collections\/2018-summer",
+          "promo2": "shopify:\/\/shop_images\/na-kel-2.png",
+          "promo2link": "\/collections\/trucks\/products\/061318-na-keltakeover-polished-black",
+          "promo3": "shopify:\/\/shop_images\/banners-3.gif",
+          "promo3link": "\/collections\/spitfire-accessories\/banners",
+          "promo4": "shopify:\/\/shop_images\/ah_banner.jpg",
+          "promo4link": "\/collections\/antihero-accessories\/products\/061318-eagle-banner-army",
+          "promo5": "shopify:\/\/shop_images\/tool-4.jpg",
+          "promo5link": "\/collections\/skate-tools",
+          "promo6": "shopify:\/\/shop_images\/flux.jpg",
+          "promo6link": "\/collections\/thunder-trucks\/products\/061318-flux-sonora-hollow-lights-front",
+          "promo7": "shopify:\/\/shop_images\/elite.gif",
+          "promo7link": "\/collections\/real-decks\/elites",
+          "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
+          "promo8link": "\/pages\/dlx-cafe"
+        }
+      }
+    },
     "content_for_index": []
   },
   "presets": {

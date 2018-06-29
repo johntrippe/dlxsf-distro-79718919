@@ -1,0 +1,201 @@
+{% paginate collection.products by 1000 %}
+
+{% if section.settings.brand1 == "Real" %}
+{% assign image1 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand1 == "Antihero" %}
+{% assign image1 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand1 == "Krooked" %}
+{% assign image1 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand1 == "Spitfire" %}
+{% assign image1 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand1 == "Thunder" %}
+{% assign image1 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand1 == "Venture" %}
+{% assign image1 = "venture_header.jpg?16657586068414848310" %}
+{% endif %}
+
+{% if section.settings.brand2 == "Real" %}
+{% assign image2 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand2 == "Antihero" %}
+{% assign image2 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand2 == "Krooked" %}
+{% assign image2 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand2 == "Spitfire" %}
+{% assign image2 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand2 == "Thunder" %}
+{% assign image2 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand2 == "Venture" %}
+{% assign image2 = "venture_header.jpg?16657586068414848310" %}
+{% endif %}
+
+{% if section.settings.brand3 == "Real" %}
+{% assign image3 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand3 == "Antihero" %}
+{% assign image3 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand3 == "Krooked" %}
+{% assign image3 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand3 == "Spitfire" %}
+{% assign image3 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand3 == "Thunder" %}
+{% assign image3 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand3 == "Venture" %}
+{% assign image3 = "venture_header.jpg?16657586068414848310" %}
+{% endif %}
+
+{% if section.settings.brand4 == "Real" %}
+{% assign image4 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand4 == "Antihero" %}
+{% assign image4 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand4 == "Krooked" %}
+{% assign image4 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand4 == "Spitfire" %}
+{% assign image4 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand4 == "Thunder" %}
+{% assign image4 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand4 == "Venture" %}
+{% assign image4 = "venture_header.jpg?16657586068414848310" %}
+{% endif %}
+
+{% if section.settings.brand5 == "Real" %}
+{% assign image5 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand5 == "Antihero" %}
+{% assign image5 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand5 == "Krooked" %}
+{% assign image5 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand5 == "Spitfire" %}
+{% assign image5 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand5 == "Thunder" %}
+{% assign image5 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand5 == "Venture" %}
+{% assign image5 = "rventure_header.jpg?16657586068414848310" %}
+{% endif %}
+
+{% if section.settings.brand6 == "Real" %}
+{% assign image6 = "real_header.jpg?16657586068414848310" %}
+{% elsif section.settings.brand6 == "Antihero" %}
+{% assign image6 = "antihero_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand6 == "Krooked" %}
+{% assign image6 = "krooked_header.jpg?9930134242600258590" %}
+{% elsif section.settings.brand6 == "Spitfire" %}
+{% assign image6 = "SF-HEADER.jpg?16657586068414848310" %}
+{% elsif section.settings.brand6 == "Thunder" %}
+{% assign image6 = "thunder_banner.jpg?16657586068414848310" %}
+{% elsif section.settings.brand6 == "Venture" %}
+{% assign image6 = "venture_header.jpg?16657586068414848310" %}
+{% endif %}
+    
+    <a name="real"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/real_header.jpg?16657586068414848310"><br><br>
+    
+	<div class="grid-uniform">
+		{% for product in collection.products %}
+		{% if product.vendor == section.settings.brand1 %}
+		{% include 'product-grid-item' %}
+		{% endif %}
+		{% endfor %}
+    </div>
+
+{% if section.settings.brand2 != blank %}
+	<a name="{{ section.settings.brand2 }}"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/{{ image2 }}"><br><br>
+    
+    <div class="grid-uniform">
+	    {% for product in collection.products %}
+		{% if product.vendor == section.settings.brand2 %}
+		{% include 'product-grid-item' %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if section.settings.brand3 != blank %}	
+	<a name="{{ section.settings.brand3 }}"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/{{ image3 }}"><br><br>
+    
+    <div class="grid-uniform">
+	    {% for product in collection.products %}
+		{% if product.vendor == section.settings.brand3 %}
+		{% include 'product-grid-item' %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
+{% if section.settings.brand4 != blank %}
+	<a name="{{ section.settings.brand4 }}"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/{{ image4 }}"><br><br>
+    
+    <div class="grid-uniform">
+	    {% for product in collection.products %}
+		{% if product.vendor == section.settings.brand4 %}
+		{% include 'product-grid-item' %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
+{% if section.settings.brand5 != blank %}	
+	<a name="{{ section.settings.brand5 }}"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/{{ image5 }}"><br><br>
+    
+    <div class="grid-uniform">
+	    {% for product in collection.products %}
+		{% if product.vendor == section.settings.brand5 %}
+		{% include 'product-grid-item' %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}	
+{% if section.settings.brand6 != blank %}	
+	<a name="{{ section.settings.brand6 }}"></a><img src="https://cdn.shopify.com/s/files/1/0714/9533/files/{{ image6 }}"><br><br>
+    
+    <div class="grid-uniform">
+	    {% for product in collection.products %}
+		{% if product.vendor == section.settings.brand6 %}
+		{% include 'product-grid-item' %}
+	    {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}   
+
+{% endpaginate %}
+
+
+
+
+{% schema %}
+{
+  "name": "Collection Brands",
+  "settings": [
+    {
+	  "type": "text",
+      "id": "brand1",
+      "label": "Brand #1"
+    },
+    {
+	  "type": "text",
+      "id": "brand2",
+      "label": "Brand #2"
+    },
+    {
+	  "type": "text",
+      "id": "brand3",
+      "label": "Brand #3"
+    },
+    {
+	  "type": "text",
+      "id": "brand4",
+      "label": "Brand #4"
+    },
+    {
+	  "type": "text",
+      "id": "brand5",
+      "label": "Brand #5"
+    },
+    {
+	  "type": "text",
+      "id": "brand6",
+      "label": "Brand #6"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

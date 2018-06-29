@@ -331,10 +331,10 @@ return confirm("Are you sure you want to clear your cart?");
               <a href="{{ item.url }}">
                 {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Atonce' %} <font color="blue">*AT-ONCE</font> {% endif %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
-              {% unless item.variant.title contains 'Default' %}
+              
                 <br>
-                <small>{{ item.variant.title }}</small>
-              {% endunless %}
+                <small>{% unless item.variant.title contains 'Default' %}{{ item.variant.title }}<br>{% endunless %}Part ID: {{ item.variant.sku }}</small>
+              
 
               {% if item.properties.size > 0 %}
               <p>
