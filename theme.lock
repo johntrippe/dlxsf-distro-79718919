@@ -430,7 +430,7 @@ templates/page.wax_order-form.liquid:
 templates/password.liquid:
   development: 2016-03-21T14:41:19-07:00   293ef6ab41be15713f839ec0dc5265b4
 templates/product.liquid:
-  development: 2018-06-14T12:02:18-07:00   ca07193c07e8966198341f015e5449a0
+  development: 2018-06-29T09:37:34-07:00   bf8a14b8bb715698d4723ecf2b5195e8
 templates/product_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   ca20041dbdda326baa415163e15eb372
 templates/product_backup_4_7_15.liquid:

@@ -9,24 +9,37 @@
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
 
-	<div class="grid-item large--one-fifth">
-		
-		        <!-- START LEFT NAV -->
-		    <style type="text/css">
-			    
-			    @media ( max-width: 1000px) {
-			    #radical { display: none; }
-			    }
-			</style>
-				
-				
-		    	<div class="nav-container2" style="background-color: white;">
-			    {% include 'collection-sidebar' %}
-				</div> 
-		    
-		    	<!-- END LEFT NAV -->
-	
-	</div>
+  <aside class="sidebar grid-item large--one-fifth collection-filters" id="collectionFilters">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+					
+					<script type="text/javascript">	
+					if($(window).width() >= 900){	
+						jQuery("document").ready(function($){
+						
+						var nav3 = $('.nav-container2');
+						
+						$(window).scroll(function () {
+							if ($(this).scrollTop() > 136) {
+								nav3.addClass("f-nav2");
+							} else {
+								nav3.removeClass("f-nav2");
+							}
+						});
+					
+					});
+					}
+					
+					</script>
+					
+					
+					
+					
+					<div class="nav-container2" style="background-color: white;">
+						
+						{% include 'collection-sidebar' %}
+						
+					</div>
+  </aside>
     	
     	
 	<div class="grid-item large--two-fifths grid-border--left">
