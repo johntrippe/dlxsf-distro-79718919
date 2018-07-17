@@ -159,10 +159,10 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/ronnie-NOD-b2b2.png",
-          "promo1link": "\/collections\/2018-summer",
-          "promo2": "shopify:\/\/shop_images\/na-kel-2.png",
-          "promo2link": "\/collections\/trucks\/products\/061318-na-keltakeover-polished-black",
+          "promo1": "shopify:\/\/shop_images\/ID4-Flyer-B2Bmain.jpg",
+          "promo1link": "",
+          "promo2": "shopify:\/\/shop_images\/distro-fp.jpg",
+          "promo2link": "\/collections\/real-kelch-flyer-preorder",
           "promo3": "shopify:\/\/shop_images\/banners-3.gif",
           "promo3link": "\/collections\/spitfire-accessories\/banners",
           "promo4": "shopify:\/\/shop_images\/ah_banner.jpg",
@@ -175,6 +175,40 @@
           "promo7link": "\/collections\/real-decks\/elites",
           "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
           "promo8link": "\/pages\/dlx-cafe"
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/nod-sp19-prebook-nodates-header.png"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "brand1": "Spitfire",
+          "brand2": "Antihero",
+          "brand3": "Real",
+          "brand4": "Krooked",
+          "brand5": "Thunder",
+          "brand6": "Venture"
+        }
+      },
+      "collection-header2": {
+        "type": "collection-header2",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/distro-kelch.jpg"
+        }
+      },
+      "collection2": {
+        "type": "collection2",
+        "settings": {
+          "brand1": "Real",
+          "brand2": "",
+          "brand3": "",
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
         }
       }
     },

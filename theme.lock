@@ -98,7 +98,7 @@ assets/zoomin.cur:
 assets/zoomout.cur:
   development: 2015-12-11T09:35:15-08:00   e5f236bf2b60f8c8fc1867d70636a046
 config/settings_data.json:
-  development: 2018-06-27T15:56:46-07:00   94bde1c54c92c85406d68a7eaf2f1c08
+  development: 2018-07-03T13:15:46-07:00   5b707b71f504afe436d49ac4245676b0
 config/settings_schema.json:
   development: 2015-12-11T09:35:12-08:00   2f4307bd378e461686492dba15c8c75f
 layout/theme.liquid:
@@ -124,13 +124,13 @@ sections/collection-header3.liquid:
 sections/collection-header4.liquid:
   development: 2018-06-27T09:36:40-07:00   3eec30968b5119e2e84f57252820332b
 sections/collection.liquid:
-  development: 2018-06-27T09:36:40-07:00   b2603da75dd3d64ef312f47f920907bd
+  development: 2018-07-02T09:24:54-07:00   1d35a74183450c4b283263a02c5bc6c6
 sections/collection2.liquid:
-  development: 2018-06-27T09:36:41-07:00   b2603da75dd3d64ef312f47f920907bd
+  development: 2018-07-02T09:25:03-07:00   1d35a74183450c4b283263a02c5bc6c6
 sections/collection3.liquid:
-  development: 2018-06-27T09:36:41-07:00   b2603da75dd3d64ef312f47f920907bd
+  development: 2018-07-02T09:25:09-07:00   1d35a74183450c4b283263a02c5bc6c6
 sections/collection4.liquid:
-  development: 2018-06-27T09:36:42-07:00   b2603da75dd3d64ef312f47f920907bd
+  development: 2018-07-02T09:25:15-07:00   1d35a74183450c4b283263a02c5bc6c6
 sections/featured.liquid:
   development: 2018-06-14T11:58:45-07:00   365b0dd1db747d2b600f68be2156489b
 sections/homepage.liquid:
@@ -166,7 +166,7 @@ snippets/collection-list-item.liquid:
 snippets/collection-sidebar-TEST.liquid:
   development: 2016-06-14T14:40:34-07:00   6b8782a7c5e6972e798e2a3c8428837e
 snippets/collection-sidebar.liquid:
-  development: 2018-06-29T09:08:11-07:00   6ff861f10faa0d2822c988e78f0dbb00
+  development: 2018-07-02T11:06:14-07:00   ce6ba44f15ebf42aa5d82f97f6142cf6
 snippets/collection-sorting.liquid:
   development: 2015-12-11T09:35:15-08:00   47fc9865d11eaf0e3e2bcb702105f298
 snippets/collection-views.liquid:
@@ -294,7 +294,7 @@ templates/collection.all-brands.liquid:
 templates/collection.allbrands.liquid:
   development: 2018-06-27T09:37:08-07:00   86fad00f9251606a29d463036a72ace0
 templates/collection.allbrands2.liquid:
-  development: 2018-06-27T09:37:09-07:00   c63175cc06c2f830feb538a8156f2c58
+  development: 2018-07-03T14:51:30-07:00   0ab0c816706c5e456980da5e188fb93f
 templates/collection.allbrands3.liquid:
   development: 2018-06-27T09:37:09-07:00   8ba750a30f42e3cefe0f161289a99b9a
 templates/collection.allbrands4.liquid:
