@@ -32,8 +32,8 @@
         {{ product.price | money | remove: '.00' }}
         {% endif %}</a>
         
-        {% if product.tags contains '2018 Summer' %}
-        	<br><font color="#0099cc">New Summer</font>
+        {% if product.tags contains '2018 Fall Drop 1' %}
+        	<br><font color="#0099cc">{% unless product.tags contains 'nbo' %}New {% endunless %}Fall 1{% if product.tags contains 'nbo' %} [ preorder ]{% endif %}</font>
         {% endif %}
 
 

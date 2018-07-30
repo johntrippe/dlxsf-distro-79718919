@@ -1,4 +1,9 @@
-<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">
+{% if section.settings.banner != NULL %}<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">{% endif %}
+
+{% if section.settings.headertext != NULL %}<br>
+
+<h1><br>{{ section.settings.headertext }}</h1>{% endif %}
+
 
 {% schema %}
 {
@@ -8,6 +13,11 @@
 	"type": "image_picker",
     "id": "banner",
     "label": "Banner"
+    },
+    {
+      "type": "text",
+      "id": "headertext",
+      "label": "Header Text"
     }
   ]
 }

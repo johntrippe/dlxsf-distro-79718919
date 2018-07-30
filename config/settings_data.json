@@ -159,20 +159,20 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/ID4-Flyer-B2Bmain.jpg",
-          "promo1link": "",
-          "promo2": "shopify:\/\/shop_images\/distro-fp.jpg",
-          "promo2link": "\/collections\/real-kelch-flyer-preorder",
-          "promo3": "shopify:\/\/shop_images\/banners-3.gif",
-          "promo3link": "\/collections\/spitfire-accessories\/banners",
-          "promo4": "shopify:\/\/shop_images\/ah_banner.jpg",
-          "promo4link": "\/collections\/antihero-accessories\/products\/061318-eagle-banner-army",
-          "promo5": "shopify:\/\/shop_images\/tool-4.jpg",
-          "promo5link": "\/collections\/skate-tools",
-          "promo6": "shopify:\/\/shop_images\/flux.jpg",
-          "promo6link": "\/collections\/thunder-trucks\/products\/061318-flux-sonora-hollow-lights-front",
-          "promo7": "shopify:\/\/shop_images\/elite.gif",
-          "promo7link": "\/collections\/real-decks\/elites",
+          "promo1": "shopify:\/\/shop_images\/2-SF-STAY-LIT-GLOW-OVERVIEW-1000x500.jpg",
+          "promo1link": "\/collections\/spitfire-glow-capsule",
+          "promo2": "shopify:\/\/shop_images\/NOD-tyshawn-ig.jpg",
+          "promo2link": "\/collections\/spitfire-new-summer-drop",
+          "promo3": "shopify:\/\/shop_images\/shaped-eagles.gif",
+          "promo3link": "\/collections\/antihero-decks\/shaped-eagle",
+          "promo4": "shopify:\/\/shop_images\/risers.jpg",
+          "promo4link": "\/collections\/risers",
+          "promo5": "shopify:\/\/shop_images\/sf-air.jpg",
+          "promo5link": "\/collections\/spitfire-accessories\/products\/67010045b00",
+          "promo6": "shopify:\/\/shop_images\/80-last.jpg",
+          "promo6link": "\/collections\/spitfire-wheels\/products\/061318-80hd-chargers-classic-white",
+          "promo7": "shopify:\/\/shop_images\/v-hollow.jpg",
+          "promo7link": "\/collections\/venture-trucks",
           "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
           "promo8link": "\/pages\/dlx-cafe"
         }
@@ -180,7 +180,8 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/nod-sp19-prebook-nodates-header.png"
+          "banner": "shopify:\/\/shop_images\/nod-sp19-prebook-nodates-header.png",
+          "headertext": ""
         }
       },
       "collection": {
@@ -197,13 +198,68 @@
       "collection-header2": {
         "type": "collection-header2",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/distro-kelch.jpg"
+          "banner": "shopify:\/\/shop_images\/fall-pre.png",
+          "headertext": ""
         }
       },
       "collection2": {
         "type": "collection2",
         "settings": {
           "brand1": "Real",
+          "brand2": "Antihero",
+          "brand3": "Krooked",
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
+        }
+      },
+      "collection-header4": {
+        "type": "collection-header4",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/NOD-tyshawn-dlxcafe.jpg",
+          "headertext": ""
+        }
+      },
+      "collection4": {
+        "type": "collection4",
+        "settings": {
+          "brand1": "Spitfire",
+          "brand2": "",
+          "brand3": "",
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
+        }
+      },
+      "collection-header3": {
+        "type": "collection-header3",
+        "settings": {
+          "banner": "",
+          "headertext": "<b>2018 Fall Drop 1 Preview<\/b><br>Orders start shipping August 6th"
+        }
+      },
+      "collection3": {
+        "type": "collection3",
+        "settings": {
+          "brand1": "Real",
+          "brand2": "Antihero",
+          "brand3": "Krooked",
+          "brand4": "Spitfire",
+          "brand5": "Thunder",
+          "brand6": "Venture"
+        }
+      },
+      "collection-header5": {
+        "type": "collection-header5",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/2-SF-STAY-LIT-GLOW-OVERVIEW-1000x500.jpg",
+          "headertext": "<b>SPITFIRE GLOW CAPSULE<\/b><br>Order by: Aug 10th<br>Ships: Sept 24th"
+        }
+      },
+      "collection5": {
+        "type": "collection5",
+        "settings": {
+          "brand1": "Spitfire",
           "brand2": "",
           "brand3": "",
           "brand4": "",
