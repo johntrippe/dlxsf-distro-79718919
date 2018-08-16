@@ -150,7 +150,7 @@ snippets/add-to-cart-6-16-BACKUP.liquid:
 snippets/add-to-cart-TEST.liquid:
   development: 2016-06-17T09:37:01-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart-product-page.liquid:
-  development: 2018-03-16T14:22:36-07:00   62e95e5ba6aa42442b7abec49596518c
+  development: 2018-08-16T13:37:33-07:00   58c997e4e7385af532a78f73bf18a821
 snippets/add-to-cart-related.liquid:
   development: 2016-07-11T15:33:36-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart.liquid:
