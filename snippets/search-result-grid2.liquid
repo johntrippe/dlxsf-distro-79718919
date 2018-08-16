@@ -28,7 +28,7 @@
   {% endif %}
 {% endfor %}
 
-<div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or item.variants.first.inventory_management == "shopify" and item.variants.first.inventory_quantity <= 0 %} sold-out{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
+<div class="grid-item {{ grid_item_width }} back-ordered{% if product_qty > 0 %}{% else %}{% if sold_out or item.variants.first.inventory_management == "shopify" and item.variants.first.inventory_quantity <= 0 %}{% unless item.tags contains 'nbo' %} sold-out{% endunless %}{% endif %}{% endif %}{% if on_sale %} on-sale{% endif %}">
 
 
 <!-- START QUANITY AND ADD TO CART -->
@@ -73,7 +73,7 @@
 				{% for variant in item.variants %}
 				{% if variant.available %}
 				<div>
-						<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 and item.tags contains 'Atonce' %}<font color="red">{{ variant.title }}</font>{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
+						<div style="display:inline-block; font-size: 10px;">{% unless variant.title == 'Default Title' %}{% if variant.inventory_quantity <= 0 and item.tags contains 'Atonce' %}{% unless item.tags contains 'nbo' %}<font color="red">{% endunless %}{{ variant.title }}{% unless item.tags contains 'nbo' %}</font>{% endunless %}{% else %}{{ variant.title }}{% endif %}{% endunless %}</div>
 			
 						<div style="display:inline-block;"><input type="trippe" onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" /></div>
 				</div>
@@ -101,8 +101,9 @@
 	    
 				{% for variant in item.variants %}
 				{% if variant.inventory_quantity <= 0 and variant.title != "Default Title" and item.tags contains 'Atonce' %}
-					
+				{% unless item.tags contains 'nbo' %}	
 					<div style="font-size: 10px;"><font color="red">{{ variant.title }}</font> - On Back Order<br></div>
+				{% endunless %}
 					
 				{% endif %}
 				{% endfor %}
@@ -116,7 +117,9 @@
 				{% endfor %}
 	
 				{% if out_of_stock == true and item.tags contains 'Atonce' %}
+				{% unless item.tags contains 'nbo' %}
 					<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ item.handle }}">notify</a>]</div>
+				{% endunless %}
 				{% endif %}
 	
 				<!-- END VARIANT BACK ORDER -->

@@ -159,18 +159,18 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/2-SF-STAY-LIT-GLOW-OVERVIEW-1000x500.jpg",
-          "promo1link": "\/collections\/spitfire-glow-capsule",
-          "promo2": "shopify:\/\/shop_images\/NOD-tyshawn-ig.jpg",
-          "promo2link": "\/collections\/spitfire-new-summer-drop",
-          "promo3": "shopify:\/\/shop_images\/shaped-eagles.gif",
-          "promo3link": "\/collections\/antihero-decks\/shaped-eagle",
-          "promo4": "shopify:\/\/shop_images\/risers.jpg",
-          "promo4link": "\/collections\/risers",
-          "promo5": "shopify:\/\/shop_images\/sf-air.jpg",
-          "promo5link": "\/collections\/spitfire-accessories\/products\/67010045b00",
-          "promo6": "shopify:\/\/shop_images\/80-last.jpg",
-          "promo6link": "\/collections\/spitfire-wheels\/products\/061318-80hd-chargers-classic-white",
+          "promo1": "shopify:\/\/shop_images\/nod-FL18-D1-b2b.png",
+          "promo1link": "\/collections\/2018-fall-drop-1",
+          "promo2": "shopify:\/\/shop_images\/gt-classics-2.jpg",
+          "promo2link": "\/collections\/all\/grant-taylor-pro-classics",
+          "promo3": "shopify:\/\/shop_images\/flash-2.jpg",
+          "promo3link": "\/collections\/krooked-decks\/flash",
+          "promo4": "shopify:\/\/shop_images\/80hd2.jpg",
+          "promo4link": "\/collections\/spitfire-wheels\/products\/10_11_17_2041005654",
+          "promo5": "shopify:\/\/shop_images\/ve-3.jpg",
+          "promo5link": "\/collections\/venture-trucks\/primary",
+          "promo6": "shopify:\/\/shop_images\/kader.gif",
+          "promo6link": "\/collections\/spitfire-wheels\/products\/f4-99-kader-radiels-072018",
           "promo7": "shopify:\/\/shop_images\/v-hollow.jpg",
           "promo7link": "\/collections\/venture-trucks",
           "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
@@ -234,8 +234,8 @@
       "collection-header3": {
         "type": "collection-header3",
         "settings": {
-          "banner": "",
-          "headertext": "<b>2018 Fall Drop 1 Preview<\/b><br>Orders start shipping August 6th"
+          "banner": "shopify:\/\/shop_images\/nod-FL18-D1-b2b.png",
+          "headertext": ""
         }
       },
       "collection3": {

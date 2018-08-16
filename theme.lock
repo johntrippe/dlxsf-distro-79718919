@@ -98,7 +98,7 @@ assets/zoomin.cur:
 assets/zoomout.cur:
   development: 2015-12-11T09:35:15-08:00   e5f236bf2b60f8c8fc1867d70636a046
 config/settings_data.json:
-  development: 2018-07-30T11:22:46-07:00   cc303b1bca2e44c955b086eaca45dc6e
+  development: 2018-08-15T12:19:53-07:00   55e1b7cc41e294f24b411bb0511f1f8c
 config/settings_schema.json:
   development: 2015-12-11T09:35:12-08:00   2f4307bd378e461686492dba15c8c75f
 layout/theme.liquid:
@@ -174,7 +174,7 @@ snippets/collection-list-item.liquid:
 snippets/collection-sidebar-TEST.liquid:
   development: 2016-06-14T14:40:34-07:00   6b8782a7c5e6972e798e2a3c8428837e
 snippets/collection-sidebar.liquid:
-  development: 2018-07-02T11:06:14-07:00   ce6ba44f15ebf42aa5d82f97f6142cf6
+  development: 2018-08-14T09:30:44-07:00   39eb6de3388ec0c0f23273cd302177f3
 snippets/collection-sorting.liquid:
   development: 2015-12-11T09:35:15-08:00   47fc9865d11eaf0e3e2bcb702105f298
 snippets/collection-views.liquid:
@@ -244,7 +244,7 @@ snippets/search-bar.liquid:
 snippets/search-result-grid.liquid:
   development: 2017-08-08T14:36:11-07:00   a741a73221d95e5613874291cf53df83
 snippets/search-result-grid2.liquid:
-  development: 2017-08-08T14:45:15-07:00   fc535be7b940dbcbb88eeba9364d37e1
+  development: 2018-08-16T13:24:45-07:00   386d0b4276c6a6ba2b57e72cf54f8d38
 snippets/search-result.liquid:
   development: 2017-04-20T13:58:08-07:00   bb60eb0cbb377f073d21a04f64aa135d
 snippets/shappify-bdl-load-bundle.liquid:
@@ -278,7 +278,7 @@ templates/article.liquid:
 templates/blog.liquid:
   development: 2015-12-11T09:35:16-08:00   36c25818338143925266dc6dfbd400da
 templates/cart.liquid:
-  development: 2018-06-20T13:58:54-07:00   faf697f00b49d41934cf8dbd43d8d950
+  development: 2018-08-03T10:36:18-07:00   b8ed0059d6c503eece889edb3bbca9b4
 templates/cart.liquid-without-spurit_upsell.liquid:
   development: 2016-11-23T11:43:14-08:00   3449a7c39a60a68dfe001743ec0e7711
 templates/collection-TEST.liquid:
