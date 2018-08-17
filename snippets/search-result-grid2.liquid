@@ -58,6 +58,8 @@
 	<!-- This is just a regular add product form. You should be able to add any valid input fields to it -->
 
 	<a href="{{ item.url | within: current_collection }}"><span class="product-title">{{ item.title }}</span><font size="1"><br>{{ item.price | money | remove: '.00' }}</font></a>
+	
+	{% include 'season-new' %}
 
 
 

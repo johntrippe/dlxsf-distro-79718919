@@ -56,6 +56,9 @@
   <div class="grid-item large--two-fifths">
 
     <h2 itemprop="name">{{ product.title }}</h2>
+	    
+	    
+    
 
     <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
@@ -65,7 +68,12 @@
       <meta itemprop="price" content="{{ variant.price | money }}">
 
       {% if settings.product_vendor_enable %}
-        <p class="product-meta" itemprop="brand">{{ product.vendor }}</p>
+        <p class="product-meta" itemprop="brand">{{ product.vendor }}
+	        
+	     <!-- START NEW SEASON -->
+		{% include 'season-new' %}
+		<!-- END NEW SEASON -->
+        </p>
       {% endif %}
 
       <ul class="inline-list product-meta">
@@ -89,6 +97,8 @@
           </li>
         {% endif %}
       </ul>
+      
+      
       
 
 		{% if  product.type == "Trucks" %}<b>*Please note that trucks are sold as singles.</b><br>{% endif %}
@@ -126,6 +136,11 @@
 		</div>
 		<!-- END ADD TO CART BUTTON -->
 <br><br>
+
+
+
+
+
 
 <!-- START LIST PART ID -->
 <p>&nbsp;<div class="tags"><b>Part IDs:</b><br>{% for variant in product.variants %}{{ variant.sku }}{% unless forloop.last %}, {% endunless %}{% endfor %} </p></div>

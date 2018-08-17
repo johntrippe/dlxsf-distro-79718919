@@ -150,11 +150,11 @@ snippets/add-to-cart-6-16-BACKUP.liquid:
 snippets/add-to-cart-TEST.liquid:
   development: 2016-06-17T09:37:01-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart-product-page.liquid:
-  development: 2018-08-16T13:37:33-07:00   58c997e4e7385af532a78f73bf18a821
+  development: 2018-08-17T09:25:23-07:00   58c997e4e7385af532a78f73bf18a821
 snippets/add-to-cart-related.liquid:
   development: 2016-07-11T15:33:36-07:00   a6f16f080609e12ecd14425f395230cf
 snippets/add-to-cart.liquid:
-  development: 2018-07-30T13:34:29-07:00   d885e9b0e769fa5e88eeeabdffb2f77b
+  development: 2018-08-16T16:04:59-07:00   c44e93c360dd275043f2bb9fca45b842
 snippets/add-to-cart_8-7-15.liquid:
   development: 2015-12-11T09:35:15-08:00   00316f460d3a9d454632bb377ea2d780
 snippets/advanced-tag-loop.liquid:
@@ -244,9 +244,11 @@ snippets/search-bar.liquid:
 snippets/search-result-grid.liquid:
   development: 2017-08-08T14:36:11-07:00   a741a73221d95e5613874291cf53df83
 snippets/search-result-grid2.liquid:
-  development: 2018-08-16T13:24:45-07:00   386d0b4276c6a6ba2b57e72cf54f8d38
+  development: 2018-08-16T16:05:37-07:00   98c00a9e3bf33d0d6a5c82d28a0791a9
 snippets/search-result.liquid:
   development: 2017-04-20T13:58:08-07:00   bb60eb0cbb377f073d21a04f64aa135d
+snippets/season-new.liquid:
+  development: 2018-08-16T16:06:36-07:00   bd001968f6af1582a06af2c225b4cfc8
 snippets/shappify-bdl-load-bundle.liquid:
   development: 2015-12-11T09:35:16-08:00   ca82d43ea0584b22e9e0295a5fc46838
 snippets/shappify-bdl-min-price.liquid:
@@ -442,7 +444,7 @@ templates/page.wax_order-form.liquid:
 templates/password.liquid:
   development: 2016-03-21T14:41:19-07:00   293ef6ab41be15713f839ec0dc5265b4
 templates/product.liquid:
-  development: 2018-06-29T09:37:34-07:00   bf8a14b8bb715698d4723ecf2b5195e8
+  development: 2018-08-17T09:20:19-07:00   be7b2b60794b49195640dbaca3b667de
 templates/product_backup.liquid:
   development: 2015-12-11T09:35:17-08:00   ca20041dbdda326baa415163e15eb372
 templates/product_backup_4_7_15.liquid:
