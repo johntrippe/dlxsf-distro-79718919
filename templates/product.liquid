@@ -142,18 +142,24 @@
 
 
 
-<!-- START LIST PART ID -->
-<p>&nbsp;<div class="tags"><b>Part IDs:</b><br>{% for variant in product.variants %}{{ variant.sku }}{% unless forloop.last %}, {% endunless %}{% endfor %} </p></div>
-<!-- START LIST PART ID -->
+	<!-- START PRODUCT DESCRIPTION -->
+    <p>&nbsp;
+	<div class="product-description rte" itemprop="description">
+      {{ product.description }}
+    </div> 
+    <!-- END PRODUCT DESCRIPTION -->
+	
+	
+	<!-- START LIST PART ID -->
+	<div class="tags"><b>Part IDs:</b><br>{% for variant in product.variants %}{{ variant.sku }}{% unless forloop.last %}, {% endunless %}{% endfor %} </p></div>
+	<!-- START LIST PART ID -->
 
 
       <hr>
 
     </div>
 
-    <div class="product-description rte" itemprop="description">
-      {{ product.description }}
-    </div> 
+    
         <!-- START LINK TO PRODUCT PHOTOS -->
     <div class="product-description rte" itemprop="description">
       <a href="https://www.dlxcafe.com/search/{{ variant.sku }}?utm_source=B2Bs&utm_medium=B2B%20Button&utm_campaign=B2Bs%20Product%20Photos%20Button" target="_Blank" class="btn btn--small">Download Product Photos</a>

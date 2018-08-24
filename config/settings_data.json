@@ -159,12 +159,12 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/nod-FL18-D1-b2b.png",
-          "promo1link": "\/collections\/2018-fall-drop-1",
-          "promo2": "shopify:\/\/shop_images\/gt-classics-2.jpg",
-          "promo2link": "\/collections\/all\/grant-taylor-pro-classics",
-          "promo3": "shopify:\/\/shop_images\/flash-2.jpg",
-          "promo3link": "\/collections\/krooked-decks\/flash",
+          "promo1": "shopify:\/\/shop_images\/kr-nod-fall-d1-b2b.jpg",
+          "promo1link": "\/collections\/krooked-decks",
+          "promo2": "shopify:\/\/shop_images\/rat-blur3.gif",
+          "promo2link": "\/collections\/krooked-decks\/rat-sticks",
+          "promo3": "shopify:\/\/shop_images\/real-signature.gif",
+          "promo3link": "\/collections\/real-decks\/deeds-signatures",
           "promo4": "shopify:\/\/shop_images\/80hd2.jpg",
           "promo4link": "\/collections\/spitfire-wheels\/products\/10_11_17_2041005654",
           "promo5": "shopify:\/\/shop_images\/ve-3.jpg",
