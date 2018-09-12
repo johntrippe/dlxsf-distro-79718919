@@ -159,18 +159,18 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/kr-nod-fall-d1-b2b.jpg",
-          "promo1link": "\/collections\/krooked-decks",
-          "promo2": "shopify:\/\/shop_images\/rat-blur3.gif",
-          "promo2link": "\/collections\/krooked-decks\/rat-sticks",
-          "promo3": "shopify:\/\/shop_images\/real-signature.gif",
-          "promo3link": "\/collections\/real-decks\/deeds-signatures",
-          "promo4": "shopify:\/\/shop_images\/80hd2.jpg",
-          "promo4link": "\/collections\/spitfire-wheels\/products\/10_11_17_2041005654",
+          "promo1": "shopify:\/\/shop_images\/nod-sf-pro-1000x500.jpg",
+          "promo1link": "\/collections\/spitfire-wheels",
+          "promo2": "shopify:\/\/shop_images\/092617-TH-TEAM-LIGHTS-3.gif",
+          "promo2link": "\/products\/team-lights-polished",
+          "promo3": "shopify:\/\/shop_images\/classic-bighead.jpg",
+          "promo3link": "\/collections\/spitfire-wheels\/classic-bigheads",
+          "promo4": "shopify:\/\/shop_images\/foy.jpg",
+          "promo4link": "\/products\/jamie-foy-conical-fulls",
           "promo5": "shopify:\/\/shop_images\/ve-3.jpg",
           "promo5link": "\/collections\/venture-trucks\/primary",
-          "promo6": "shopify:\/\/shop_images\/kader.gif",
-          "promo6link": "\/collections\/spitfire-wheels\/products\/f4-99-kader-radiels-072018",
+          "promo6": "shopify:\/\/shop_images\/kanfoush4.jpg",
+          "promo6link": "\/products\/061318-kanfoush-gulo-8-25",
           "promo7": "shopify:\/\/shop_images\/v-hollow.jpg",
           "promo7link": "\/collections\/venture-trucks",
           "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
@@ -216,19 +216,19 @@
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/NOD-tyshawn-dlxcafe.jpg",
-          "headertext": ""
+          "banner": "",
+          "headertext": "2018 Fall Drop 2 [ preorder ]"
         }
       },
       "collection4": {
         "type": "collection4",
         "settings": {
-          "brand1": "Spitfire",
-          "brand2": "",
-          "brand3": "",
-          "brand4": "",
-          "brand5": "",
-          "brand6": ""
+          "brand1": "Real",
+          "brand2": "Antihero",
+          "brand3": "Krooked",
+          "brand4": "Spitfire",
+          "brand5": "Thunder",
+          "brand6": "Venture"
         }
       },
       "collection-header3": {
