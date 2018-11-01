@@ -18,20 +18,28 @@
 		
 	<!-- END 2 SECTION -->
 	
+	<!-- START 3 SECTION -->
 	
-	<!-- START 3 MID SECTION -->	
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo4link }}"><img border="0" src="{{ section.settings.promo4 | img_url: '500x500' }}"></a></div>
+		
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo5link }}"><img border="0" src="{{ section.settings.promo5 | img_url: '500x500' }}"></a></div>
+		
+	<!-- END 3 SECTION -->
 	
-		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo4link }}"><img border="0" src="{{ section.settings.promo4 | img_url: '500x274' }}"></a></div>
-		
-		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo5link }}"><img border="0" src="{{ section.settings.promo5 | img_url: '500x274' }}"></a></div>
-		
+	
+	<!-- START 4 MID SECTION -->	
+	
 		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo6link }}"><img border="0" src="{{ section.settings.promo6 | img_url: '500x274' }}"></a></div>
 		
-	<!-- END 3 MID SECTION -->
+		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo7link }}"><img border="0" src="{{ section.settings.promo7 | img_url: '500x274' }}"></a></div>
 		
-		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo7link }}"><img border="0" src="{{ section.settings.promo7 | img_url: '1000x175' }}"></a></div>
+		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img border="0" src="{{ section.settings.promo8 | img_url: '500x274' }}"></a></div>
 		
-		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img border="0" src="{{ section.settings.promo8 | img_url: '1000x200' }}"></a><br><br></div>
+	<!-- END 4 MID SECTION -->
+		
+		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo9link }}"><img border="0" src="{{ section.settings.promo9 | img_url: '1000x175' }}"></a></div>
+		
+		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo10link }}"><img border="0" src="{{ section.settings.promo10 | img_url: '1000x200' }}"></a><br><br></div>
 	
 	
 </div>
@@ -110,7 +118,8 @@
 	  "type": "text",
       "id": "promo7link",
       "label": "Promo 7 Link"
-    },{
+    },
+    {
       "type": "image_picker",
       "id": "promo8",
       "label": "Promo 8"
@@ -119,7 +128,28 @@
 	  "type": "text",
       "id": "promo8link",
       "label": "Promo 8 Link"
-     } 
+    },
+    {
+      "type": "image_picker",
+      "id": "promo9",
+      "label": "Promo 9"
+    },
+    {
+	  "type": "text",
+      "id": "promo9link",
+      "label": "Promo 9 Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "promo10",
+      "label": "Promo 10"
+    },
+    {
+	  "type": "text",
+      "id": "promo10link",
+      "label": "Promo 10 Link"
+    }  
+    
   ]
 }
 {% endschema %}

@@ -159,28 +159,32 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/nod-sf-pro-1000x500.jpg",
-          "promo1link": "\/collections\/spitfire-wheels",
-          "promo2": "shopify:\/\/shop_images\/092617-TH-TEAM-LIGHTS-3.gif",
-          "promo2link": "\/products\/team-lights-polished",
-          "promo3": "shopify:\/\/shop_images\/classic-bighead.jpg",
-          "promo3link": "\/collections\/spitfire-wheels\/classic-bigheads",
-          "promo4": "shopify:\/\/shop_images\/foy.jpg",
-          "promo4link": "\/products\/jamie-foy-conical-fulls",
-          "promo5": "shopify:\/\/shop_images\/ve-3.jpg",
-          "promo5link": "\/collections\/venture-trucks\/primary",
-          "promo6": "shopify:\/\/shop_images\/kanfoush4.jpg",
-          "promo6link": "\/products\/061318-kanfoush-gulo-8-25",
-          "promo7": "shopify:\/\/shop_images\/v-hollow.jpg",
-          "promo7link": "\/collections\/venture-trucks",
-          "promo8": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
-          "promo8link": "\/pages\/dlx-cafe"
+          "promo1": "shopify:\/\/shop_images\/nod-FL18-D3-b2b.png",
+          "promo1link": "\/collections\/2018-fall-drop-3",
+          "promo2": "shopify:\/\/shop_images\/5-rl-victory-ww.jpg",
+          "promo2link": "\/collections\/real-decks\/ishod-victory",
+          "promo3": "shopify:\/\/shop_images\/2-rl-cut-ww.jpg",
+          "promo3link": "\/collections\/real-decks\/cut-and-paste",
+          "promo4": "shopify:\/\/shop_images\/3-ah-yogrt-ww.jpg",
+          "promo4link": "\/collections\/antihero-decks\/yogrt",
+          "promo5": "shopify:\/\/shop_images\/4-rl-namesake-davis-ww.jpg",
+          "promo5link": "\/products\/davis-namesake-8-25-full-se",
+          "promo6": "shopify:\/\/shop_images\/1-sf-venomous-radial-slim-ww.jpg",
+          "promo6link": "\/collections\/spitfire-wheels\/venomous",
+          "promo7": "shopify:\/\/shop_images\/crusher-ah.jpg",
+          "promo7link": "\/products\/2018bts-shaped-eagle-orange-crusher-9-1",
+          "promo8": "shopify:\/\/shop_images\/salt-pep-ve.jpg",
+          "promo8link": "\/collections\/venture-trucks\/products\/300510065",
+          "promo9": "shopify:\/\/shop_images\/ve-og.gif",
+          "promo9link": "\/collections\/venture-trucks\/og-vs",
+          "promo10": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
+          "promo10link": "\/pages\/dlx-cafe"
         }
       },
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/nod-sp19-prebook-nodates-header.png",
+          "banner": "shopify:\/\/shop_images\/DLX-acc-SUM19-PRE-HEADER-1000x500.png",
           "headertext": ""
         }
       },
@@ -189,8 +193,8 @@
         "settings": {
           "brand1": "Spitfire",
           "brand2": "Antihero",
-          "brand3": "Real",
-          "brand4": "Krooked",
+          "brand3": "Krooked",
+          "brand4": "Real",
           "brand5": "Thunder",
           "brand6": "Venture"
         }
@@ -198,7 +202,7 @@
       "collection-header2": {
         "type": "collection-header2",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/fall-pre.png",
+          "banner": "shopify:\/\/shop_images\/nod-FL18-D3-b2b.png",
           "headertext": ""
         }
       },
@@ -208,16 +212,16 @@
           "brand1": "Real",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "",
-          "brand5": "",
-          "brand6": ""
+          "brand4": "Spitfire",
+          "brand5": "Thunder",
+          "brand6": "Venture"
         }
       },
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "",
-          "headertext": "2018 Fall Drop 2 [ preorder ]"
+          "banner": "shopify:\/\/shop_images\/DLX-sp19-completes-HEADER-2-1000x500.png",
+          "headertext": ""
         }
       },
       "collection4": {
@@ -226,27 +230,27 @@
           "brand1": "Real",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "Spitfire",
-          "brand5": "Thunder",
-          "brand6": "Venture"
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
         }
       },
       "collection-header3": {
         "type": "collection-header3",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/nod-FL18-D1-b2b.png",
+          "banner": "shopify:\/\/shop_images\/sf-kr-nod-mainb2b.jpg",
           "headertext": ""
         }
       },
       "collection3": {
         "type": "collection3",
         "settings": {
-          "brand1": "Real",
-          "brand2": "Antihero",
-          "brand3": "Krooked",
-          "brand4": "Spitfire",
-          "brand5": "Thunder",
-          "brand6": "Venture"
+          "brand1": "Spitfire",
+          "brand2": "Krooked",
+          "brand3": "",
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
         }
       },
       "collection-header5": {
@@ -258,6 +262,24 @@
       },
       "collection5": {
         "type": "collection5",
+        "settings": {
+          "brand1": "Spitfire",
+          "brand2": "",
+          "brand3": "",
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
+        }
+      },
+      "collection-header6": {
+        "type": "collection-header6",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/sf-nod-fd2-18-checkcapsule-b2b.jpg",
+          "headertext": ""
+        }
+      },
+      "collection6": {
+        "type": "collection6",
         "settings": {
           "brand1": "Spitfire",
           "brand2": "",
