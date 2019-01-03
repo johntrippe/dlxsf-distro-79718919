@@ -40,6 +40,13 @@
 {% endfor %}
 
 {% for item in cart.items %}
+    {% if item.product.tags contains 'Onsale' and item.product.type == "Decks" %}       
+         {% capture temp4 %}{{ num_sale | plus: item.quantity }}{% endcapture %} 
+    {% endif %}
+    {% assign num_sale = temp4 %}
+{% endfor %}
+
+{% for item in cart.items %}
     {% if item.product.tags contains 'Price Points' and item.product.type == "Decks" %}       
          {% capture temp5 %}{{ num_pricepoint | plus: item.quantity }}{% endcapture %} 
     {% endif %}
@@ -67,9 +74,6 @@
     {% endif %}
     {% assign num_prebook = temp8 %}
 {% endfor %}
-
-
-
 
 
 
@@ -101,9 +105,6 @@
 <br><a href="/cart/"><u>View Cart</u></a> - <a href="javascript:window.location.reload();">refresh</a>
 <br><br>
 
-
-
-
 <!-- END CART SUMMARY SIDEBAR -->
 
 <!-- START + CHANGER ON FILTERS -->
@@ -123,7 +124,7 @@ function changeText(idElement) {
 
 	
 		
-{% if collection.title == "Apparel" or collection.title == "Spitfire Apparel"  or collection.title == "Krooked Apparel"  or collection.title == "Venture Apparel" or collection.title == "Antihero Apparel"  or collection.title == "Thunder Apparel" or collection.title == "Real Apparel" %}
+{% if collection.title == "Apparel" or collection.title == "Spitfire Apparel"  or collection.title == "Krooked Apparel"  or collection.title == "Venture Apparel" or collection.title == "Antihero Apparel"  or collection.title == "Thunder Apparel" or collection.title == "REAL Apparel" %}
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
 	    {% assign tags = 'Hats, Beanies, Tees, Jackets, Socks, Misc Apparel, Hoodies, Bearings, Bolts, Bushings, Griptape, Misc Hardware, Patches, Risers, Skate Tools, Wax, Youths, Girls/Juniors' | split: ',' %}
@@ -143,56 +144,61 @@ function changeText(idElement) {
 	  	<li class="divider2"></li>
 	  
 	  
+	  	<label>&nbsp;&nbsp;BRANDS<span style="float:right; padding-right:30px;">+</a></label>
 	  	<ul class="clearfix filters">
-		<li class="clearfix filters"><u>Brands</u></li>	
-		<li class="clearfix filters"><a href="/collections/real-apparel">Real Apparel</a></li>
-		<li class="clearfix filters"><a href="/collections/antihero-apparel">Antihero Apparel</a></li>
-		<li class="clearfix filters"><a href="/collections/krooked-apparel">Krooked Apparel</a></li>
-		<li class="clearfix filters"><a href="/collections/spitfire-apparel">Spitfire Apparel</a></li>
-		<li class="clearfix filters"><a href="/collections/thunder-apparel">Thunder Apparel</a></li>
-		</ul>
+		<li class="clearfix filter">
+			<ul class="nav nav-list tree bullets">	
+				<li><a href="/collections/real-apparel">REAL Apparel</a></li>
+				<li><a href="/collections/antihero-apparel">Antihero Apparel</a></li>
+				<li><a href="/collections/krooked-apparel">Krooked Apparel</a></li>
+				<li><a href="/collections/spitfire-apparel">Spitfire Apparel</a></li>
+				<li><a href="/collections/thunder-apparel">Thunder Apparel</a></li>
+				<li><a href="/collections/venture-apparel">Venture Apparel</a></li>
+			</ul>
+		</li>
+	  	</ul>
 		
-		
-{% elsif collection.title == "2018 SUMMER"   %}
+
+{% elsif collection.title == "ZZZ"   %}
 
 
 	   <hr>
-	    <label><b>2018 SUMMER DROP</b></label>
+	    <label><b>2018 Fall 2 Decks</b></label>
 	    
 	    <ul class="clearfix filters">
-	      <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#real">&#183; Real</a></li>
-	      <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#antihero">&#183; Antihero</a></li>
-		  <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#krooked">&#183; Krooked</a></li>
-		  <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#spitfire">&#183; Spitfire</a></li>
-		  <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#thunder">&#183; Thunder</a></li>
-		  <li class="clearfix filters"><a href="https://distro.dlxsf.com/collections/2018-summer/#venture">&#183; Venture</a></li>
-	      
-	    </ul>
-	    
-{% elsif collection.title == "2019 SUMMER PREBOOK"   %}
-
-
-	   <hr>
-	    <label><b>2019 SUMMER PREBOOK</b></label>
-	    
-	    <ul class="clearfix filters">
-	      <li class="clearfix filters"><a href="#Spitfire">&#183; Spitfire</a></li>
-	      <li class="clearfix filters"><a href="#Antihero">&#183; Antihero</a></li>
-	      <li class="clearfix filters"><a href="#Krooked">&#183; Krooked</a></li>
 	      <li class="clearfix filters"><a href="#Real">&#183; Real</a></li>
+	      <li class="clearfix filters"><a href="#Antihero">&#183; Antihero</a></li>
+		  <li class="clearfix filters"><a href="#Krooked">&#183; Krooked</a></li>
+		  <!-- <li class="clearfix filters"><a href="#Spitfire">&#183; Spitfire</a></li>
 		  <li class="clearfix filters"><a href="#Thunder">&#183; Thunder</a></li>
-		  <li class="clearfix filters"><a href="#Venture">&#183; Venture</a></li>
+		  <li class="clearfix filters"><a href="#Venture">&#183; Venture</a></li> -->
 	      
 	    </ul>
-		
+	    
+	    
 
-{% elsif == "Accessories" or collection.title == "Accessories" or collection.title == "Real Accessories" or collection.title == "Antihero Accessories" or collection.title == "Spitfire Accessories" or collection.title == "Thunder Accessories" or collection.title == "Krooked Accessories" or collection.title == "Venture Accessories"   %}
+{% elsif collection.title == "SF HI VIS, SF SLIDES & KR EFFISHANT CAPSULES"   %}
+
+
+	   <hr>
+	    <label><b>SF & KR CAPSULES</b></label>
+	    
+	    <ul class="clearfix filters">
+	      <li class="clearfix filters"><a href="#SFNIVI">&#183; SPITFIRE NIGHT VISION</a></li>
+	      <li class="clearfix filters"><a href="#SFSL">&#183; SPITFIRE SLIDES</a></li>
+	      <li class="clearfix filters"><a href="#KREF">&#183; KROOKED EFFISHANT</a></li>
+	    </ul>
+	    
+
+		
+		
+{% elsif collection.title == "Accessories" or collection.title == "REAL Accessories" or collection.title == "Antihero Accessories" or collection.title == "Spitfire Accessories" or collection.title == "Thunder Accessories" or collection.title == "Krooked Accessories" or collection.title == "Venture Accessories"   %}
 
 
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
 	    {% assign tags = 'Stickers, Bags, DVDs, Lighters, Patches, Pins, Air Fresheners, Misc' | split: ',' %}
-	    <label style="cursor:pointer;" onClick="javascript:changeText(6)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;TYPE<span id="element6" style="float:right; padding-right:30px;">-</a></label>
+	    <label style="cursor:pointer;" onClick="javascript:changeText(5)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;TYPE<span id="element5" style="float:right; padding-right:30px;">-</a></label>
 	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
@@ -206,25 +212,29 @@ function changeText(idElement) {
 	  </li>
 	  </ul>
 	  
-	  <ul class="clearfix filters">
-		<li class="clearfix filters"><u>Brands</u></li>	
-		<li class="clearfix filters"><a href="/collections/real-accessories">Real Accessories</a></li>
-		<li class="clearfix filters"><a href="/collections/antihero-accessories">Antihero Accessories</a></li>
-		<li class="clearfix filters"><a href="/collections/krooked-accessories">Krooked Accessories</a></li>
-		<li class="clearfix filters"><a href="/collections/spitfire-accessories">Spitfire Accessories</a></li>
-		<li class="clearfix filters"><a href="/collections/thunder-accessories">Thunder Accessories</a></li>
-		<li class="clearfix filters"><a href="/collections/venture-accessories">Venture Accessories</a></li>
-		</ul>	
+	  <label>&nbsp;&nbsp;BRANDS<span style="float:right; padding-right:30px;">+</a></label>
+	  	<ul class="clearfix filters">
+		<li class="clearfix filter">
+			<ul class="nav nav-list tree bullets">	
+				<li><a href="/collections/real-accessories">REAL Accessories</a></li>
+				<li><a href="/collections/antihero-accessories">Antihero Accessories</a></li>
+				<li><a href="/collections/krooked-accessories">Krooked Accessories</a></li>
+				<li><a href="/collections/spitfire-accessories">Spitfire Accessories</a></li>
+				<li><a href="/collections/thunder-accessories">Thunder Accessories</a></li>
+				<li><a href="/collections/venture-accessories">Venture Accessories</a></li>
+			</ul>	
+		</li>
+	  	</ul>
 		
 
  
  <!-- END + CHANGER ON FILTERS -->
  
-{% elsif == "REAL Decks" or collection.title == "REAL Decks" or collection.title == "REAL" or collection.title == "Krooked Decks" or collection.title == "Krooked Decks - On Hand" or collection.title == "Real Decks - On Hand" or collection.title == "Antihero Decks - On Hand" or collection.title == "Decks" or collection.title == "Real Decks" or collection.title == "Antihero Decks" or collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" or collection.title == "Wheels" or collection.title == "Spitfire Wheels" or collection.title == "Krooked Wheels"   %}
+{% elsif collection.title == "REAL Decks" or collection.title == "REAL" or collection.title == "Krooked Decks" or collection.title == "Krooked Decks - On Hand" or collection.title == "REAL Decks - On Hand" or collection.title == "Antihero Decks - On Hand" or collection.title == "Decks" or collection.title == "REAL Decks" or collection.title == "Antihero Decks" or collection.title == "Trucks" or collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" or collection.title == "Wheels" or collection.title == "Spitfire Wheels" or collection.title == "Krooked Wheels" %}
 	<ul class="clearfix filters">
 	  <li class="clearfix filter">
-	    {% assign tags = "48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +, 143's - 7.125'', 145's - 7.62'', 147's - 8.0'', 148's - 8.25'', 149's - 8.5'', 151's - 8.75'', Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8" | split: ',' %}
-	    <label style="cursor:pointer;" onClick="javascript:changeText(1)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;SIZE<span id="element1" style="float:right; padding-right:30px;">-</a></label>
+	    {% assign tags = "48mm,50mm,51mm,52mm,53mm,54mm,55mm,56mm,57mm,58mm,59mm,60mm,65mm,7.0 - 7.49,7.5 - 7.9,8.0 - 8.124,8.125 - 8.24,8.25 - 8.37,8.38 - 8.49,8.5 - 8.74,8.75 - 8.9,9.0 +,143's - 7.125'', 145's - 7.62'', 147's - 8.0'', 148's - 8.25'', 149's - 8.5'', 151's - 8.75'', Lo 5.0, Hi 5.0, Lo 5.2, Hi 5.2, Hi 5.8" | split: ',' %}
+	    <label style="cursor:pointer;" onClick="javascript:changeText(1)" class="tree-toggle-down clearfix filter">&nbsp;&nbsp;SIZE<span id="element1" style="float:right; padding-right:30px;">+</a></label>
 	     <ul class="nav nav-list tree-down bullets">
 	      {% for t in tags %}
 	      {% assign tag = t | strip %}
@@ -238,7 +248,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Andrew Allen, Youness Amrani, Tom Asta, Brian Anderson, Mike Anderson, David Bachinsky, Lacey Baker, Theotis Beasley, Raney Beres, Elijah Berle, Brandon Biebel, Justin Brock, Robbie Brockel, Dennis Busenitz, John Cardiel, Chris Cole, Brad Cromer, Jack Curtain, Jake Donnelly, Dan Drehobl, Eric Dressen, Erik Ellington, Chima Ferguson, Jamie Foy, Frank Gerwer, Mark Gonzales, Jeff Grosso, Tommy Guerrero, Felipe Gustavo, Spencer Hamilton, James Hardy, Peter Hewitt, Hjalte Halberg, Brian Hansen, Keith Hufnagel, Marc Johnson, Cory Kennedy, PJ Ladd, Louie Lopez, Sean Malto, Josh Matthews, Trent McClung, Tony Miorana, Lance Mountain, Darren Navarrette, Silas Baxter Neal, Shane Oneill, Tyshawn Pedigree, Chris Pfanner, Collin Provost, Torey Pudwill, Peter Ramondetta, Andrew Reynolds, Paul Rodriguez, Oskar Rozenberg, Andy Roy, Robbie Russo, Ronnie Sandoval, Max Schaaf, Miles Silvas, Evan Smith, Na-Kel Smith, Daewon Song, Elissa Steamer, Julien Stranger, Mark Suciu, Kader Sylla, Grant Taylor, Raven Tershy, Davis Torgerson, Tony Trujillo, Daan Van Der Linden, Anthony Van Engelen, Nick Tucker, Rodrigo TX, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest, Zion Wright' | split: ',' %}
+	    {% assign tags = 'Andrew Allen, Youness Amrani, Tom Asta, Brian Anderson, Mike Anderson, David Bachinsky, Lacey Baker, Theotis Beasley, Raney Beres, Elijah Berle, Brandon Biebel, Justin Brock, Robbie Brockel, Dennis Busenitz, John Cardiel, Chris Cole, Brad Cromer, Jack Curtain, Bobby De Keyzer, Jake Donnelly, Dan Drehobl, Eric Dressen, Erik Ellington, Chima Ferguson, John Fitzgerald, Jamie Foy, Frank Gerwer, Mark Gonzales, Jeff Grosso, Tommy Guerrero, Felipe Gustavo, Spencer Hamilton, James Hardy, Peter Hewitt, Hjalte Halberg, Brian Hansen, Keith Hufnagel, Marc Johnson, Chris Jones, Cory Kennedy, PJ Ladd, Louie Lopez, Alec Majerus, Sean Malto, Josh Matthews, Trent McClung, Tony Miorana, Lance Mountain, Darren Navarrette, Silas Baxter Neal, Shane Oneill, Tyshawn Pedigree, Chris Pfanner, Collin Provost, Torey Pudwill, Peter Ramondetta, Andrew Reynolds, Paul Rodriguez, Oskar Rozenberg, Andy Roy, Robbie Russo, Ronnie Sandoval, Max Schaaf, Miles Silvas, Evan Smith, Na-Kel Smith, Daewon Song, Elissa Steamer, Julien Stranger, Mark Suciu, Kader Sylla, Grant Taylor, Raven Tershy, Davis Torgerson, Tony Trujillo, Daan Van Der Linden, Anthony Van Engelen, Nick Tucker, Rodrigo TX, Ishod Wair, Kyle Walker, Sebo Walker, Brandon Westgate, Bobby Worrest, Zion Wright' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(2)" class="tree-toggle clearfix filter">&nbsp;&nbsp;PRO<span id="element2" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
@@ -253,7 +263,7 @@ function changeText(idElement) {
 	  </li>
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
-	    {% assign tags = 'Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, 80HD Softcruiser, Pro Classic Series, Lock-Ins, Team Classics, Colored, Pro Trucks, Titanium Lights, Team Titaniums, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
+	    {% assign tags = 'Pro V-Hollow Lights, Team V-Hollow Lights, Pro V-Lights, Team V-Lights, Pro Regulars, Team Regulars, Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, Lock-Ins, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Bighead, Radials, Radial Slims, Conical Full, Spitfire Wide, Classic Full, Pro Trucks, Titanium Lights, Team Titaniums, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
 	    <label style="cursor:pointer;" onClick="javascript:changeText(3)" class="tree-toggle clearfix filter">&nbsp;&nbsp;STYLE<span id="element3" style="float:right; padding-right:30px;">+</a></label>
 	    <ul class="nav nav-list tree bullets">
 	      {% for t in tags %}
@@ -266,24 +276,10 @@ function changeText(idElement) {
 	      {% endfor %}
 	    </ul>
 	  </li>
-	  <li class="divider2"></li>
-	 <li class="clearfix filter">
-	    {% assign tags = 'Antihero, Real, Spitfire, Krooked, Thunder' | split: ',' %}
-	    <label style="cursor:pointer;" onClick="javascript:changeText(4)" class="tree-toggle clearfix filter">&nbsp;&nbsp;BRAND<span id="element4" style="float:right; padding-right:30px;">+</a></label>
-	    <ul class="nav nav-list tree bullets">
-	      {% for t in tags %}
-	      {% assign tag = t | strip %}
-	      {% if current_tags contains tag %}
-	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
-	      {% elsif collection.all_tags contains tag %}
-	      <li><a href="/collections/{{ collection.handle }}/{{ tag | handle }}">{{ tag }}</a></li>
-	      {% endif %}
-	      {% endfor %}
-	    </ul>
-	  </li>
+
 	 </ul>
 	 
-{% elsif == "Hardware" or collection.title == "Hardware" or collection.title == "Bearings" or collection.title == "Bolts" or collection.title == "Bushings" or collection.title == "Griptape" or collection.title == "Misc Hardware" or collection.title == "Risers" or collection.title == "Skate Tools" or collection.title == "Wax" %}
+{% elsif collection.title == "Hardware" or collection.title == "Bearings" or collection.title == "Bolts" or collection.title == "Bushings" or collection.title == "Griptape" or collection.title == "Misc Hardware" or collection.title == "Risers" or collection.title == "Skate Tools" or collection.title == "Wax" %}
 
 		<ul class="clearfix filters">
 		<li class="clearfix filters"><a href="/collections/bearings">Bearings</a></li>
@@ -295,34 +291,8 @@ function changeText(idElement) {
 		<li class="clearfix filters"><a href="/collections/skate-tools">Skate Tools</a></li>
 		<li class="clearfix filters"><a href="/collections/wax">Wax</a></li>
 		</ul>
-		
-{% elsif collection.title == "2018 Spring Prebook" %}
-
-<hr>
-		<ul class="clearfix filters">
-		<li class="clearfix filters"><u>2018 Spring Prebook</u></li>	
-		<li class="clearfix filters"><a href="#spitfire">Spitfire</a></li>
-		<li class="clearfix filters"><a href="#antihero">Antihero</a></li>
-		<li class="clearfix filters"><a href="#krooked">Krooked</a></li>
-		<li class="clearfix filters"><a href="#real">Real</a></li>
-		<li class="clearfix filters"><a href="#thunder">Thunder</a></li>
-		</ul>
-		
-{% elsif collection.title == "2017 Fall Drop 1 Preview"   %}
-
-
-	   <hr>
-	    <label><b>2017 Fall Drop 1</b></label>
-	    
-	    <ul class="clearfix filters">
-	      <li class="clearfix filters"><a href="#real">&#183; Real</a></li>
-	      <li class="clearfix filters"><a href="#antihero">&#183; Antihero</a></li>
-		  <li class="clearfix filters"><a href="#krooked">&#183; Krooked</a></li>
-		  <li class="clearfix filters"><a href="#spitfire">&#183; Spitfire</a></li>
-		  <li class="clearfix filters"><a href="#thunder">&#183; Thunder</a></li>
-	      
-	    </ul>
-	    
+ 
+	  
 {% elsif product.type == "Decks" and product.vendor == "Real" %}
 		<ul class="clearfix filters">
 		<li class="clearfix filter">
@@ -342,12 +312,7 @@ function changeText(idElement) {
 		</ul>
 
 
-		<div class="btn btn--small">Brands</div><p>
-		<ul class="clearfix filters">
-		<li class="clearfix filters"><a href="/collections/real-decks">Real Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/antihero-decks">Antihero Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/krooked-decks">Krooked Decks</a></li>
-		</ul>
+
 		
 {% elsif product.type == "Decks" and product.vendor == "Antihero" %}
 		<ul class="clearfix filters">
@@ -368,12 +333,6 @@ function changeText(idElement) {
 		</ul>
 
 
-		<div class="btn btn--small">Brands</div><p>
-		<ul class="clearfix filters">
-		<li class="clearfix filters"><a href="/collections/real-decks">Real Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/antihero-decks">Antihero Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/krooked-decks">Krooked Decks</a></li>
-		</ul>
 		
 {% elsif product.type == "Decks" and product.vendor == "Krooked" %}
 		<ul class="clearfix filters">
@@ -394,12 +353,7 @@ function changeText(idElement) {
 		</ul>
 
 
-		<div class="btn btn--small">Brands</div><p>
-		<ul class="clearfix filters">
-		<li class="clearfix filters"><a href="/collections/real-decks">Real Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/antihero-decks">Antihero Decks</a></li>
-		<li class="clearfix filters"><a href="/collections/krooked-decks">Krooked Decks</a></li>
-		</ul>
+
 
 {% elsif product.type == "Wheels" and product.vendor == "Spitfire" %}
 		<ul class="clearfix filters">
@@ -468,15 +422,11 @@ function changeText(idElement) {
 			</ul>
 		</li>
 		</ul>
- 
-	  
-{% else %}
-
 	  
 {% endif %}
 
 
-	<!-- BOOTSTRAP -->
+	<!-- START BOOTSTRAP MENU -->
 <script src="https://production-assets.codepen.io/assets/common/stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js"></script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
@@ -504,7 +454,28 @@ function changeText(idElement) {
 	});
 	// END MENU STARTS DOWN
   </script>
-<!-- END BOOTSTRAP -->
+<!-- END BOOTSTRAP MENU -->
+
+
+<li class="divider2"></li>
+
+<!-- START BRANDS -->
+<label>&nbsp;&nbsp;BRANDS<span style="float:right; padding-right:30px;">+</a></label>
+	<ul class="clearfix filters">
+		<li class="clearfix filter">
+			<ul class="nav nav-list tree bullets">
+			<li><a href="/collections/real-decks">REAL</a></li>
+			<li><a href="/collections/antihero-decks">Antihero</a></li>
+			<li><a href="/collections/krooked-decks">Krooked</a></li>
+			<li><a href="/collections/spitfire-wheels">Spitfire</a></li>
+			<li><a href="/collections/thunder-trucks">Thunder</a></li>
+			<li><a href="/collections/venture-trucks">Venture</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+
+<!-- END BRANDS -->
 
 
 <script>
@@ -564,6 +535,5 @@ function changeText(idElement) {
     </div>
 
 <!-- END DROPDOWNS -->
-
 
 

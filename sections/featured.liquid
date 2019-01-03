@@ -1,11 +1,18 @@
 
 
 <div class="grid-item" style="padding: 0px;">
+	{% if section.settings.promo1link != blank %}
 	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
 		<!-- START VIDEO -->
 		<a href="{{ section.settings.promo1link }}"><img src="{{ section.settings.promo1 | img_url: '1000x500' }}" border="0"></a>
 		<!-- END VIDEO -->
 	</div>
+	{% endif %}
+	{% if section.settings.promo1video == true %}
+	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
+		{{ section.settings.promo1videolink }}
+	</div>
+	{% endif %}
 </div>
 
 <div class="grid-item" style="padding: 0px;">
@@ -26,20 +33,32 @@
 		
 	<!-- END 3 SECTION -->
 	
+	<!-- START 4 SECTION -->
+		{% if section.settings.promo6video == true %}
+		<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
+			{{ section.settings.promo6videolink }}
+		</div>
+		{% endif %}
+		
+		{% if section.settings.promo6link != blank %}
+		<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
+			<a href="{{ section.settings.promo6link }}"><img src="{{ section.settings.promo6 | img_url: '1000x500' }}" border="0"></a>
+		</div>
+		{% endif %}
+	<!-- END 4 SECTION -->
 	
-	<!-- START 4 MID SECTION -->	
 	
-		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo6link }}"><img border="0" src="{{ section.settings.promo6 | img_url: '500x274' }}"></a></div>
+	<!-- START 5 SECTION -->
+	
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo7link }}"><img border="0" src="{{ section.settings.promo7 | img_url: '500x500' }}"></a></div>
 		
-		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo7link }}"><img border="0" src="{{ section.settings.promo7 | img_url: '500x274' }}"></a></div>
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img border="0" src="{{ section.settings.promo8 | img_url: '500x500' }}"></a></div>
 		
-		<div class="grid-item large--one-third" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img border="0" src="{{ section.settings.promo8 | img_url: '500x274' }}"></a></div>
+	<!-- END 5 SECTION -->
+
+
 		
-	<!-- END 4 MID SECTION -->
-		
-		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo9link }}"><img border="0" src="{{ section.settings.promo9 | img_url: '1000x175' }}"></a></div>
-		
-		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo10link }}"><img border="0" src="{{ section.settings.promo10 | img_url: '1000x200' }}"></a><br><br></div>
+		<div class="grid-item large--one-whole" style="padding: 10px;"><a href="{{ section.settings.promo9link }}"><img border="0" src="{{ section.settings.promo9 | img_url: '1000x200' }}"></a><br><br></div>
 	
 	
 </div>
@@ -60,6 +79,16 @@
       "id": "promo1link",
       "label": "Promo 1 Link"
      },
+     {
+	  "type": "checkbox",
+      "id": "promo1video",
+      "label": "Promo 1 Video?"
+    },
+    {
+	  "type": "textarea",
+      "id": "promo1videolink",
+      "label": "Promo 1 Video Embed"
+    },
 	 {
 	 "type": "image_picker",
       "id": "promo2",
@@ -109,7 +138,18 @@
 	  "type": "text",
       "id": "promo6link",
       "label": "Promo 6 Link"
-    },{
+    },
+    {
+	  "type": "checkbox",
+      "id": "promo6video",
+      "label": "Promo 6 Video?"
+    },
+    {
+	  "type": "textarea",
+      "id": "promo6videolink",
+      "label": "Promo 6 Video Embed"
+    },
+    {
       "type": "image_picker",
       "id": "promo7",
       "label": "Promo 7"
@@ -138,17 +178,7 @@
 	  "type": "text",
       "id": "promo9link",
       "label": "Promo 9 Link"
-    },
-    {
-      "type": "image_picker",
-      "id": "promo10",
-      "label": "Promo 10"
-    },
-    {
-	  "type": "text",
-      "id": "promo10link",
-      "label": "Promo 10 Link"
-    }  
+    } 
     
   ]
 }

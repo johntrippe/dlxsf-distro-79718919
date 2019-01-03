@@ -221,9 +221,9 @@ return confirm("Are you sure you want to clear your cart?");
 
 {% for item in cart.items %}
     {% if item.product.type == "Prebook" %}       
-         {% capture temp8 %}{{ num_prebook | plus: item.quantity }}{% endcapture %} 
+         {% capture temp9 %}{{ num_prebook | plus: item.quantity }}{% endcapture %} 
     {% endif %}
-    {% assign num_prebook = temp8 %}
+    {% assign num_prebook = temp9 %}
 {% endfor %}
 
 <!-- START LIMIT ON SPECIAL PRODUCT -->

@@ -35,6 +35,12 @@
         
         {% include 'season-new' %}
         
+        <!-- START EMAIL NOTIFICATION -->
+		{% if product.tags contains 'nbo' %}
+		<br><u><a href='#' class='BIS_trigger' data-product-data='{{ product | json | escape }}'>email when avail</a></u>
+		{% endif %}
+		<!-- END EMAIL NOTIFICATION -->
+        
 
 
 
