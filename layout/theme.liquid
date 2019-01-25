@@ -7,6 +7,12 @@
 
 
 <head>
+<!-- Guided Tour -->
+<script src="//cdn.shopify.com/s/files/1/1241/4272/t/5/assets/intro.min.js"></script>
+<link rel="stylesheet" href="//cdn.shopify.com/s/files/1/1241/4272/t/5/assets/introjs.min.css">
+<!-- Guided Tour -->
+
+
 {% unless customer %}
     {% if template contains 'customers' %}
         {% assign send_to_login = false %}
@@ -152,7 +158,7 @@ location.replace("/account/login");
               {% endif %}
 
               {% if shop.customer_accounts_enabled %}
-                <span class="site-header--meta-links medium-down--hide">
+                <span class="site-header--meta-links medium-down--hide">{% if template contains 'index' %}{% else %}<a class="class_name" href="javascript:void(0);" onclick="javascript:introJs().start();">SITE HELP</a> - {% endif %} 
                   {% if customer %}
                     <a href="/account">[ <font color="#0099cc">order history</font> ]</a>
                      &middot; {{ 'layout.customer.log_out' | t | customer_logout_link }}
