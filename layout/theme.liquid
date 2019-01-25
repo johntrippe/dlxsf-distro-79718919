@@ -77,6 +77,46 @@ location.replace("/account/login");
 
 	{% include 'magiczoomplus.headers' %}
 {% assign nowts = "now" | date: "%s" %}{% assign metats = shop.metafields._ls_meta.check %}{% assign timediff = nowts | minus: metats %}{% if timediff < 604800 %}<script src="https://livesearch.okasconcepts.com/js/livesearch.init.min.js?v=2&shop=dlxsf-distro.myshopify.com"></script>{% endif %}
+
+<!-- START LAZY LOAD -->
+
+<script>
+	
+	document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages = document.querySelectorAll("img.lazy");    
+  var lazyloadThrottleTimeout;
+  
+  function lazyload () {
+    if(lazyloadThrottleTimeout) {
+      clearTimeout(lazyloadThrottleTimeout);
+    }    
+    
+    lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+    }, 20);
+  }
+  
+  document.addEventListener("scroll", lazyload);
+  window.addEventListener("resize", lazyload);
+  window.addEventListener("orientationChange", lazyload);
+});
+
+</script>
+
+<!-- END LAZY LOAD -->
+
+
 </head>
 
 <body id="{{ page_title | handle }}" {% if  collection.title == "Krooked Decks" or collection.title == "Krooked Apparel" %} class="krooked" {% elsif collection.title == "Spitfire Wheels" or collection.title == "Spitfire Apparel" %} class="spitfire" {% elsif collection.title == "Thunder Trucks" or collection.title == "Thunder Apparel" %} class="thunder" {% elsif collection.title == "Venture Trucks" or collection.title == "Venture Apparel" %} class="venture" {% elsif collection.title == "REAL Decks" or collection.title == "REAL Apparel" %} class="real" {% elsif collection.title == "Antihero Decks" or collection.title == "Antihero Apparel" %} class="antihero" {% else %} class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" {% endif %}>
