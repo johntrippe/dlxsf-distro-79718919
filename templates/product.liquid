@@ -201,14 +201,14 @@
       {% include 'social-sharing' %}
     {% endif %}
     
-    	<div class="tags">
+    	<div class="tags" data-intro="Click on tags in blue to browse product collections by group." data-step="5">
 		          <b>Browse Tags</b>: <br>
 					{% for tag in product.tags %}
 					<div style="float: left; background: #c3efff; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; padding-right: 6px; color: #FFFFFF;"><a href="/collections/all/{{ tag | handleize }}" rel="tag"><font color="#666">{{ tag }}</font></a></div>
 					{% endfor %}
 		          </i> </div>
 
-  <a data-intro="Click on tags in blue to browse product collections by group." data-step="3"></a></div>
+		</div>
 </div>
 
 

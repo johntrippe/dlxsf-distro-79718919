@@ -122,7 +122,7 @@ function changeText(idElement) {
    
  </script>
 
-	
+<div data-intro="Click on filters to browse by size, style, pro, etc" data-step="1">
 		
 {% if collection.title == "Apparel" or collection.title == "Spitfire Apparel"  or collection.title == "Krooked Apparel"  or collection.title == "Venture Apparel" or collection.title == "Antihero Apparel"  or collection.title == "Thunder Apparel" or collection.title == "REAL Apparel" %}
 		<ul class="clearfix filters">
@@ -264,6 +264,7 @@ function changeText(idElement) {
 	      {% endfor %}
 	    </ul>
 	  </li>
+	  
 	  <li class="divider2"></li>
 	  <li class="clearfix filter">
 	    {% assign tags = 'Pro V-Hollow Lights, Team V-Hollow Lights, Pro V-Lights, Team V-Lights, Pro Regulars, Team Regulars, Pro, Team, Specialty Shape, Slicks, Full Shapes, Price Points, Formula Four Pro, Formula Four Team, Formula Four Colored, Lock-Ins, 80HD Softcruiser, Pro Classic Series, Team Classics, Colored, Bighead, Radials, Radial Slims, Conical Full, Spitfire Wide, Classic Full, Pro Trucks, Titanium Lights, Team Titaniums, Hollow Lights, Team Hollows, Lights, Team Lights, Team Editions, Polished, Color' | split: ',' %}
@@ -427,6 +428,8 @@ function changeText(idElement) {
 		</ul>
 	  
 {% endif %}
+
+</div>
 
 
 	<!-- START BOOTSTRAP MENU -->

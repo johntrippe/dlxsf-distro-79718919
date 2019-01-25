@@ -37,7 +37,7 @@
         
         <!-- START EMAIL NOTIFICATION -->
 		{% if product.tags contains 'nbo' %}
-		<br><a data-intro="Click 'email when aval' to be notified by email when a NEW product you're interested in arrives to our warehouse." data-step="1"></a><u><a href='#' class='BIS_trigger' data-product-data='{{ product | json | escape }}'>email when avail</a></u>
+		<br><a data-intro="Click 'email when aval' to be notified by email when a NEW product you're interested in arrives to our warehouse." data-step="2"></a><u><a href='#' class='BIS_trigger' data-product-data='{{ product | json | escape }}'>email when avail</a></u>
 		{% endif %}
 		<!-- END EMAIL NOTIFICATION -->
         
@@ -114,7 +114,7 @@
 			{% endfor %}
 
 		{% if out_of_stock == true and product.tags contains 'Atonce' %}
-		{% unless product.tags contains 'nbo' %}<a data-intro="Click 'notify' to be notified when back-ordered items are back in stock." data-step="2"></a>
+		{% unless product.tags contains 'nbo' %}<a data-intro="Click 'notify' to be notified when back-ordered items are back in stock." data-step="3"></a>
 		<div style="font-size: 10px;">[<a style="color:red;" href="#" class="BIS_trigger" data-product-handle="{{ product.handle }}">notify</a>]</div>
 		{% endunless %}
 		{% endif %}
