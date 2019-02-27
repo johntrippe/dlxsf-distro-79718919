@@ -159,26 +159,26 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "",
+          "promo1": "shopify:\/\/shop_images\/sf-ad-19-02-FREE-jacopo-web1280x720_copy.jpg",
           "promo1link": "",
           "promo1video": true,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/SwtpGvQaNVw\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
-          "promo2": "shopify:\/\/shop_images\/DAEWON.gif",
-          "promo2link": "\/products\/f4-99-daewon-fury-lock-ins-b2b-232",
-          "promo3": "shopify:\/\/shop_images\/nighthammer.gif",
-          "promo3link": "\/collections\/antihero-decks\/products\/grimple-stix-night-hammer-10-25-right",
-          "promo4": "shopify:\/\/shop_images\/TH-POLISHED.gif",
-          "promo4link": "\/collections\/thunder-trucks\/polished",
-          "promo5": "shopify:\/\/shop_images\/summer-19-prebook-IG-nodates.gif",
-          "promo5link": "\/collections\/2019-BTS-PREBOOK",
-          "promo6": "shopify:\/\/shop_images\/k-horizontal.jpg",
-          "promo6link": "\/products\/f4-99-kader-radiels-072018",
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/gjGgNGIZ68s\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo2": "shopify:\/\/shop_images\/staples-promo-zone2.gif",
+          "promo2link": "\/collections\/staples-collection",
+          "promo3": "shopify:\/\/shop_images\/AH-SPR19-D1-SQUARE.jpg",
+          "promo3link": "\/collections\/2019-spring-drop-1#Antihero",
+          "promo4": "shopify:\/\/shop_images\/RL_-_SP1_-_19_-_ROBBIE_-_CHIMA_-_ANTRA_-_GUEST-_ARTIST_EDITED19.jpg",
+          "promo4link": "\/collections\/real-decks\/antra-guest",
+          "promo5": "shopify:\/\/shop_images\/AH-GRIMPLE-KEYCHAIN-igPortrait.jpg",
+          "promo5link": "\/collections\/antihero-decks\/products\/grimple-keychain-b2b-232",
+          "promo6": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.png",
+          "promo6link": "\/collections\/2019-spring-drop-2",
           "promo6video": false,
-          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/SwtpGvQaNVw\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
-          "promo7": "shopify:\/\/shop_images\/3.jpg",
-          "promo7link": "\/collections\/spitfire-wheels\/80hd-softcruiser",
-          "promo8": "shopify:\/\/shop_images\/2.jpg",
-          "promo8link": "\/collections\/all\/tyshawn-jones",
+          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/eElD_Ko2Bio\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo7": "shopify:\/\/shop_images\/TH-POLISHED.gif",
+          "promo7link": "\/collections\/thunder-trucks\/polished",
+          "promo8": "shopify:\/\/shop_images\/DAEWON.gif",
+          "promo8link": "\/products\/f4-99-daewon-fury-lock-ins-b2b-232",
           "promo9": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
           "promo9link": "https:\/\/www.dlxcafe.com"
         }
@@ -222,8 +222,8 @@
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "",
-          "headertext": "2019 SPRING DROP 1"
+          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.png",
+          "headertext": ""
         }
       },
       "collection4": {

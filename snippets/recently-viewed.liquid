@@ -1,27 +1,34 @@
 {{ '//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js' | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
 
-<div id="recently-viewed-products" class="collection clearfix">
-  <h2>Recently Viewed Products</h2>
+
+	
+<div id="recently-viewed-products" class="collection clearfix" style="display:none">
+  <h1>Recently Viewed Products</h1>
 </div>
 
 {% raw %}
-<script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
-<div id="product-${handle}" class="product">
-  <div class="image" style="background-color: white; padding-top: 10%; vertical-align: bottom;">
-    <a href="${url}">
-      <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
-    </a>
-  </div>
-  <div class="details">
-    <a href="${url}">
-      <span class="title">${title}</span>
-      <span class="price">{{if price_varies}}From {{/if}}${Shopify.formatMoney(price)}</span>
-    </a>
-  </div>
+<div class="grid-uniform">
+	<div class="grid-item">
+		<script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+		<div id="product-${handle}" class="product">
+		  <div class="image">
+		    <a href="${url}">
+		      <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" />
+		    </a>
+		  </div>
+		  <div class="details">
+		    <a href="${url}">
+		      <span class="product-title">${title}</span>
+		      <span class="price">{{if price_varies}}From {{/if}}${Shopify.formatMoney(price)}</span>
+		    </a>
+		  </div>
+		</div>
+		</script>
+	</div>
 </div>
-</script>
 {% endraw %}
+
 
 <script>
 Shopify.Products.showRecentlyViewed( { howManyToShow:5 } );
@@ -48,9 +55,10 @@ margin-right: 0;
 .collection .product .image {
 border: 1px solid #E0E0E0;
 margin-bottom: 10px;
+height: 245px;
+width: 245px;
 vertical-align: middle;
-height: 160px;
-width: 160px;
+display: table-cell;
 overflow: hidden;
 }
 .collection .product .cy {
