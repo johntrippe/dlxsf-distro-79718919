@@ -208,6 +208,9 @@
 		{% endfor %}
 	</div>
 
+{% include 'recently-viewed-collection' %}
+
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
 
   </div>
 
@@ -228,6 +231,8 @@
 {% section 'featured' %}
 
 {% endpaginate %}
+
+<!-- START SCRIPT TO ADD TO CART -->
 
 <script>
 Shopify.itemsToAdd = [];
@@ -296,3 +301,5 @@ table.pure-table img { float:left; padding: 5px 0; }
 table.pure-table td { vertical-align: middle; }
 .quantity { text-align: center; width: 60px !important; margin: 0 !important; }
 </style>
+
+<!-- END SCRIPT TO ADD TO CART -->
