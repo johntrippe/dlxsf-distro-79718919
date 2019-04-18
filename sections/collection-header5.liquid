@@ -1,4 +1,4 @@
-{% if section.settings.banner != NULL %}<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">{% endif %}
+{% if section.settings.banner != NULL %}{% if section.settings.bannerlink != NULL %}<a href="{{ section.settings.bannerlink }}" target="_Blank">{% endif %}<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">{% if section.settings.bannerlink != NULL %}</a>{% endif %}{% endif %}
 
 {% if section.settings.headertext != NULL %}<br>
 
@@ -13,6 +13,11 @@
 	"type": "image_picker",
     "id": "banner",
     "label": "Banner"
+    },
+    {
+      "type": "text",
+      "id": "bannerlink",
+      "label": "Banner Link"
     },
     {
       "type": "text",

@@ -159,26 +159,26 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/sf-ad-19-02-FREE-jacopo-web1280x720_copy.jpg",
-          "promo1link": "",
-          "promo1video": true,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/gjGgNGIZ68s\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo1": "shopify:\/\/shop_images\/DLX-decks-sp19-d3_1000x5001000x500.png",
+          "promo1link": "\/collections\/2019-spring-drop-3",
+          "promo1video": false,
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/eO9usG3hLbI\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "promo2": "shopify:\/\/shop_images\/staples-promo-zone2.gif",
           "promo2link": "\/collections\/staples-collection",
-          "promo3": "shopify:\/\/shop_images\/AH-SPR19-D1-SQUARE.jpg",
-          "promo3link": "\/collections\/2019-spring-drop-1#Antihero",
-          "promo4": "shopify:\/\/shop_images\/great-heights.jpg",
-          "promo4link": "\/collections\/real-decks\/great-heights",
-          "promo5": "shopify:\/\/shop_images\/AH-GRIMPLE-KEYCHAIN-igPortrait.jpg",
-          "promo5link": "\/collections\/antihero-decks\/products\/grimple-keychain-b2b-232",
-          "promo6": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.png",
-          "promo6link": "\/collections\/2019-spring-drop-2",
+          "promo3": "shopify:\/\/shop_images\/ah-hol19-500.jpg",
+          "promo3link": "\/collections\/2019-holiday-prebook",
+          "promo4": "shopify:\/\/shop_images\/blooming.gif",
+          "promo4link": "\/products\/kyle-blooming-visions-8-25-b2b-256",
+          "promo5": "shopify:\/\/shop_images\/RL_-_SP1_-_19_-_ROBBIE_-_CHIMA_-_ANTRA_-_GUEST-_ARTIST_EDITED19.jpg",
+          "promo5link": "\/collections\/real-decks\/antra-guest",
+          "promo6": "shopify:\/\/shop_images\/distro-holiday_prebook_1000_5002.gif",
+          "promo6link": "\/collections\/2019-holiday-prebook",
           "promo6video": false,
-          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/eElD_Ko2Bio\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/gjGgNGIZ68s\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "promo7": "shopify:\/\/shop_images\/TH-POLISHED.gif",
           "promo7link": "\/collections\/thunder-trucks\/polished",
-          "promo8": "shopify:\/\/shop_images\/DAEWON.gif",
-          "promo8link": "\/products\/f4-99-daewon-fury-lock-ins-b2b-232",
+          "promo8": "shopify:\/\/shop_images\/great-heights.jpg",
+          "promo8link": "\/collections\/real-decks\/great-heights",
           "promo9": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
           "promo9link": "https:\/\/www.dlxcafe.com"
         }
@@ -187,6 +187,7 @@
         "type": "collection-header",
         "settings": {
           "banner": "shopify:\/\/shop_images\/DLX-acc-SUM19-PRE-HEADER-1000x500.png",
+          "bannerlink": "",
           "headertext": ""
         }
       },
@@ -204,25 +205,27 @@
       "collection-header2": {
         "type": "collection-header2",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-Completes-Banner-NODATES-1000x500.jpg",
+          "banner": "shopify:\/\/shop_images\/holiday_prebook_1000_500.gif",
+          "bannerlink": "http:\/\/www.dlxsf.com\/holiday-2019-prebook.pdf",
           "headertext": ""
         }
       },
       "collection2": {
         "type": "collection2",
         "settings": {
-          "brand1": "Real",
+          "brand1": "Spitfire",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "",
-          "brand5": "",
-          "brand6": ""
+          "brand4": "Real",
+          "brand5": "Thunder",
+          "brand6": "Venture"
         }
       },
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.png",
+          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.jpg",
+          "bannerlink": "",
           "headertext": ""
         }
       },
@@ -241,6 +244,7 @@
         "type": "collection-header3",
         "settings": {
           "banner": "shopify:\/\/shop_images\/DLX-HOL18-PRE-HEADER-1000x500.gif",
+          "bannerlink": "",
           "headertext": "2018 HOLIDAY PREBOOK LEFTOVERS"
         }
       },
@@ -258,7 +262,8 @@
       "collection-header5": {
         "type": "collection-header5",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/summer-19-prebook-b2b-nodates.gif",
+          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d3_1000x5001000x500.png",
+          "bannerlink": "",
           "headertext": ""
         }
       },
@@ -277,6 +282,7 @@
         "type": "collection-header6",
         "settings": {
           "banner": "shopify:\/\/shop_images\/2-SF-STAY-LIT-GLOW-OVERVIEW-1000x500_0f9f1e70-8f81-4226-a6bb-47ba981b0144.jpg",
+          "bannerlink": "",
           "headertext": ""
         }
       },
@@ -289,6 +295,13 @@
           "brand4": "",
           "brand5": "",
           "brand6": ""
+        }
+      },
+      "collection-header-sf-wheels": {
+        "type": "collection-header-sf-wheels",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/sf-sp19-b2b-banners-2.jpg",
+          "bannerlink": "http:\/\/www.spitfirewheels.com\/"
         }
       }
     },
