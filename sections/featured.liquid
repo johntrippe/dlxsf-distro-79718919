@@ -15,7 +15,22 @@
 	{% endif %}
 </div>
 
-<div class="grid-item" style="padding: 0px;">
+<div class="grid-item" style="padding: 0px; display: flex; flex-wrap: wrap;">
+	
+	<!-- START TEXT SECTION -->
+	
+		<div class="grid-item large--one-half" style="padding: 10px;">
+			<div style="padding: 10px; {% if section.settings.text1bgimage != blank %}background: url({{ section.settings.text1bgimage | img_url: '1000x1000' }});{% endif %}{% if section.settings.text1bgcolor != blank %}background-color: {{ section.settings.text1bgcolor }};{% endif %} height: 100%;"><h2>{{ section.settings.text1header }}:</h2>{{ section.settings.text1text }}{% if section.settings.text1linkurl != blank %} 
+<br><br><a href="{{ section.settings.text1linkurl }}"><font color="red"><b>{{ section.settings.text1linktext }}</b></font></a>{% endif %}<br><br>
+			</div>
+		</div>
+
+		<div class="grid-item large--one-half" style="padding: 10px;">
+			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2>{{ section.settings.text2header }}:</h2><h2>{{ section.settings.text2text }}</h2><br><br>
+			</div>
+		</div>
+		
+	<!-- END TEXT SECTION -->
 	
 	<!-- START 2 SECTION -->
 	
@@ -89,7 +104,67 @@
       "id": "promo1videolink",
       "label": "Promo 1 Video Embed"
     },
-	 {
+	{
+	 "type": "image_picker",
+      "id": "text1bgimage",
+      "label": "Text 1 BG Image"
+    },
+    {
+	  "type": "text",
+      "id": "text1bgcolor",
+      "label": "Text 1 BG Color"
+    },
+    {
+	  "type": "text",
+      "id": "text1header",
+      "label": "Text 1 Header"
+    },
+    {
+	  "type": "text",
+      "id": "text1text",
+      "label": "Text 1 Text"
+    },
+    {
+	  "type": "text",
+      "id": "text1linkurl",
+      "label": "Text 1 Link URL"
+    },
+    {
+	  "type": "text",
+      "id": "text1linktext",
+      "label": "Text 1 Link Text"
+    },
+    {
+	 "type": "image_picker",
+      "id": "text2bgimage",
+      "label": "Text 2 BG Image"
+    },
+    {
+	  "type": "text",
+      "id": "text2bgcolor",
+      "label": "Text 2 BG Color"
+    },
+    {
+	  "type": "text",
+      "id": "text2header",
+      "label": "Text 2 Header"
+    },
+    {
+	  "type": "text",
+      "id": "text2text",
+      "label": "Text 2 Text"
+    },
+    {
+	  "type": "text",
+      "id": "text2linkurl",
+      "label": "Text 2 Link URL"
+    },
+    {
+	  "type": "text",
+      "id": "text2linktext",
+      "label": "Text 2 Link Text"
+    },
+	{
 	 "type": "image_picker",
       "id": "promo2",
       "label": "Promo 2"
