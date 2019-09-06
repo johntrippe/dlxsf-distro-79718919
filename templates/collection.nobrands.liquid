@@ -38,7 +38,7 @@
 					
 					
 					
-					<div class="nav-container2" style="background-color: white;">
+					<div class="nav-container2">
 						
 						{% include 'collection-sidebar' %}
 						
@@ -88,7 +88,9 @@
       </div>
     {% else %}
     
-    <!-- <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/sf_lockins_flyer_web_header.jpg?1337823584112838332"> -->
+    {% section 'collection-no-brands' %}
+    
+    
     <header class="section-header">
      
       
@@ -112,19 +114,13 @@
     </header>
     {% endif %}
 
-
-
-<!-- START HEADER IMAGE -->    
-  <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/b2b-for-jack-assetsDLX-Slider_1000x500.jpg?v=1559329808"><br><br>
-<!-- END HEADER IMAGE -->   
+	
     
-    <div class="grid-uniform">
-		{% for product in collection.products %}
+	<div class="grid-uniform">
+	    {% for product in collection.products %}
 		{% include 'product-grid-item' %}
 		{% endfor %}
 	</div>
-
-
     
 
 

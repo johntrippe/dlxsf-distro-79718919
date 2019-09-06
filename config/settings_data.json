@@ -117,7 +117,7 @@
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
+    "checkout_body_background_color": "#ffffff",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#fafafa",
@@ -159,36 +159,36 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/DLX-decks-sp19-d3_1000x5001000x500.png",
-          "promo1link": "\/collections\/2019-spring-drop-3",
+          "promo1": "shopify:\/\/shop_images\/DLX-decks-hol191000x500-no-dates.jpg",
+          "promo1link": "\/collections\/2020-spring-prebook",
           "promo1video": false,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/eO9usG3hLbI\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/f1DDm7DAV0s\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "text1bgimage": "",
-          "text1bgcolor": "#c1fce9",
-          "text1header": "CLICK BAIT",
-          "text1text": "Thunder 2019 Drop 1 Catalog is LIVE!<br><br> Check out the newest Spring ’19 release from Thunder with new Stamped Signature trucks from Alec Majerus, Chris Jones & John Fitzgerald. Plus, Full Dip Scripts, Pearl Titanium Lights, and tons more available now.",
-          "text1linkurl": "\/collections\/thunder-trucks",
-          "text1linktext": "SHOP NOW",
-          "text2bgimage": "shopify:\/\/shop_images\/bg-sf-blue.jpg",
-          "text2bgcolor": "#c1fce9",
-          "text2header": "NEW ADDITIONS",
-          "text2text": "- <a href=\"\/collections\/2019-spring-drop-3\">2019 SPRING DROP 3<\/a><br>- <a href=\"\/collections\/2019-holiday-prebook\">2019 HOLIDAY PREBOOK<\/a>",
+          "text1bgcolor": "#E3E3E3",
+          "text1header": "NEWS - WEEK OF 8.26",
+          "text1text": "<a href=\"https:\/\/www.antiheroskateboards.com\/\" target=\"_Blank\"><b>ANTIHERO SKATEBOARDS : FALL 2019 CATALOG<\/b><\/a> --- Antihero Skateboards Fall 2019 Drop 1 has landed. Storm into Area 50-50 with the NEW Park Board series, Trujillo & GT Vantics & Oblivion Pro Series with Artwork by Todd Francis. Is Daan turning Grimple? -<a href=\"\/collections\/antihero-decks\">SHOP ANTIHERO<\/a> <br><br> <a href=\"https:\/\/www.thepredatorybird.com\/why-so-sad-2019-mission-for-mental-health\/\" target=\"_Blank\"><b>WHY SO SAD? 2019 MISSION FOR MENTAL HEALTH<\/b><\/a> -- John Rattray is on his 3rd year raising funds for mental health. The hope is that one day we’ll talk about depression and anxiety as easily as we talk about swellbows. <a href=\"https:\/\/www.thepredatorybird.com\/why-so-sad-2019-mission-for-mental-health\/\">Learn all about this year’s Why So Sad? mission here<\/a>. <br><br> <a href=\"\/collections\/2020-spring-prebook\"><b>SPRING PREBOOK<\/b><\/a> --- Order deadline fast approaching.",
+          "text1linkurl": "\/collections\/2020-spring-prebook",
+          "text1linktext": "ORDER NOW",
+          "text2bgimage": "shopify:\/\/shop_images\/spitfire-bg2.jpg",
+          "text2bgcolor": "#FAFACE",
+          "text2header": "WHAT'S NEW\/BACK IN STOCK",
+          "text2text": "- <a href=\"\/collections\/spitfire-wheels\/lance-mountain-pool-services\"><b>F4 99 PRO CLASSIC MOUNTAIN POOL SERVICE<\/b><\/a>  <br> - <a href=\"\/collections\/venture-trucks\/products\/2018bts-hi-polished\"><b>NEW VENTURE SIZES<\/b><\/a>",
           "text2linkurl": "",
           "text2linktext": "",
-          "promo2": "shopify:\/\/shop_images\/oval-selects.jpg",
-          "promo2link": "\/collections\/real-decks\/dual-ovals",
-          "promo3": "shopify:\/\/shop_images\/KR-hol-18-appare2-500.png",
-          "promo3link": "\/collections\/2019-holiday-prebook",
+          "promo2": "shopify:\/\/shop_images\/gonz_postcards.gif",
+          "promo2link": "\/collections\/real-decks\/gonz-postcards",
+          "promo3": "shopify:\/\/shop_images\/fall-1.gif",
+          "promo3link": "\/collections\/2019-fall-drop-1",
           "promo4": "shopify:\/\/shop_images\/sf-tablet-1536.png",
           "promo4link": "\/collections\/spitfire-wheels",
-          "promo5": "shopify:\/\/shop_images\/na-kel-thunders.gif",
-          "promo5link": "\/products\/nakel-nak-hollow-light-wht-blk-b2b-256",
-          "promo6": "shopify:\/\/shop_images\/distro-holiday_prebook_1000_5002.gif",
-          "promo6link": "\/collections\/2019-holiday-prebook",
+          "promo5": "shopify:\/\/shop_images\/VE-Dot.gif",
+          "promo5link": "\/collections\/venture-trucks\/ve-dot",
+          "promo6": "shopify:\/\/shop_images\/3-JEREMY-FISH-dt.jpg",
+          "promo6link": "\/collections\/jeremy-fish-capsule",
           "promo6video": false,
-          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/gjGgNGIZ68s\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
-          "promo7": "shopify:\/\/shop_images\/GUY-SPITFIRES.gif",
-          "promo7link": "\/products\/guy-mariano-pro-classic-turquoise-black-swirl-b2b-256",
+          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/Qfvcodjy9VQ\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo7": "shopify:\/\/shop_images\/TH-AARON.gif",
+          "promo7link": "\/collections\/thunder-trucks\/products\/aaron-herrinton-stamped-series-team-hollows-b2b-321",
           "promo8": "shopify:\/\/shop_images\/staples-promo-zone2.gif",
           "promo8link": "\/collections\/staples-collection",
           "promo9": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
@@ -198,18 +198,18 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-acc-SUM19-PRE-HEADER-1000x500.png",
-          "bannerlink": "",
+          "banner": "shopify:\/\/shop_images\/DLX-prebook-sum191000x500.jpg",
+          "pdflink": "",
           "headertext": ""
         }
       },
       "collection": {
         "type": "collection",
         "settings": {
-          "brand1": "Spitfire",
+          "brand1": "Real",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "Real",
+          "brand4": "Sptifire",
           "brand5": "Thunder",
           "brand6": "Venture"
         }
@@ -217,9 +217,9 @@
       "collection-header2": {
         "type": "collection-header2",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/holiday_prebook_1000_500.gif",
-          "bannerlink": "http:\/\/www.dlxsf.com\/holiday-2019-prebook.pdf",
-          "headertext": ""
+          "banner": "shopify:\/\/shop_images\/DLX-decks-hol191000x500-no-dates.jpg",
+          "pdflink": "",
+          "headertext": "2020 SPRING PREBOOK"
         }
       },
       "collection2": {
@@ -236,8 +236,8 @@
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d21000x500.jpg",
-          "bannerlink": "",
+          "banner": "shopify:\/\/shop_images\/e872d67e-76af-4354-8fab-b5b1f9ee2155.jpg",
+          "pdflink": "",
           "headertext": ""
         }
       },
@@ -255,18 +255,18 @@
       "collection-header3": {
         "type": "collection-header3",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-HOL18-PRE-HEADER-1000x500.gif",
-          "bannerlink": "",
-          "headertext": "2018 HOLIDAY PREBOOK LEFTOVERS"
+          "banner": "shopify:\/\/shop_images\/DLX-prebook-sum191000x500-copy.gif",
+          "pdflink": "",
+          "headertext": "2019 FALL DROP 1"
         }
       },
       "collection3": {
         "type": "collection3",
         "settings": {
-          "brand1": "Spitfire",
-          "brand2": "Real",
-          "brand3": "Antihero",
-          "brand4": "Krooked",
+          "brand1": "Real",
+          "brand2": "Antihero",
+          "brand3": "Krooked",
+          "brand4": "Spitfire",
           "brand5": "Thunder",
           "brand6": "Venture"
         }
@@ -274,8 +274,8 @@
       "collection-header5": {
         "type": "collection-header5",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-decks-sp19-d3_1000x5001000x500.png",
-          "bannerlink": "",
+          "banner": "shopify:\/\/shop_images\/b2b-spring-d3.jpg",
+          "pdflink": "",
           "headertext": ""
         }
       },
@@ -294,7 +294,7 @@
         "type": "collection-header6",
         "settings": {
           "banner": "shopify:\/\/shop_images\/2-SF-STAY-LIT-GLOW-OVERVIEW-1000x500_0f9f1e70-8f81-4226-a6bb-47ba981b0144.jpg",
-          "bannerlink": "",
+          "pdflink": "",
           "headertext": ""
         }
       },
@@ -314,6 +314,30 @@
         "settings": {
           "banner": "shopify:\/\/shop_images\/sf-sp19-b2b-banners-2.jpg",
           "bannerlink": "http:\/\/www.spitfirewheels.com\/"
+        }
+      },
+      "collection-no-brands": {
+        "type": "collection-no-brands",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/ahgh-landscape-header.jpg",
+          "pdflink": "https:\/\/www.dlxsf.com\/antihero-gnarhunters.pdf",
+          "headertext": ""
+        }
+      },
+      "collection-no-brands2": {
+        "type": "collection-no-brands2",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/sf-quartersnacks-1000x500.jpg",
+          "pdflink": "https:\/\/www.dlxsf.com\/spitfire-quartersnacks.pdf",
+          "headertext": ""
+        }
+      },
+      "collection-no-brands3": {
+        "type": "collection-no-brands3",
+        "settings": {
+          "banner": "shopify:\/\/shop_images\/fish-capsule.jpg",
+          "pdflink": "",
+          "headertext": ""
         }
       }
     },

@@ -20,11 +20,8 @@ Use the assign statement outside of this comment block at the top of your templa
 <!-- START NAV -->
 {% include 'order-form-nav' %}
 <!-- END NAV -->
-{% unless  collection.title == "Bearings" or collection.title == "Bolts"  or collection.title == "Bushings"  or collection.title == "Griptape" or collection.title == "Misc Hardware" or collection.title == "Risers" or collection.title == "Skate Tools" or collection.title == "Wax" or collection.title == "Real Apparel" or collection.title == "Antihero Apparel" or collection.title == "Krooked Apparel" or collection.title == "Thunder Apparel" or collection.title == "Venture Apparel" or collection.title == "Spitfire Apparel"%}
+
 <br><br>
-<a href="{{ page.url }}-avail">Show Only On Hand</a>
-<br><br>
-{% endunless %}  
 {% if  collection.title == "Thunder Trucks" or collection.title == "Venture Trucks" %}
 <font color="red"><B>*</B> PLEASE NOTE - TRUCKS SOLD AS SINGLES</font>
 <br><br>
@@ -113,50 +110,7 @@ Use the assign statement outside of this comment block at the top of your templa
 </div>
 {% endif %}
 
-{% if available_only != 'yes' %}
 
-		{% if collection.products_count > 0 %} 
-		{{ 'http://yui.yahooapis.com/pure/0.4.2/tables-min.css' | stylesheet_tag }}
-		<table class="pure-table pure-table-bordered">
-		  <tbody>
-		  {% for product in collection.products %}
-		
-		    {% if product.available %}
-		      {% for variant in product.variants %}
-		
-		        {% if variant.available %}
-		        <tr class="{% cycle 'pure-table-odd', '' %}">
-		          <td style="background-color:white">
-		            <a href="{{ product.url | collection }}">
-		              <img src="{{ product.featured_image.src | product_img_url: 'compact' }}" alt="{{ product.featured_image.alt | escape }}" />
-		            </a>
-		          </td>
-		          <td>
-		            <a href="{{ product.url | collection }}">
-		             <font color="#000">{{ product.title }}</font>{% unless variant.title contains 'Default' %} - <font color="#003399">{{ variant.title }}</font>{% endunless %}{% unless variant.sku == '' %} - {{ variant.sku }}{% endunless %}       {% if variant.inventory_quantity <= 0 %}<font color="red">[ On Back Order ]</font>{% endif %}
-		            </a>
-		          </td>
-		          <td>
-		{{ variant.price | money }}
-		          </td>
-		          <td style="text-align:right;">
-		            <input onfocus="this.select()" class="quantity field" data-id="{{ variant.id }}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}{% assign max = variant.inventory_quantity %}{% for item in cart.items %}{% if item.id == variant.id %}{% assign max = max | minus: item.quantity %}{% endif %}{% endfor %} max="{{ max }}" {% endunless %} type="text" value="" tabindex="1" />
-		          </td>
-		        </tr>
-		        {% endif %}
-		      {% endfor %}
-		    {% endif %}
-		  {% endfor %}
-		  </tbody>
-		</table>
-		<div class="action-bar clearfix">
-		  <input class="action-button submit button btn right add-to-cart-order-form" type="button" value="Add to the cart" />
-		</div> 
-		{% else %}
-		<p>There are no products in this view.</p>
-		{% endif %}
-		
-{% else %}
 
 
 		{% if collection.products_count > 0 %} 
@@ -199,8 +153,7 @@ Use the assign statement outside of this comment block at the top of your templa
 		{% else %}
 		<p>There are no products in this view.</p>
 		{% endif %}
-		
-{% endif %}
+
 		
 
 <!-- START NAV -->

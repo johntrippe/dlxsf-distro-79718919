@@ -6,7 +6,7 @@
 
   <div class="grid-item large--four-fifths">
     <div class="grid">
-      <div class="grid-item large--ten-twelfths">
+      <div class="grid-item large--twelve-twelfths">
 
         {% if current_tags %}
           <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>
@@ -16,20 +16,13 @@
 
         {% for article in blog.articles %}
 
-          <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-          <p class="text-light">
-            {% capture date %}<strong><time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time></strong>{% endcapture %}
-            {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-            {{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}
-          </p>
+          
+          
 
-          <div class="rte">
-            {% if article.excerpt.size > 0 %}
-              {{ article.excerpt }}
-            {% else %}
-              <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-            {% endif %}
-          </div>
+          <div class="rte" style="padding-right: 20px;">
+          <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+          {{ article.content }}
+		  </div>
 
           <ul>
             {% if blog.comments_enabled? %}
@@ -40,10 +33,13 @@
             </li>
             {% endif %}
 
-            {% include 'tags-article' %}
+            {% include 'tags-article' %} {% capture date %}<strong><time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time></strong>{% endcapture %}
+            {% capture author %}<strong>DLX</strong>{% endcapture %}
+            {{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}
+            <br><br>---<br>
           </ul>
 
-          <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} →</a></p>
+          <p>{% comment %}<a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} →</a></p>{% endcomment %}
 
         {% endfor %}
 
@@ -64,3 +60,6 @@
 </div>
 
 {% endpaginate %}
+
+
+<br><br>{% section 'featured' %}

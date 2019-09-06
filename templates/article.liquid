@@ -10,20 +10,20 @@
 
   <div class="grid-item large--four-fifths">
     <div class="grid">
-      <div class="grid-item large--ten-twelfths">
+      <div class="grid-item large--twelve-twelfths">
 
         <header class="section-header">
           <div class="section-header--left">
             <h1>{{ article.title }}</h1>
             <p class="text-light">
               {% capture date %}<strong><time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time></strong>{% endcapture %}
-              {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
+             {% capture author %}<strong>DLX</strong>{% endcapture %}
               {{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}
             </p>
           </div>
         </header>
 
-        <div class="rte">
+        <div class="rte" style="padding-right: 20px;">
           {{ article.content }}
         </div>
 
@@ -178,3 +178,5 @@
     {% include 'blog-sidebar' %}
   </aside>
 </div>
+
+<br><br>{% section 'featured' %}

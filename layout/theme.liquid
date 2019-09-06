@@ -82,7 +82,7 @@ location.replace("/account/login");
 
 
 	{% include 'magiczoomplus.headers' %}
-{% assign nowts = "now" | date: "%s" %}{% assign metats = shop.metafields._ls_meta.check %}{% assign timediff = nowts | minus: metats %}{% if timediff < 604800 %}<script src="https://livesearch.okasconcepts.com/js/livesearch.init.min.js?v=2&shop=dlxsf-distro.myshopify.com"></script>{% endif %}
+{% assign nowts = "now" | date: "%s" %}{% assign metats = shop.metafields._ls_meta.check %}{% assign timediff = nowts | minus: metats %}{% if timediff < 604800 %}<script async="async" src="https://livesearch.okasconcepts.com/js/livesearch.init.min.js?v=2&shop=dlxsf-distro.myshopify.com"></script>{% endif %}
 
 
 </head>

@@ -1,8 +1,14 @@
-{% if section.settings.banner != NULL %}{% if section.settings.bannerlink != NULL %}<a href="{{ section.settings.bannerlink }}" target="_Blank">{% endif %}<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">{% if section.settings.bannerlink != NULL %}</a>{% endif %}{% endif %}
+{% if section.settings.banner != NULL %}{% if section.settings.pdflink != NULL %}<a href="{{ section.settings.pdflink }}" target="_Blank">{% endif %}<img src="{{ section.settings.banner | img_url: '1000x500' }}" border="0">{% if section.settings.pdflink != NULL %}</a>{% endif %}{% endif %}
 
 {% if section.settings.headertext != NULL %}<br>
 
 <h1><br>{{ section.settings.headertext }}</h1>{% endif %}
+
+{% if section.settings.pdflink != "" %}
+<br><a href="{{ section.settings.pdflink }}" target="_Blank"><u>Download the PDF</u></a>
+{% endif %}
+
+
 
 
 {% schema %}
@@ -16,8 +22,8 @@
     },
     {
       "type": "text",
-      "id": "bannerlink",
-      "label": "Banner Link"
+      "id": "pdflink",
+      "label": "PDF Link"
     },
     {
       "type": "text",
