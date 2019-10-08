@@ -20,13 +20,32 @@
 	<!-- START TEXT SECTION -->
 	
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div style="padding: 10px; {% if section.settings.text1bgimage != blank %}background: url({{ section.settings.text1bgimage | img_url: '1000x1000' }});{% endif %}{% if section.settings.text1bgcolor != blank %}background-color: {{ section.settings.text1bgcolor }};{% endif %} height: 100%;"><h2>{{ section.settings.text1header }}:</h2>{{ section.settings.text1text }}{% if section.settings.text1linkurl != blank %} 
-<br><br><a href="{{ section.settings.text1linkurl }}"><font color="red"><b>{{ section.settings.text1linktext }}</b></font></a>{% endif %}<br><br>
+			<div style="padding: 10px; {% if section.settings.text1bgimage != blank %}background: url({{ section.settings.text1bgimage | img_url: '1000x1000' }});{% endif %}{% if section.settings.text1bgcolor != blank %}background-color: {{ section.settings.text1bgcolor }};{% endif %} height: 100%;"><h2>{{ section.settings.text1header }}:</h2>
+			
+			<!-- START NEWS STORIES -->
+			<font color="{{ section.settings.text1color }}">
+			{% if section.settings.story1title != blank %}<a href="{{ section.settings.story1link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story1title | upcase }}</u></font></b></a> --> {{ section.settings.story1text }}{% endif %}
+			
+			{% if section.settings.story2title != blank %}<br><br><a href="{{ section.settings.story2link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story2title | upcase }}</u></font></b></a> --> {{ section.settings.story2text }}{% endif %}
+			
+			{% if section.settings.story3title != blank %}<br><br><a href="{{ section.settings.story3link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story3title | upcase }}</u></font></b></a> --> {{ section.settings.story3text }}{% endif %}
+			
+			{% if section.settings.story4title != blank %}<br><br><a href="{{ section.settings.story4link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story4title | upcase }}</u></font></b></a> --> {{ section.settings.story4text }}{% endif %}
+			
+			</font><br><br>
+			<!-- START NEWS STORIES -->
 			</div>
 		</div>
 
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2>{{ section.settings.text2header }}:</h2><h2>{{ section.settings.text2text }}</h2><br><br>
+			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2><font color="{{ section.settings.text2headercolor }}">{{ section.settings.text2header }}:</font></h2>
+			
+			<h2>
+			{% if section.settings.new1title != blank %}<a href="{{ section.settings.new1url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new1title }}</font></b></a><br>{% endif %}
+			{% if section.settings.new2title != blank %}<a href="{{ section.settings.new2url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new2title }}</font></b></a><br>{% endif %}
+			{% if section.settings.new3title != blank %}<a href="{{ section.settings.new3url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new3title }}</font></b></a><br>{% endif %}
+			{% if section.settings.new4title != blank %}<a href="{{ section.settings.new4url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new4title }}</font></b></a><br>{% endif %}
+			</h2>
 			</div>
 		</div>
 		
@@ -34,9 +53,9 @@
 	
 	<!-- START 2 SECTION -->
 	
-		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo2link }}"><img border="0" src="{{ section.settings.promo2 | img_url: '500x500' }}"></a></div>
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo2link }}"><img loading="lazy" border="0" src="{{ section.settings.promo2 | img_url: '500x500' }}"></a></div>
 		
-		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo3link }}"><img border="0" src="{{ section.settings.promo3 | img_url: '500x500' }}"></a></div>
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo3link }}"><img loading="lazy" border="0" src="{{ section.settings.promo3 | img_url: '500x500' }}"></a></div>
 		
 	<!-- END 2 SECTION -->
 	
@@ -46,7 +65,7 @@
 		
 		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo5link }}"><img loading="lazy" border="0" src="{{ section.settings.promo5 | img_url: '500x500' }}"></a></div>
 		
-	<!-- END 3 SECTION -->
+	<!-- END 3 SECTION --> 
 	
 	<!-- START 4 SECTION -->
 		{% if section.settings.promo6video == true %}
@@ -67,7 +86,7 @@
 	
 		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo7link }}"><img loading="lazy" border="0" src="{{ section.settings.promo7 | img_url: '500x500' }}"></a></div>
 		
-		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img loading="lazy" border="0" src="{{ section.settings.promo8 | img_url: '500x500' }}"></a></div>
+		<div class="grid-item large--one-half" style="padding: 10px;"><a href="{{ section.settings.promo8link }}"><img loading="lazy" border="0"  src="{{ section.settings.promo8 | img_url: '500x500' }}"></a></div>
 		
 	<!-- END 5 SECTION -->
 
@@ -114,6 +133,11 @@
       "id": "text1bgcolor",
       "label": "Text 1 BG Color"
     },
+     {
+	  "type": "text",
+      "id": "text1color",
+      "label": "Text 1 Color"
+    },
     {
 	  "type": "text",
       "id": "text1header",
@@ -121,18 +145,63 @@
     },
     {
 	  "type": "text",
-      "id": "text1text",
-      "label": "Text 1 Text"
+      "id": "story1title",
+      "label": "Story 1 Title"
     },
     {
 	  "type": "text",
-      "id": "text1linkurl",
-      "label": "Text 1 Link URL"
+      "id": "story1link",
+      "label": "Story 1 Link"
     },
     {
 	  "type": "text",
-      "id": "text1linktext",
-      "label": "Text 1 Link Text"
+      "id": "story1text",
+      "label": "Story 1 Text"
+    },
+    {
+	  "type": "text",
+      "id": "story2title",
+      "label": "Story 2 Title"
+    },
+    {
+	  "type": "text",
+      "id": "story2link",
+      "label": "Story 2 Link"
+    },
+    {
+	  "type": "text",
+      "id": "story2text",
+      "label": "Story 2 Text"
+    },
+    {
+	  "type": "text",
+      "id": "story3title",
+      "label": "Story 3 Title"
+    },
+    {
+	  "type": "text",
+      "id": "story3link",
+      "label": "Story 3 Link"
+    },
+    {
+	  "type": "text",
+      "id": "story3text",
+      "label": "Story 3 Text"
+    },
+    {
+	  "type": "text",
+      "id": "story4title",
+      "label": "Story 4 Title"
+    },
+    {
+	  "type": "text",
+      "id": "story4link",
+      "label": "Story 4 Link"
+    },
+    {
+	  "type": "text",
+      "id": "story4text",
+      "label": "Story 4 Text"
     },
     {
 	 "type": "image_picker",
@@ -146,13 +215,59 @@
     },
     {
 	  "type": "text",
+      "id": "text2headercolor",
+      "label": "Text 2 Header Color"
+    },
+    {
+	  "type": "text",
       "id": "text2header",
       "label": "Text 2 Header"
     },
     {
 	  "type": "text",
-      "id": "text2text",
-      "label": "Text 2 Text"
+      "id": "text2color",
+      "label": "Text 2 txt Color"
+    },
+    {
+	  "type": "text",
+      "id": "new1title",
+      "label": "New 1 Title"
+    },
+    {
+	  "type": "text",
+      "id": "new1url",
+      "label": "New 1 Url"
+    },
+    
+    {
+	  "type": "text",
+      "id": "new2title",
+      "label": "New 2 Title"
+    },
+    {
+	  "type": "text",
+      "id": "new2url",
+      "label": "New 2 Url"
+    },
+    {
+	  "type": "text",
+      "id": "new3title",
+      "label": "New 3 Title"
+    },
+    {
+	  "type": "text",
+      "id": "new3url",
+      "label": "New 3 Url"
+    },
+    {
+	  "type": "text",
+      "id": "new4title",
+      "label": "New 4 Title"
+    },
+    {
+	  "type": "text",
+      "id": "new4url",
+      "label": "New 4 Url"
     },
     {
 	  "type": "text",
