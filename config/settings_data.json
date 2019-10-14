@@ -159,17 +159,17 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/2-HIGH-SEAS-dt2.jpg",
-          "promo1link": "\/collections\/real-decks\/high-seas",
+          "promo1": "shopify:\/\/shop_images\/DLX-HEADERS-SUMMER20-PREBOOK-v21000x500_1WEEK_w_o_DATES.jpeg",
+          "promo1link": "\/collections\/2020-spring-completes",
           "promo1video": true,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/WfsLBtRd1CA\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/1g_KDeR8plY\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "text1bgimage": "",
-          "text1bgcolor": "#ff0000",
+          "text1bgcolor": "#04C0FC",
           "text1color": "#fff",
-          "text1header": "NEWS - WEEK OF 9.30",
-          "story1title": "SPITFIRE – BURNING THROUGH THE YEARS",
-          "story1link": "https:\/\/www.dlxsf.com\/news\/spitfire-burning-years\/",
-          "story1text": "Spitfire is hosting a show at KCDC next Friday. October 4th from 7-9. If you’re in New York, come out to see a spread of visuals from the past 30 year",
+          "text1header": "NEWS - WEEK OF 10.14",
+          "story1title": "SUMMER PREBOOK",
+          "story1link": "\/collections\/2020-summer-prebook",
+          "story1text": "Only 1 more week to place your order for Summer Prebook ~ Shipping April 27th",
           "story2title": "",
           "story2link": "",
           "story2text": "",
@@ -194,16 +194,16 @@
           "new4url": "",
           "text2linkurl": "",
           "text2linktext": "",
-          "promo2": "shopify:\/\/shop_images\/VE-6-1.gif",
-          "promo2link": "\/collections\/venture-trucks\/hi-6-1",
+          "promo2": "shopify:\/\/shop_images\/slides-500-distro.gif",
+          "promo2link": "\/collections\/2020-summer-prebook",
           "promo3": "shopify:\/\/shop_images\/sf-in-stock.gif",
           "promo3link": "\/pages\/spitfire-wheels-order-form-avail",
-          "promo4": "shopify:\/\/shop_images\/AH-FD19-DAAN_GRIMPLE_BUSINESS-BOTTOM-DETAIL2.jpg",
-          "promo4link": "\/products\/daan-grimple-business-8-06",
-          "promo5": "shopify:\/\/shop_images\/cath-series.gif",
-          "promo5link": "\/collections\/real-decks\/cathedrals",
-          "promo6": "shopify:\/\/shop_images\/ah-legends-cat-dt.jpg",
-          "promo6link": "\/collections\/antihero-decks\/legends",
+          "promo4": "shopify:\/\/shop_images\/overspray-2.jpg",
+          "promo4link": "\/collections\/real-decks\/overspray",
+          "promo5": "shopify:\/\/shop_images\/KR-FD19-CROMER-HOLYHELL-SET-2_5606ac0e-aa6e-4342-b41c-6507de07472c.jpg",
+          "promo5link": "\/products\/cromer-holy-hell-8-38-b2b-389",
+          "promo6": "shopify:\/\/shop_images\/slides-1000-distro.gif",
+          "promo6link": "\/collections\/2020-summer-prebook",
           "promo6video": false,
           "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/3pSA1sYl_DE\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "promo7": "shopify:\/\/shop_images\/staples-promo-zone2.gif",
@@ -274,9 +274,9 @@
       "collection-header3": {
         "type": "collection-header3",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-prebook-sum191000x500-copy.gif",
-          "pdflink": "",
-          "headertext": "2019 FALL DROP 1"
+          "banner": "shopify:\/\/shop_images\/distro-100-ocompletes.gif",
+          "pdflink": "https:\/\/www.dlxsf.com\/spring-2020-completes.pdf",
+          "headertext": "2020 SPRING COMPLETES"
         }
       },
       "collection3": {
@@ -285,9 +285,9 @@
           "brand1": "Real",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "Spitfire",
-          "brand5": "Thunder",
-          "brand6": "Venture"
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
         }
       },
       "collection-header5": {
