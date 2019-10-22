@@ -24,15 +24,21 @@
 			
 			<!-- START NEWS STORIES -->
 			<font color="{{ section.settings.text1color }}">
-			{% if section.settings.story1title != blank %}<a href="{{ section.settings.story1link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story1title | upcase }}</u></font></b></a> --> {{ section.settings.story1text }}{% endif %}
 			
-			{% if section.settings.story2title != blank %}<br><br><a href="{{ section.settings.story2link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story2title | upcase }}</u></font></b></a> --> {{ section.settings.story2text }}{% endif %}
+			{% if section.settings.story1title != blank %}<p><a href="{{ section.settings.story1link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story1title | upcase }}</u></font></b></a> --> {{ section.settings.story1text }}</p>{% endif %}
 			
-			{% if section.settings.story3title != blank %}<br><br><a href="{{ section.settings.story3link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story3title | upcase }}</u></font></b></a> --> {{ section.settings.story3text }}{% endif %}
+			{% if section.settings.story2title != blank %}<p><a href="{{ section.settings.story2link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story2title | upcase }}</u></font></b></a> --> {{ section.settings.story2text }}</p>{% endif %}
 			
-			{% if section.settings.story4title != blank %}<br><br><a href="{{ section.settings.story4link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story4title | upcase }}</u></font></b></a> --> {{ section.settings.story4text }}{% endif %}
+			{% if section.settings.story3title != blank %}<p><a href="{{ section.settings.story3link }}"><b><font color="{{ section.settings.text1color }}"><u>{{ section.settings.story3title | upcase }}</u></font></b></a> --> {{ section.settings.story3text }}</p>{% endif %}
 			
-			</font><br><br>
+			
+			{% for article in blogs.News.articles limit: section.settings.numofblogs %}
+				<p><a href="{{ article.url }}"><font color="{{ section.settings.text1color }}"><b><u>{{ article.title | upcase }}</u></b></a> --> {{ article.excerpt }}</font>{% if article.image %}
+            <br><br><a href="{{ article.url }}">{{ article | img_url: '500x500', scale: 2 | img_tag: '' }}</a>
+          {% endif %}</p>
+			{% endfor %}
+			
+			</font>
 			<!-- START NEWS STORIES -->
 			</div>
 		</div>
@@ -123,6 +129,11 @@
       "id": "promo1videolink",
       "label": "Promo 1 Video Embed"
     },
+        {
+	  "type": "text",
+      "id": "numofblogs",
+      "label": "Number of Blog Posts"
+    },
 	{
 	 "type": "image_picker",
       "id": "text1bgimage",
@@ -187,21 +198,6 @@
 	  "type": "text",
       "id": "story3text",
       "label": "Story 3 Text"
-    },
-    {
-	  "type": "text",
-      "id": "story4title",
-      "label": "Story 4 Title"
-    },
-    {
-	  "type": "text",
-      "id": "story4link",
-      "label": "Story 4 Link"
-    },
-    {
-	  "type": "text",
-      "id": "story4text",
-      "label": "Story 4 Text"
     },
     {
 	 "type": "image_picker",
