@@ -214,7 +214,7 @@
 	<!-- START TEXT SECTION -->
 	
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div style="padding: 10px; {% if section.settings.text1bgimage != blank %}background: url({{ section.settings.text1bgimage | img_url: '1000x1000' }});{% endif %}{% if section.settings.text1bgcolor != blank %}background-color: {{ section.settings.text1bgcolor }};{% endif %} height: 100%;"><h2>{{ section.settings.text1header }}:</h2>
+			<div style="padding: 10px; {% if section.settings.text1bgimage != blank %}background: url({{ section.settings.text1bgimage | img_url: '1000x1000' }});{% endif %}{% if section.settings.text1bgcolor != blank %}background-color: {{ section.settings.text1bgcolor }};{% endif %} height: 100%;"><h2><font color="{{ section.settings.text1headercolor }}">{{ section.settings.text1header }}:</font></h2>
 			
 			<!-- START NEWS STORIES -->
 			<font color="{{ section.settings.text1color }}">
@@ -238,7 +238,7 @@
 		</div>
 
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2><font color="{{ section.settings.text2headercolor }}">{{ section.settings.text2header }}:</font></h2>
+			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2><font color="{{ section.settings.text2hdrcolor }}">{{ section.settings.text2header }}:</font></h2>
 			
 			<h2>
 			{% if section.settings.new1title != blank %}<a href="{{ section.settings.new1url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new1title }}</font></b></a><br>{% endif %}
@@ -246,6 +246,7 @@
 			{% if section.settings.new3title != blank %}<a href="{{ section.settings.new3url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new3title }}</font></b></a><br>{% endif %}
 			{% if section.settings.new4title != blank %}<a href="{{ section.settings.new4url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new4title }}</font></b></a><br>{% endif %}
 			</h2>
+			{% if section.settings.whatsnewimage != blank %}<br><br><a href="{% if section.settings.usenew1url == true %}{{ section.settings.new1url }}{% elsif section.settings.usenew2url == true %}{{ section.settings.new2url }}{% elsif section.settings.usenew3url == true %}{{ section.settings.new3url }}{% elsif section.settings.usenew4url == true %}{{ section.settings.new4url }}{% endif %}">{{ section.settings.whatsnewimage | img_url: '500x500', scale: 2 | img_tag: '' }}</a>{% endif %}
 			</div>
 		</div>
 		
@@ -334,12 +335,17 @@
       "label": "Text 1 BG Image"
     },
     {
-	  "type": "text",
+	  "type": "color",
       "id": "text1bgcolor",
       "label": "Text 1 BG Color"
-    },
-     {
-	  "type": "text",
+	},
+	{
+	  "type": "color",
+      "id": "text1headercolor",
+      "label": "Text 1 Header Color"
+	},
+    {
+	  "type": "color",
       "id": "text1color",
       "label": "Text 1 Color"
     },
@@ -399,13 +405,13 @@
       "label": "Text 2 BG Image"
     },
     {
-	  "type": "text",
+	  "type": "color",
       "id": "text2bgcolor",
       "label": "Text 2 BG Color"
     },
     {
-	  "type": "text",
-      "id": "text2headercolor",
+	  "type": "color",
+      "id": "text2hdrcolor",
       "label": "Text 2 Header Color"
     },
     {
@@ -414,15 +420,26 @@
       "label": "Text 2 Header"
     },
     {
-	  "type": "text",
+	  "type": "color",
       "id": "text2color",
       "label": "Text 2 txt Color"
+    },
+    {
+	 "type": "image_picker",
+      "id": "whatsnewimage",
+      "label": "What's New Img"
     },
     {
 	  "type": "text",
       "id": "new1title",
       "label": "New 1 Title"
     },
+    {
+      "type":      "checkbox",
+      "id":        "usenew1url",
+      "label":     "Use New 1 url for img",
+      "default":   false
+	},
     {
 	  "type": "text",
       "id": "new1url",
@@ -435,6 +452,12 @@
       "label": "New 2 Title"
     },
     {
+      "type": "checkbox",
+      "id":  "usenew2url",
+      "label": "Use New 2 url for img",
+      "default": false
+	},
+    {
 	  "type": "text",
       "id": "new2url",
       "label": "New 2 Url"
@@ -445,6 +468,12 @@
       "label": "New 3 Title"
     },
     {
+      "type": "checkbox",
+      "id": "usenew3url",
+      "label": "Use New 3 url for img",
+      "default": false
+	},
+    {
 	  "type": "text",
       "id": "new3url",
       "label": "New 3 Url"
@@ -454,6 +483,12 @@
       "id": "new4title",
       "label": "New 4 Title"
     },
+    {
+      "type": "checkbox",
+      "id": "usenew4url",
+      "label": "Use New 4 url for img",
+      "default": false
+	},
     {
 	  "type": "text",
       "id": "new4url",
