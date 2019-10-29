@@ -1,4 +1,4 @@
-{% paginate blog.articles by 5 %}
+{% paginate blog.articles by 10 %}
 
 {% include 'breadcrumb' %}
 
@@ -61,5 +61,6 @@
 
 {% endpaginate %}
 
+<br><br>
 
-<br><br>{% section 'featured' %}
+{% section 'featured' %}

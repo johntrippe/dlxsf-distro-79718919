@@ -1,11 +1,12 @@
 <h4>{{ 'blogs.sidebar.recent_articles' | t }}</h4>
-{% for article in blog.articles limit:6 %}
+{% for article in blog.articles limit:10 %}
   <p>
     <a href="{{ article.url }}">{{ article.title }}</a>
     <br>
     <time pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
       <em class="text-light">{{ article.published_at | date: format: 'month_day_year' }}</em>
     </time>
+    {% if article.image != blank %}<br><a href="{{ article.url }}">{{ article | img_url: '300x300', scale: 2 | img_tag: '' }}</a>{% endif %}
   </p>
 {% endfor %}
 
