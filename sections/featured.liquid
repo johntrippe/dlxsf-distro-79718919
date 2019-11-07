@@ -227,9 +227,10 @@
 			
 			
 			{% for article in blogs.News.articles limit: section.settings.numofblogs %}
-				<p><a href="{{ article.url }}"><font color="{{ section.settings.text1color }}"><b><u>{{ article.title | upcase }}</u></b></a> --> {{ article.excerpt }}</font>{% if article.image %}
-            <br><br><a href="{{ article.url }}">{{ article | img_url: '500x500', scale: 2 | img_tag: '' }}</a>
-          {% endif %}</p>
+				<p><a href="{{ article.url }}"><font color="{{ section.settings.text1color }}"><b><u>{{ article.title | upcase }}</u></b></a> --> {{ article.excerpt }}</font>
+				{% if article.image %}
+					{% unless article.tags contains "noimg" %}<br><br><a href="{{ article.url }}">{{ article | img_url: '500x500', scale: 2 | img_tag: '' }}</a>{% endunless %}
+				{% endif %}</p>
 			{% endfor %}
 			
 			</font>
