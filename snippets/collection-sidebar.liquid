@@ -19,21 +19,21 @@
     
      
 {% for item in cart.items %}
-    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Points' %}{% elsif item.product.type == "Decks" %}   
-         {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %} 
+    {% if item.product.tags contains 'Onsale' or item.product.tags contains 'Price Points' %}{% elsif item.product.type == "Decks" or item.product.tags contains 'Decks' %}   
+         {% capture temp %}{{ num | plus: item.quantity }}{% endcapture %}
     {% endif %}
     {% assign num = temp %}
 {% endfor %}
  
 {% for item in cart.items %}   
-    {% if item.product.type == "Trucks" %}       
+    {% if item.product.type == "Trucks" or item.product.tags contains 'Trucks' %}       
          {% capture temp2 %}{{ num_trucks | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num_trucks = temp2 %}
 {% endfor %}
 
 {% for item in cart.items %}   
-    {% if item.product.type == "Wheels" %}       
+    {% if item.product.type == "Wheels" or item.product.tags contains 'Wheels' %}       
          {% capture temp3 %}{{ num_wheels | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num_wheels = temp3 %}
@@ -62,7 +62,7 @@
 {% endfor %}
 
 {% for item in cart.items %}
-    {% if item.product.type == "Apparel" %}       
+    {% if item.product.type == "Apparel" or item.product.tags contains 'Apparel' %}       
          {% capture temp7 %}{{ num_apparel | plus: item.quantity }}{% endcapture %} 
     {% endif %}
     {% assign num_apparel = temp7 %}
