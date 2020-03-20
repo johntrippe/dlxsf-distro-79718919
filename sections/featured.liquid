@@ -247,7 +247,7 @@
       
       <h2><font color="{{ section.settings.text2hdrcolor }}">{{ section.settings.text2header }}:</font></h2>
 			
-			<div style="padding-top:20px;"><h2>
+			<div style="padding-top:{{ section.settings.new1titleheight }}px;"><h2>
 			{% if section.settings.new1title != blank %}<a href="{{ section.settings.new1url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new1title }}</font></b></a><br>{% endif %}
 			{% if section.settings.new2title != blank %}<a href="{{ section.settings.new2url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new2title }}</font></b></a><br>{% endif %}
 			{% if section.settings.new3title != blank %}<a href="{{ section.settings.new3url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new3title }}</font></b></a><br>{% endif %}
@@ -440,6 +440,11 @@
 	  "type": "text",
       "id": "new1title",
       "label": "New 1 Title"
+    },
+    {
+	  "type": "text",
+      "id": "new1titleheight",
+      "label": "New 1 Pixel Height"
     },
     {
       "type":      "checkbox",
