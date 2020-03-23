@@ -243,7 +243,7 @@
 		</div>
 
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div style="padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}">
+			<div onclick="window.open('{{ section.settings.new1url }}');" style="cursor:pointer; padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}">
       
       <h2><font color="{{ section.settings.text2hdrcolor }}">{{ section.settings.text2header }}:</font></h2>
 			
