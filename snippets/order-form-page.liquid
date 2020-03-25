@@ -11,7 +11,7 @@ Use the assign statement outside of this comment block at the top of your templa
 {% if collection.products_count > 0 %}
 <div class="action-bar top clearfix">
   <h1 class="left">{% if template contains 'page' %}{{ page.title }}{% else %}{{ collection.title }}{% endif %}</h1>
-  <div class="order-form-add-to-cart"><input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add to the cart" /></div>
+  <div class="order-form-add-to-cart"><input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add to Cart" /></div>
 </div> 
 {% else %}
 <h1>{% if template contains 'page' %}{{ page.title }}{% else %}{{ collection.title }}{% endif %}</h1>
