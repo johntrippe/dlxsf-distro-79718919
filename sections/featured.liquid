@@ -194,6 +194,20 @@
 
 {% endif %}
 
+<!-- START BACKGROUND COLOR FOR INSTAGRAM -->
+{% if section.settings.instaBGColor == 'white' %}
+    {% assign instaBG = '255, 255, 255' %}
+
+	{% elsif section.settings.instaBGColor == 'gray' %}
+    {% assign instaBG = '140, 140, 140' %}
+
+  {% elsif section.settings.instaBGColor == 'black' %}
+    {% assign instaBG = '0, 0, 0' %}
+
+{% endif %}
+
+<!-- END BACKGROUND COLOR FOR INSTAGRAM -->
+
 <div class="grid-item" style="padding: 0px;">
 	{% if section.settings.promo1link != blank %}
 	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
@@ -239,16 +253,14 @@
 			</font>
 			<!-- END NEWS STORIES -->
       </div>
-      <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/news-footer-2.png?v=1584464109"></div>
+      <img src="https://cdn.shopify.com/s/files/1/0714/9533/files/news-footer-2.png?v=1584464109">
+			</div>
 		</div>
 
 		<div class="grid-item large--one-half" style="padding: 10px;">
-			<div onclick="window.open('{{ section.settings.new1url }}');" style="cursor:pointer; padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}">
-      
-      <h2><font color="{{ section.settings.text2hdrcolor }}">{{ section.settings.text2header }}:</font></h2>
-			
+      <div  onclick="window.open('{{ section.settings.new1url }}');" style="cursor:pointer; padding: 10px; {% if section.settings.text2bgcolor != blank %}background-color: {{ section.settings.text2bgcolor }};{% endif %} height: 100%; {% if section.settings.text2bgimage != blank %}background: url({{ section.settings.text2bgimage | img_url: '1000x1000' }});{% endif %}"><h2><font color="{{ section.settings.text2hdrcolor }}">{{ section.settings.text2header }}:</font></h2>
 			<div style="padding-top:{{ section.settings.new1titleheight }}px;"><h2>
-			{% if section.settings.new1title != blank %}<a href="{{ section.settings.new1url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new1title }}</font></b></a><br>{% endif %}
+			{% if section.settings.new1title != blank %}<p style="background-color: rgba({{instaBG}}, {{ section.settings.instaTxtAplha }} );"><a href="{{ section.settings.new1url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new1title }}</font></b></a></p><br>{% endif %}
 			{% if section.settings.new2title != blank %}<a href="{{ section.settings.new2url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new2title }}</font></b></a><br>{% endif %}
 			{% if section.settings.new3title != blank %}<a href="{{ section.settings.new3url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new3title }}</font></b></a><br>{% endif %}
 			{% if section.settings.new4title != blank %}<a href="{{ section.settings.new4url }}"><b><font color="{{ section.settings.text2color }}">- {{ section.settings.new4title }}</font></b></a><br>{% endif %}
@@ -409,7 +421,7 @@
     {
 	 "type": "image_picker",
       "id": "text2bgimage",
-      "label": "Text 2 BG Image"
+      "label": "Instagram img"
     },
     {
 	  "type": "color",
@@ -432,14 +444,14 @@
       "label": "Text 2 txt Color"
     },
     {
-	 "type": "image_picker",
-      "id": "whatsnewimage",
-      "label": "What's New Img"
+	  "type": "text",
+      "id": "new1title",
+      "label": "Instagram"
     },
     {
 	  "type": "text",
-      "id": "new1title",
-      "label": "New 1 Title"
+      "id": "new1url",
+      "label": "Insta Link"
     },
     {
 	  "type": "text",
@@ -447,16 +459,26 @@
       "label": "New 1 Pixel Height"
     },
     {
+   "type": "select",
+   "id": "instaBGColor",
+   "options": [
+      { "value": "white", "label": "White"},
+      { "value": "gray", "label": "Gray"},
+      { "value": "black", "label": "Black"}
+   ],
+   "label": "Insta Txt BG"
+   	},
+    {
+	  "type": "text",
+    "id": "instaTxtAplha",
+    "label": "instaTxtAplha"
+    },
+    {
       "type":      "checkbox",
       "id":        "usenew1url",
       "label":     "Use New 1 url for img",
       "default":   false
 	},
-    {
-	  "type": "text",
-      "id": "new1url",
-      "label": "New 1 Url"
-    },
     
     {
 	  "type": "text",
