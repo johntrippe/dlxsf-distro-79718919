@@ -1,0 +1,20 @@
+   {% case media.media_type %}
+      {% when 'image' %}
+      <a href="{{ image | product_img_url: MagicToolboxBigImageSize }}" rel="zoom-id:zoom{{ product.id }}" rev="{{ image | product_img_url: MagicToolboxThumbnailImageSize }}" title="{{ image.alt | escape }}"><img src="{{ image | product_img_url: MagicToolboxSelectorImageSize }}" alt="{{ image.alt | escape }}" /></a>
+      {% when 'external_video' %}
+        <div class="product-single__media" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;" data-media-id="{{ media.id }}">
+          {{ media | external_video_tag }}
+        </div>
+      {% when 'video' %}
+        <div class="product-single__media" data-media-id="{{ media.id }}">
+          {{ media | video_tag: controls: true }}
+        </div>
+      {% when 'model' %}
+        <div class="product-single__media" style="padding-top: 100%" data-media-id="{{ media.id }}">
+          {{ media | model_viewer_tag }}
+        </div>
+      {% else %}
+        <div class="product-single__media" style="padding-top: 100%;" data-media-id="{{ media.id }}">
+          {{ media | media_tag }}
+        </div>
+    {% endcase %}
