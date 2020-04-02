@@ -209,18 +209,46 @@
 <!-- END BACKGROUND COLOR FOR INSTAGRAM -->
 
 <div class="grid-item" style="padding: 0px;">
-	{% if section.settings.promo1link != blank %}
+  <!-- START SLIDER -->
+  {% if section.settings.promo1link == blank %}
+  <div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
+  {% if settings.slider_home_enable %}
+  <div class="flexslider" id="heroSlider" data-auto="{{ settings.slider_home_auto }}" data-rate="{{ settings.slider_home_rate }}">
+    <ul class="slides">
+
+      {% for i in (1..6) %}
+        {% capture slide %}slide_{{ i }}{% endcapture %}
+        {% capture slide_link %}slide_{{ i }}_link{% endcapture %}
+        {% capture slide_img %}slide_{{ i }}.jpg{% endcapture %}
+        {% capture slide_alt %}slide_{{ i }}_alt{% endcapture %}
+        {% if settings[slide] %}
+          <li>
+            <a href="{{ settings[slide_link] }}" class="slide-link">
+              {{ slide_img | asset_url | img_tag: settings[slide_alt] }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+</div>
+{% endif %}
+  <!-- END SLIDER -->
+	<!-- START PROMO 1 -->
+  {% if section.settings.promo1link != blank %}
 	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
-		<!-- START VIDEO -->
 		<a href="{{ section.settings.promo1link }}"><img src="{{ section.settings.promo1 | img_url: '1000x500' }}" border="0"></a>
-		<!-- END VIDEO -->
 	</div>
 	{% endif %}
+  <!-- END PROMO 1 -->
+  <!-- START VIDEO -->
 	{% if section.settings.promo1video == true %}
 	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
 		{{ section.settings.promo1videolink }}
 	</div>
 	{% endif %}
+  <!-- END VIDEO -->
 </div>
 
 <div class="grid-item" style="padding: 0px; display: flex; flex-wrap: wrap;">
@@ -272,13 +300,13 @@
           E[n].style.display='';
         }
     </script>
-    <div class="elfsight-sapp-2459f6c0-413e-4c51-bbc3-a2f939438f7b item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-65cdef60-f37e-4001-89e9-c7f6248c3eeb item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-46b739b2-6569-4130-bb70-12306261fd9b item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-8989d7e0-ecae-4bb0-9340-395def546ee5 item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-434ddef8-195d-41fe-8883-04237b74848e item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-696bf917-a93f-4e26-bc51-254bd46b065c item grid-item large--one-half" style="padding: 10px;"></div>
-    <div class="elfsight-sapp-28bdabf0-4f1c-43a4-9e6d-bde87879e997 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-18624e41-fea0-4f9e-9292-53055b2be891 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-650327e2-c197-453c-b4bb-e4c0ffd6e3f5 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-53df474c-82b8-4f67-bfe9-9423a6e15a8c item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-1ca99556-199b-4b1b-8ee8-86c9fd9cb6e1 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-439b8dad-d2e8-4794-8780-bd8ec9c3e3b4 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-30f03ba9-8926-4599-9582-57789a8135c6 item grid-item large--one-half" style="padding: 10px;"></div>
+    <div class="elfsight-sapp-ed7a20ac-d3cd-4862-92a7-a480b8e5f444 item grid-item large--one-half" style="padding: 10px;"></div>
     <!-- END INSTAGRAM INSERT -->
 		
 	<!-- END TEXT SECTION -->
