@@ -46,17 +46,17 @@
     "mailing_list_form_action": "\/\/dlxsf.us10.list-manage.com\/subscribe\/post?u=bedc46314b6e82692f692d2df&amp;id=aec4b176b2",
     "footer_legallinks_enable": false,
     "footer_legallinks_linklist": "",
-    "slider_home_enable": true,
+    "slider_home_enable": false,
     "slider_home_auto": true,
-    "slider_home_rate": "7000",
+    "slider_home_rate": "5000",
     "slide_1": true,
-    "slide_1_link": "\/collections\/spitfire-wheels",
+    "slide_1_link": "\/collections\/daniel-clark-series",
     "slide_1_alt": "",
     "slide_2": true,
-    "slide_2_link": "\/collections\/real-decks",
+    "slide_2_link": "\/collections\/daniel-clark-series",
     "slide_2_alt": "",
     "slide_3": false,
-    "slide_3_link": "\/collections\/thunder-trucks",
+    "slide_3_link": "\/collections\/spitfire-wheels",
     "slide_3_alt": "",
     "slide_4": false,
     "slide_4_link": "\/collections\/real-apparel",
@@ -159,12 +159,12 @@
       "featured": {
         "type": "featured",
         "settings": {
-          "promo1": "shopify:\/\/shop_images\/2-sf-spring-20-dr-1-lbaker-dt.jpg",
-          "promo1link": "\/collections\/spitfire-wheels",
+          "promo1": "shopify:\/\/shop_images\/rs-sp20-d2-slider.jpg",
+          "promo1link": "\/collections\/real-decks",
           "promo1video": true,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/TOcwCstPCiU\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/sExlGSV2I3M\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "numofblogs": "1",
-          "text1bgimage": "shopify:\/\/shop_images\/bg.jpg",
+          "text1bgimage": "shopify:\/\/shop_images\/bg_1000x1000-lighter-060420.jpg",
           "text1bgcolor": "#d6ea5f",
           "text1headercolor": "#4b3f09",
           "text1color": "#000000",
@@ -200,28 +200,28 @@
           "new4url": "",
           "text2linkurl": "",
           "text2linktext": "",
-          "promo2": "shopify:\/\/shop_images\/8-ISHOD-SPRING-20-D1-SQ.jpg",
+          "promo2": "shopify:\/\/shop_images\/IMG_4842.jpg",
           "promo_2_selector": "promosel4",
-          "promo2link": "\/collections\/ishod-cat-scratch",
+          "promo2link": "\/collections\/spitfire-wheels",
           "promo3": "shopify:\/\/shop_images\/IMG_8566.jpg",
           "promo_3_selector": "promosel8",
           "promo3link": "\/collections\/thunder-trucks\/polished",
-          "promo4": "shopify:\/\/shop_images\/TH-Charged-Grenade-SS-Tee-Front_Ishod-Wair-IG_Square.jpg",
+          "promo4": "shopify:\/\/shop_images\/TH-SP1-NEW_-_CHARGED_2001_-_SS_TEE-TOM-K-Back_IG_Square_069d881f-949f-4fe7-bc9b-5236cc28f5a8.jpg",
           "promo_4_selector": "promosel2",
-          "promo4link": "\/collections\/thunder-apparel\/products\/b2b-615-5e04ef29a2e30",
-          "promo5": "shopify:\/\/shop_images\/TH-SP1-GUY-MARIANO-SERPENT-MOON-TEAM-HOLLOWS-2--IG-SQUARE.jpg",
+          "promo4link": "\/collections\/thunder-apparel",
+          "promo5": "shopify:\/\/shop_images\/SPRING-PRE-OVERSTOCK-2.jpg",
           "promo_5_selector": "promosel3",
-          "promo5link": "\/collections\/thunder-trucks\/products\/b2b-615-5e04edeb07dab",
-          "promo6": "shopify:\/\/shop_images\/3-kelch-walker-sp-20-d1-dt.jpg",
-          "promo6link": "\/collections\/kelch-twister",
+          "promo5link": "\/collections\/2020-spring-prebook-overstock",
+          "promo6": "shopify:\/\/shop_images\/DLX-HOLIDAY20-COMPLETES-1000x500_FINAL_CALL.jpg",
+          "promo6link": "",
           "promo6video": true,
-          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/Exfiq6Bb_vE\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo6videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/BH19hcj3SoE\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
           "promo7": "shopify:\/\/shop_images\/staples-promo-zone2.gif",
           "promo_7_selector": "promosel7",
           "promo7link": "\/collections\/staples-collection",
-          "promo8": "shopify:\/\/shop_images\/DLX-HEADERS-SPRING20-DROP11536x1536.jpg",
+          "promo8": "shopify:\/\/shop_images\/IMG_4450.JPG",
           "promo_8_selector": "promosel5",
-          "promo8link": "\/collections\/2020-spring-drop-1",
+          "promo8link": "\/collections\/krooked-decks\/zip-zingers",
           "promo9": "shopify:\/\/shop_images\/dlx-coffeebeans_a37d68ef-6ad7-4506-b1dd-31cbf30143b7.jpg",
           "promo9link": "https:\/\/www.dlxcafe.com"
         }
@@ -229,9 +229,9 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-BTS2020-PREBOOK-HEADERS-1000x500-B2B---NO-DATES.jpg",
-          "pdflink": "https:\/\/www.dlxsf.com\/bts-2020-prebook.pdf",
-          "headertext": "2020 BTS PREBOOK"
+          "banner": "shopify:\/\/shop_images\/spring-pre-NO-DATES.jpg",
+          "pdflink": "",
+          "headertext": "2021 SPRING PREBOOK"
         }
       },
       "collection": {
@@ -267,9 +267,9 @@
       "collection-header4": {
         "type": "collection-header4",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-HEADERS-SPRING20-DROP11000x500.jpg",
-          "pdflink": "https:\/\/www.dlxsf.com\/spring-2020-drop-1.pdf",
-          "headertext": ""
+          "banner": "shopify:\/\/shop_images\/DLX-HOLIDAY20-COMPLETES-1000x500_BASE.jpg",
+          "pdflink": "https:\/\/www.dlxsf.com\/holiday-2020-completes.pdf",
+          "headertext": "2020 HOLIDAY COMPLETES"
         }
       },
       "collection4": {
@@ -278,17 +278,17 @@
           "brand1": "Real",
           "brand2": "Antihero",
           "brand3": "Krooked",
-          "brand4": "Spitfire",
-          "brand5": "Thunder",
-          "brand6": "Venture"
+          "brand4": "",
+          "brand5": "",
+          "brand6": ""
         }
       },
       "collection-header3": {
         "type": "collection-header3",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DISTRO-DLX-HOLIDAY2020-PREBOOK-HEADERS-1000x500-B2B---NO-DATES_c879c714-0482-4e3c-bf14-8c4e7d47de8b.jpg",
+          "banner": "shopify:\/\/shop_images\/DLX-decks-hol191000x500-overstock.jpg",
           "pdflink": "",
-          "headertext": "2020 HOLIDAY PREBOOK"
+          "headertext": "2020 SPRING PREBOOK OVERSTOCK"
         }
       },
       "collection3": {
