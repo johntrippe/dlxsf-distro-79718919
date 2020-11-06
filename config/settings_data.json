@@ -160,9 +160,9 @@
         "type": "featured",
         "settings": {
           "promo1": "shopify:\/\/shop_images\/rs-sp20-d2-slider.jpg",
-          "promo1link": "\/collections\/real-decks",
+          "promo1link": "",
           "promo1video": true,
-          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/sExlGSV2I3M\" frameborder=\"0\" allowfullscreen=\"\"><\/iframe><\/div>",
+          "promo1videolink": "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }<\/style><div class=\"embed-container\"><iframe src=\"https:\/\/www.youtube.com\/embed\/\/xzRFf29N-3M\" frameborder=\"0\" allowfullscreen><\/iframe><\/div>",
           "numofblogs": "1",
           "text1bgimage": "shopify:\/\/shop_images\/bg_1000x1000-lighter-060420.jpg",
           "text1bgcolor": "#d6ea5f",
@@ -229,9 +229,9 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "banner": "shopify:\/\/shop_images\/DLX-SP21-Prebook-no-dates.jpg",
-          "pdflink": "https:\/\/www.dlxsf.com\/spring-2021-prebook.pdf",
-          "headertext": "2021 SPRING PREBOOK"
+          "banner": "shopify:\/\/shop_images\/nodates-DLX-HEADERS-SUMMER21-PREBOOK-1000x500-BASE-W_O-DATES.jpg",
+          "pdflink": "https:\/\/www.dlxsf.com\/summer-2021-prebook.pdf",
+          "headertext": "2021 SUMMER PREBOOK"
         }
       },
       "collection": {
