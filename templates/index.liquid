@@ -1,13 +1,209 @@
-<div class="grid-item" style="padding: 0px;">
-	<div class="grid-item large--one-whole" style="padding: 10px; padding-top:0px;">
-		<p><h3>
+{% assign collection = collections.bts-prebook %}
+
+{% paginate collection.products by 1000 %}
+
+{% include 'breadcrumb' %}
+
+{% assign has_sidebar = false %}
+{% if collection.all_tags.size > 0 %}
+  {% assign has_sidebar = true %}
+{% endif %}
+
+<div class="grid grid-border">
+	
+
+  {% if has_sidebar %}
+  <aside class="sidebar grid-item large--one-fifth collection-filters" id="collectionFilters">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+					
+					<script type="text/javascript">	
+					if($(window).width() >= 900){	
+						jQuery("document").ready(function($){
+						
+						var nav3 = $('.nav-container2');
+						
+						$(window).scroll(function () {
+							if ($(this).scrollTop() > 136) {
+								nav3.addClass("f-nav2");
+							} else {
+								nav3.removeClass("f-nav2");
+							}
+						});
+					
+					});
+					}
+					
+					</script>
+					
+					
+					
+					
+					<div class="nav-container2">
+						
+						{% include 'collection-sidebar' %}
+						
+					</div>
+  </aside>
+  {% endif %}
+
+
+  <div class="grid-item{% if has_sidebar %} large--four-fifths grid-border--left{% endif %}">
+
+    {% comment %}
+      Different markup if description is set
+    {% endcomment %}
+    {% if collection.description != blank %}
+      <header class="section-header">
+        <h1 class="section-header--title">{{ collection.title }}</h1>
+        <div class="rte rte--header">
+          {{ collection.description }}
+        </div>
+        
+        <div class="section-header--right">
+
+
+      
+      <div class="order-form-add-to-cart">
+	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
+            <span class="icon icon-cart"></span>
+            {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
+          </a>
+	      </span>
+          <br><br>
+          <input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add To Cart" />
+      </div>
+
+      
+      </div>
+      
+      
+      </header>
+      <hr class="hr--offset-left">
+      <div class="section-header">
+        <div class="section-header--right">
+          <!-- {% include 'collection-sorting' %} -->
+          <!-- {% include 'collection-views' %} -->
+          {% include 'toggle-filters' %}
+        </div>
+      </div>
+    {% else %}
     
-    As much as we’d prepared, the overwhelming number of orders have crashed our system. We are assessing the damage and will give you a shout when we are able to reopen. For those of you that did place orders, we will let you know an estimate of your ship date as soon as possible. Thanks again.
+    {% section 'collection-header' %}
+    
+    
+    <header class="section-header">
+     
+      
+      	
+     
+      <div class="section-header--right">
+
+      
+      <div class="f-nav4">
+	      <span id="hide-cart" style="display:none;"><a href="/cart" class="header-cart-btn">
+            <span class="icon icon-cart"></span>
+            {{ 'layout.cart.cart' | t }} <span id="cartCount" {% if cart.item_count == 0 %}class="hidden-count"{% endif %}>{{ cart.item_count }}</span>
+          </a>
+	      </span>
+          <br><br>
+          <input class="action-button submit button btn3 right add-to-cart-order-form" type="button" value="Add To Cart" />
+      </div>
+
+      
+      </div>
+    </header>
+    {% endif %}
+
+	
+    
+{% section 'collection' %}
+    
 
 
+  </div>
 
+  {% if paginate.pages > 1 %}
+  <div class="grid-item pagination-border-top">
+    <div class="grid">
+      <div class="grid-item{% if has_sidebar %} large--four-fifths push--large--one-fifth{% endif %}">
+          <div class="text-center">
+            {% include 'pagination-custom' %}
+          </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
-</h3></p>
-	</div>
 </div>
-{% section 'featured' %}
+
+
+
+{% endpaginate %}
+
+<script>
+Shopify.itemsToAdd = [];
+Shopify.addItemstoTheCart = function() {
+  if (Shopify.itemsToAdd.length) {
+    var item = Shopify.itemsToAdd.pop();
+    $.ajax({
+      url: '/cart/add',
+      dataType: 'json',
+      type: 'post',
+      data: item,
+      success: Shopify.addItemstoTheCart,
+      error: Shopify.addItemstoTheCart
+    });
+  }
+    else {
+    window.location = window.location;
+  }
+};
+jQuery(function($) {
+  $('table .quantity:first').focus();
+  $('[max]').change(function() {
+    var max = parseInt($(this).attr('max'), 10);
+    var value = parseInt($(this).val(), 10) || 0;
+    if (value > max) { 
+      alert('We only have ' + max + ' of this item in stock');
+      $(this).val(max); 
+    }    
+  });
+  $('.add-to-cart-order-form').click(function() {
+    $('.add-to-cart-order-form').addClass('disabled').attr('disabled','disabled');
+    // Resetting.
+    Shopify.itemsToAdd = [];
+    $('.quantity').each(function() {
+      var quantity = parseInt($(this).val(), 10);
+      if (quantity) {
+        Shopify.itemsToAdd.push( { id: $(this).attr('data-id'), quantity: quantity } );
+      }
+    });     
+    if (Shopify.itemsToAdd.length) {
+      Shopify.addItemstoTheCart();
+    }
+    else {
+      alert('All quantities are set to zero.');
+      $('.add-to-cart-order-form').removeAttr('disabled').removeClass('disabled');
+    }
+  });
+});
+</script>
+
+  
+<style>
+.action-bar { margin: 15px 0; }
+.action-bar.top { margin: 30px 0 0; }
+.action-bar h1 { margin:0; padding: 0; line-height:1 }
+.left { float: left; }
+.right { float: right; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+/* Additional styles for table */
+table.pure-table { margin: 15px 0; width: 100%; }
+table.pure-table tr td:first-child, table.pure-table tr th:first-child { padding-left: 12px; }
+table.pure-table tr td:last-child, table.pure-table tr th:last-child { padding-right: 12px; }
+table.pure-table img { float:left; padding: 5px 0; }
+table.pure-table td { vertical-align: middle; }
+.quantity { text-align: center; width: 60px !important; margin: 0 !important; }
+</style>
