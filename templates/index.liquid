@@ -12,42 +12,10 @@
 <div class="grid grid-border">
 	
 
-  {% if has_sidebar %}
-  <aside class="sidebar grid-item large--one-fifth collection-filters" id="collectionFilters">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-					
-					<script type="text/javascript">	
-					if($(window).width() >= 900){	
-						jQuery("document").ready(function($){
-						
-						var nav3 = $('.nav-container2');
-						
-						$(window).scroll(function () {
-							if ($(this).scrollTop() > 136) {
-								nav3.addClass("f-nav2");
-							} else {
-								nav3.removeClass("f-nav2");
-							}
-						});
-					
-					});
-					}
-					
-					</script>
-					
-					
-					
-					
-					<div class="nav-container2">
-						
-						{% include 'collection-sidebar' %}
-						
-					</div>
-  </aside>
-  {% endif %}
 
 
-  <div class="grid-item{% if has_sidebar %} large--four-fifths grid-border--left{% endif %}">
+
+  <div class="grid-item{% if has_sidebar %} large--five-fifths grid-border--left{% endif %}">
 
     {% comment %}
       Different markup if description is set
