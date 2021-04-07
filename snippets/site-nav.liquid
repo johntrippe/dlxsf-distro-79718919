@@ -4,11 +4,28 @@
     <a href="/">{{ 'general.breadcrumbs.home' | t }}</a>
   </li>
   {% endunless %}
-
+  {% for link in linklists.main-menu.links %}
+    {% assign child_list_handle = link.title | handleize %}
+    {% if linklists[child_list_handle].links != blank %}
+      <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+          <span class="icon-fallback-text">
+            <span class="icon icon-arrow-down" aria-hidden="true"></span>
+          </span>
+        </a>
+        <ul class="site-nav--dropdown">
+          {% for childlink in linklists[child_list_handle].links %}
+            <li {% if childlink.active %}class="site-nav--active"{% endif %}><a href="{{ childlink.url }}"><font color="#FFFFFF">{{ childlink.title | escape }}</font></a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
       <li {% if link.active %}class="site-nav--active"{% endif %}>
-        <a href="/">2021 HOLIDAY PREBOOK</li><li> | </li></a></li> <li><a href="https://www.dlxcafe.com/dam/collection/contents/collection:23d66ac4-7e09-4640-82c7-b72e24dd6615" target="_Blank">DOWNLOAD PREBOOK ASSESTS</a></li>
-      
-
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
