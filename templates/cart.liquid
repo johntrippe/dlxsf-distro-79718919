@@ -28,6 +28,7 @@ return confirm("Are you sure you want to clear your cart?");
 {% assign pre_book3 = '0' %}
 {% assign pre_book4 = '0' %}
 {% assign at_once = '0' %}
+{% assign zero_five_nine = '0' %}
 
 
 {% for item in cart.items %}
@@ -37,18 +38,18 @@ return confirm("Are you sure you want to clear your cart?");
   {% if item.product.tags contains 'Prebook3' %}{% assign pre_book3 = '1' %}{% endif %}
   {% if item.product.tags contains 'Prebook4' %}{% assign pre_book4 = '1' %}{% endif %}
   {% if item.product.tags contains 'Atonce' %}{% assign at_once = '1' %}{% endif %}
+  {% if item.product.tags contains '059' %}{% assign zero_five_nine = '1' %}{% endif %}
 
 {% endfor %}
 
 
 <!-- END MIXING PRE-BOOK WITH AT-ONCE ALERT -->
 
-<!-- START PREBOOK AMOUNT CHECK -->
+<!-- START PREBOOK AMOUNT CHECK AND WAREHOUSE 059 -->
           
-    {% assign prebook_total = pre_book | plus: pre_book2 | plus: pre_book3 | plus: pre_book4 %}
-    
+{% assign prebook_total = pre_book | plus: pre_book2 | plus: pre_book3 | plus: pre_book4 | plus: zero_five_nine %}
           
-<!-- END PREBOOK AMOUNT CHECK -->
+<!-- END PREBOOK AMOUNT CHECK AND WAREHOUSE 059 -->
 
 
 	{% if cart.item_count > 0 %}
@@ -153,15 +154,17 @@ return confirm("Are you sure you want to clear your cart?");
 <br><br>Note: Price Point & Sale decks don't count towards quantity discounts. 
 <br><a href="/cart/clear" onclick="return confirm_click();"><font color="red"><u>clear cart</u></font></a> | <a href="#notes"><u>add po# & notes</u></a>
 
-{% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0'  %}
+<!-- START WARNING IF MIXING WRONG WAREHOUSES -->
+
+{% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0'  or zero_five_nine > '0' %}
 <br><br>
-<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix Pre-Book and At-Once items in the same order. Order At-Once items and Pre-Book items separately. 
+<h1 class="section-header--title section-header--left"><font color="red">PLEASE NOTE</font>: Customers can not mix PreBook, Atonce (059) and AtOnce items in the same order. Order AtOnce, Atonce (059) and PreBook items separately. 
 	<br><br>Please adjust your cart to check-out. Thank you!</h1>
 {% endif %}
 
 {% if prebook_total > 1 %}
 <br><br>
-<h1 class="section-header--title section-header--left"><font color="red">ERROR</font>: Customers can not mix 2 different Pre-Book orders in the same order. Please only order from one Pre-Book per order. Thank you!</h1>
+<h1 class="section-header--title section-header--left"><font color="red">ERROR</font>: Customers can not mix 2 different PreBook orders in the same order or Atonce items with Prebook items. Please only order from one PreBook per order. Thank you!</h1>
 {% endif %}
 
 {% if limit_item > limit_item_amount %}
@@ -170,21 +173,23 @@ return confirm("Are you sure you want to clear your cart?");
 	<br>Please adjust QTY to 1.</h1>
 {% endif %}
 
+<!-- END WARNING IF MIXING WRONG WAREHOUSES -->
+
 <div class="grid-item text-right">
           <input type="submit" name="update" class="btn-secondary update-cart" value="{{ 'cart.general.update' | t }}">
 
           
-          <!-- START CHECK OUT TEST -->
+          <!-- START CHECK OUT TEST TO REMOVE CHECKOUT BUTTON -->
           
           {% if prebook_total > 1 %}
           	{% assign checkout_button = 'fail' %}
           {% endif %}
           
-          {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0' %}
+          {% if at_once > '0' and pre_book > '0' or pre_book2 > '0' or pre_book3 > '0' or pre_book4 > '0' or zero_five_nine > '0' %}
           	{% assign checkout_button = 'fail' %}
           {% endif %}
           
-          <!-- END CHECK OUT TEST -->
+          <!-- END CHECK OUT TEST TO REMOVE CHECKOUT BUTTON -->
           
           {% if checkout_button != 'fail' %}
           <button style="background: #FF0000;" type="submit" name="checkout" class="btn">
@@ -214,7 +219,7 @@ return confirm("Are you sure you want to clear your cart?");
 
             <div class="grid-item two-thirds large--three-quarters">
               <a href="{{ item.url }}">
-                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Atonce' %} <font color="blue">*AT-ONCE</font> {% endif %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
+                {{ item.product.title }} {% if checkout_button == 'fail' %}{% if item.product.tags contains 'Atonce' %} <font color="blue">*AT-ONCE</font> {% endif %}{% if item.product.tags contains '059' %} <font color="blue">*AT-ONCE (059)</font> {% endif %}{% if item.product.tags contains 'Prebook' %} <font color="red">*prebook</font> {% endif %}{% if item.product.tags contains 'Prebook2' %} <font color="red">*prebook 2</font> {% endif %}{% if item.product.tags contains 'Prebook3' %} <font color="red">*prebook 3</font> {% endif %}{% if item.product.tags contains 'Prebook4' %} <font color="red">*prebook 4</font> {% endif %}{% endif %}{% if checkout_limit_item == '1' %}{% if item.product.tags contains 'Limit' %} <font color="red">*limit</font> {% endif %}{% endif %}
               </a>
               
                 <br>
